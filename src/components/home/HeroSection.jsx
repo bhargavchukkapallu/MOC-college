@@ -39,7 +39,7 @@ const slides = [
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-[100vh] min-h-[600px] mt-0">
+    <div className="relative w-full h-[90vh] min-h-[600px] mt-0">
       <Swiper
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
         effect="fade"
@@ -71,7 +71,7 @@ const HeroSection = () => {
 
                 {/* Content */}
                 <div className="relative z-20 w-full h-full flex flex-col items-start justify-center text-left px-6 sm:px-12 lg:px-24 mx-auto">
-                  <div className="bg-brand-dark/30 p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
+                  <div className="bg-brand-dark/80 p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
                     <motion.h1
                       initial={{ opacity: 0, x: -50 }}
                       animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}

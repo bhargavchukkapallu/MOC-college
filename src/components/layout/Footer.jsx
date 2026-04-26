@@ -25,17 +25,11 @@ const Footer = () => {
     <footer className="bg-brand-dark text-white pt-16 pb-8 border-t-4 border-brand-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Brand Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-primary font-bold text-xl">
-                MOC
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl leading-tight">Matrusri</span>
-                <span className="text-sm text-brand-secondary font-medium uppercase tracking-wider">Oriental College</span>
-              </div>
+            <div className="mb-6 bg-white/95 p-1 rounded-full inline-block">
+              <img src="./MOC_Logo.png" alt="MOC Banner" className="h-24 w-auto object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               A Premier Educational Institution inaugurated by Viswajanani Jillellamudi AMMA on August 6, 1971. Emphasizing classical languages and modern education.

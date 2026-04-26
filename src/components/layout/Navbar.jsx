@@ -45,17 +45,12 @@ const Navbar = () => {
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
 
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-0 sm:pe-6">
+    <nav className="fixed w-full z-50 bg-white backdrop-blur-md shadow-sm border-b border-gray-100">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 min-h-[5rem]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 md:gap-5">
-            <img src="/MOC_Logo.png" alt="MOC Logo" className="h-16 md:h-24 w-auto object-contain" />
-            <div className="flex flex-col justify-center">
-              <span className="font-bold text-xl md:text-2xl text-brand-primary leading-tight">Matrusri</span>
-              <span className="text-xs md:text-sm text-brand-secondary font-bold uppercase tracking-widest mt-0.5">Oriental College</span>
-            </div>
-            <img src="/MOC-Naac-B.png" alt="MOC-Naac-B" className="h-16 md:h-24 w-auto object-contain" />
+          <Link to="/" className="flex items-center">
+            <img src="/MOC-Jillellamudi-Banner-Naac-B.png" alt="MOC Banner" className="h-16 md:h-28 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
