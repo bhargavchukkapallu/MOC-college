@@ -1,120 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, GraduationCap, Heart, Users } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const features = [
-  {
-    icon: <BookOpen className="w-8 h-8 text-brand-secondary" />,
-    title: 'Gurukula System',
-    description: 'Unique educational approach focusing on holistic development and traditional values.'
-  },
-  {
-    icon: <Heart className="w-8 h-8 text-brand-secondary" />,
-    title: 'Spiritual Growth',
-    description: 'Promoting harmony, universal love, and brotherhood as taught by Jillellamudi AMMA.'
-  },
-  {
-    icon: <GraduationCap className="w-8 h-8 text-brand-secondary" />,
-    title: 'Modern Education',
-    description: 'Offering computer courses and training for competitive exams alongside classical studies.'
-  },
-  {
-    icon: <Users className="w-8 h-8 text-brand-secondary" />,
-    title: 'Inclusive Community',
-    description: 'Fostering cooperation and unity beyond caste, religion, or community barriers.'
-  }
+const featuresList = [
+  'Unique Gurukula System focusing on holistic development',
+  'Promoting harmony, universal love, and brotherhood',
+  'Offering computer courses and competitive exam training',
+  'Fostering cooperation beyond caste, religion, or community'
 ];
 
 const AboutSection = () => {
   return (
-    <section className="pb-24 pt-0 bg-white relative z-10">
+    <section className="py-24 bg-white relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Features Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 -mt-16 md:-mt-24 mb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 + (index * 0.1), duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-brand-light rounded-xl shadow-sm flex items-center justify-center mb-6">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
         <div className="flex flex-col lg:flex-row items-center gap-16">
-
-          {/* Text Content */}
+          
+          {/* Left Side: Image/Video Composition (Educavo Style) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/2"
+            className="lg:w-1/2 w-full relative"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-primary text-sm font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-brand-secondary"></span>
-              About The College
+            {/* Main Video/Image Container */}
+            <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-white z-10">
+              <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  src="https://www.youtube.com/embed/D0Tn5deUvoM?si=u2NOBIfHkhI22kc2&rel=0"
+                  title="Matrusri Oriental College Overview"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              A Premier Educational Institution
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Inaugurated by Viswajanani Jillellamudi AMMA on August 6, 1971, Matrusri Oriental College has successfully completed over 50 years of excellence. We emphasize classical languages like Telugu and Sanskrit, guiding students towards success.
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              This esteemed institution is unique in imparting education through the Gurukula system, focusing on the holistic development of physical, mental, and spiritual growth.
-            </p>
 
+            {/* Decorative Background Shape */}
+            <div className="absolute -bottom-6 -left-6 w-full h-full bg-brand-primary rounded-lg z-0"></div>
+
+            {/* Floating Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex items-center gap-4"
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="absolute -bottom-8 -right-8 bg-brand-secondary text-brand-dark p-6 rounded-lg shadow-xl z-20 hidden md:flex flex-col items-center justify-center min-w-[180px]"
             >
-              <div className="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center border-2 border-brand-primary">
-                <span className="text-2xl font-bold text-brand-primary">53+</span>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900">Years of Excellence</h4>
-                <p className="text-sm text-gray-500">Established in 1971</p>
-              </div>
+              <span className="text-5xl font-extrabold mb-1">53+</span>
+              <span className="text-sm font-bold uppercase tracking-wider text-center">Years of<br/>Excellence</span>
             </motion.div>
           </motion.div>
 
-          {/* Video Embed Section */}
+          {/* Right Side: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-50 bg-gray-100"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:w-1/2 w-full"
           >
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/D0Tn5deUvoM?si=u2NOBIfHkhI22kc2&rel=0"
-                title="Matrusri Oriental College Overview"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+            {/* Section Subtitle */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-0.5 bg-brand-secondary"></div>
+              <span className="text-brand-primary font-bold uppercase tracking-widest text-sm">About The College</span>
             </div>
+            
+            {/* Main Title */}
+            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">
+              A Premier Educational Institution Since 1971
+            </h2>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Inaugurated by Viswajanani Jillellamudi AMMA on August 6, 1971, Matrusri Oriental College has successfully completed over 50 years of excellence. We emphasize classical languages like Telugu and Sanskrit, guiding students towards a bright and successful future.
+            </p>
+            
+            {/* Features Bullet List (Educavo Style) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+              {featuresList.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-brand-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <Link 
+              to="/about"
+              className="inline-flex items-center gap-2 bg-brand-primary text-white px-8 py-4 rounded-md font-bold hover:bg-brand-dark transition-colors transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+            >
+              Read More About Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
+
         </div>
       </div>
     </section>

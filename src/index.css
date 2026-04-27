@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #1e3a8a; /* deep academic blue */
-  --color-brand-secondary: #f59e0b; /* saffron/gold accent */
-  --color-brand-dark: #0f172a;
-  --color-brand-light: #f8fafc;
+  --color-brand-primary: #800000; /* maroon */
+  --color-brand-secondary: #facc15; /* yellow/gold accent */
+  --color-brand-dark: #171717; /* neutral-900 */
+  --color-brand-light: #f9fafb; /* gray-50 */
 }
 
 @layer base {

@@ -2,62 +2,67 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Award } from 'lucide-react';
+import { Clock, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const courses = [
   {
     id: 1,
     title: 'B.A. O.L. (Telugu)',
-    duration: '5 Years Integrated',
-    eligibility: '10th Grade Pass',
+    duration: '5 Yrs',
+    eligibility: '10th Pass',
+    students: '120+',
+    image: `${import.meta.env.BASE_URL}images/MOC-Building.jpg`,
+    category: 'Literature',
     description: 'Deep dive into classical Telugu literature, grammar, and history. Preparation for teaching, media, and civil services.',
-    color: 'from-blue-600 to-brand-primary'
   },
   {
     id: 2,
     title: 'B.A. O.L. (Sanskrit)',
-    duration: '5 Years Integrated / 3 Years',
-    eligibility: '10th Grade / Inter (Sanskrit)',
+    duration: '3/5 Yrs',
+    eligibility: 'Inter/10th',
+    students: '80+',
+    image: `${import.meta.env.BASE_URL}images/MOC-Library-2.jpg`,
+    category: 'Classical',
     description: 'Mastery of ancient Sanskrit texts, Vedas, and literature. Opens paths for research, translation, and international teaching.',
-    color: 'from-orange-500 to-brand-secondary'
   },
   {
     id: 3,
-    title: 'B.Sc. Honours (Computer Science)',
-    duration: '4 Years',
-    eligibility: 'Intermediate (MPC)',
+    title: 'B.Sc. Honours (Comp. Sci.)',
+    duration: '4 Yrs',
+    eligibility: 'Intermediate',
+    students: '200+',
+    image: `${import.meta.env.BASE_URL}images/moc-lab.jpg`,
+    category: 'Science',
     description: 'Modern technical education blending programming, algorithms, and software development for the digital age.',
-    color: 'from-emerald-500 to-teal-700'
   }
 ];
 
 const CoursesSection = () => {
   return (
     <section className="py-24 bg-brand-light relative">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header (Educavo Style) */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-brand-primary text-sm font-semibold mb-4 shadow-sm border border-gray-100"
+            className="flex items-center justify-center gap-3 mb-4"
           >
-            <span className="w-2 h-2 rounded-full bg-brand-secondary"></span>
-            Academics
+            <div className="w-12 h-0.5 bg-brand-secondary"></div>
+            <span className="text-brand-primary font-bold uppercase tracking-widest text-sm">Academics</span>
+            <div className="w-12 h-0.5 bg-brand-secondary"></div>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6"
           >
-            Programs Offered
+            Our Popular Programs
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -87,43 +92,53 @@ const CoursesSection = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-16 px-4 !overflow-visible"
+            className="pb-16 px-4 !overflow-visible courses-swiper"
           >
             {courses.map((course) => (
               <SwiperSlide key={course.id}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col border border-gray-100 group">
-                  <div className={`h-2 w-full bg-gradient-to-r ${course.color}`}></div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-primary transition-colors">
-                      {course.title}
-                    </h3>
-                    
-                    <div className="flex flex-col gap-3 mb-6">
-                      <div className="flex items-center text-sm text-gray-600 bg-gray-50 p-2 rounded-lg">
-                        <Clock className="w-4 h-4 mr-2 text-brand-secondary" />
-                        <span className="font-medium">Duration:</span>
-                        <span className="ml-1">{course.duration}</span>
-                      </div>
-                      <div className="flex items-center text-sm text-gray-600 bg-gray-50 p-2 rounded-lg">
-                        <Award className="w-4 h-4 mr-2 text-brand-secondary" />
-                        <span className="font-medium">Eligibility:</span>
-                        <span className="ml-1">{course.eligibility}</span>
-                      </div>
+                {/* Educavo Style Course Card */}
+                <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col group border border-gray-100 relative">
+                  
+                  {/* Image Header */}
+                  <div className="relative h-60 overflow-hidden">
+                    <img 
+                      src={course.image} 
+                      alt={course.title} 
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4 bg-brand-secondary text-brand-dark px-4 py-1 text-sm font-bold rounded-md z-10 shadow-md">
+                      {course.category}
                     </div>
+                    {/* Dark Overlay on Hover */}
+                    <div className="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <Link to="/academics" className="bg-white text-brand-primary w-12 h-12 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </div>
+                  </div>
 
-                    <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
+                  {/* Body */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-bold text-brand-dark mb-3 group-hover:text-brand-primary transition-colors">
+                      <Link to="/academics">{course.title}</Link>
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
                       {course.description}
                     </p>
+                  </div>
 
-                    <Link 
-                      to="/academics" 
-                      className="inline-flex items-center justify-between w-full font-semibold text-brand-primary hover:text-brand-secondary transition-colors group/btn"
-                    >
-                      View Syllabus
-                      <div className="w-8 h-8 rounded-full bg-brand-light flex items-center justify-center group-hover/btn:bg-brand-secondary group-hover/btn:text-white transition-colors">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </Link>
+                  {/* Footer (Meta Data) */}
+                  <div className="px-6 py-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500 bg-gray-50">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-brand-primary" />
+                      <span className="font-medium">{course.duration}</span>
+                    </div>
+                    <div className="w-px h-4 bg-gray-300"></div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-4 h-4 text-brand-primary" />
+                      <span className="font-medium">{course.eligibility}</span>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -131,6 +146,29 @@ const CoursesSection = () => {
           </Swiper>
         </motion.div>
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .courses-swiper .swiper-button-next,
+        .courses-swiper .swiper-button-prev {
+          color: var(--color-brand-primary);
+          background: white;
+          width: 40px;
+          height: 40px;
+          border-radius: 4px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .courses-swiper .swiper-button-next:hover,
+        .courses-swiper .swiper-button-prev:hover {
+          background: var(--color-brand-primary);
+          color: white;
+        }
+        .courses-swiper .swiper-button-next::after,
+        .courses-swiper .swiper-button-prev::after {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      `}} />
     </section>
   );
 };
