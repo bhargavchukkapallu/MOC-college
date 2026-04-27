@@ -11,7 +11,7 @@ const CTASection = () => {
         className="absolute inset-0 bg-[url('./images/mog-gate.jpg')] bg-cover bg-center bg-fixed"
       >
         {/* Deep blue gradient overlay */}
-        <div className="absolute inset-0 bg-brand-primary/80 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-brand-primary/30 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/10 to-transparent"></div>
       </div>
 

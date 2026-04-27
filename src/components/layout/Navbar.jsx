@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, Search, ArrowRight } from 'lucide-react';
+import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, ArrowRight } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -56,28 +56,26 @@ const Navbar = () => {
 
   return (
     <header className="fixed w-full z-50 transition-all duration-300 pt-4 lg:pt-6 pointer-events-none">
-      <div className={`mx-auto transition-all duration-500 ease-in-out pointer-events-auto ${
-        scrolled 
-          ? 'max-w-full px-0 -mt-4 lg:-mt-6' 
+      <div className={`mx-auto transition-all duration-500 ease-in-out pointer-events-auto ${scrolled
+          ? 'max-w-full px-0 -mt-4 lg:-mt-6'
           : 'max-w-[95%] lg:max-w-[90%] px-4 sm:px-6'
-      }`}>
-        <nav className={`transition-all duration-500 ease-in-out ${
-          scrolled 
-            ? 'bg-white shadow-xl py-3 border-b border-gray-100 rounded-none' 
-            : 'bg-white/95 backdrop-blur-md shadow-lg py-3 lg:py-4 px-6 lg:px-10 rounded-[2rem] lg:rounded-full border border-white/20'
         }`}>
+        <nav className={`transition-all duration-500 ease-in-out ${scrolled
+            ? 'bg-white shadow-xl p-3 border-b border-gray-100 rounded-none'
+            : 'bg-white/95 backdrop-blur-md shadow-lg py-3 lg:py-4 px-6 lg:px-10 rounded-[2rem] lg:rounded-full border border-white/20'
+          }`}>
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link to="/" className="flex items-center shrink-0">
-              <img 
-                src={`${import.meta.env.BASE_URL}MOC-Jillellamudi-Banner-Naac-B.png`} 
-                alt="MOC Banner" 
-                className={`transition-all duration-300 object-contain ${scrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'}`} 
+              <img
+                src={`${import.meta.env.BASE_URL}MOC-Jillellamudi-Banner-Naac-B.png`}
+                alt="MOC Banner"
+                className={`transition-all duration-300 object-contain ${scrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'}`}
               />
             </Link>
 
-            {/* Desktop Navigation - Centered */}
-            <div className="hidden lg:flex items-center justify-center flex-1 mx-10">
+            {/* Desktop Navigation - Right Aligned */}
+            <div className="hidden lg:flex items-center ml-auto mr-4">
               <div className="flex items-center space-x-1 xl:space-x-2">
                 {navLinks.map((link) => (
                   <div
@@ -92,7 +90,7 @@ const Navbar = () => {
                     >
                       {link.name}
                       {link.megaMenu && <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeMegaMenu === link.name ? 'rotate-180' : ''}`} />}
-                      <motion.span 
+                      <motion.span
                         className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                       />
                     </Link>
@@ -142,20 +140,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button className="p-2.5 text-gray-700 hover:text-brand-primary transition-colors rounded-full hover:bg-gray-100">
-                <Search className="w-5 h-5" />
-              </button>
-              <Link 
-                to="/contact" 
-                className="group relative inline-flex items-center justify-center px-7 py-3 font-bold text-white bg-brand-primary rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-primary/20 transform hover:-translate-y-0.5 active:scale-95"
-              >
-                <span className="relative z-10">Apply Now</span>
-                <div className="absolute inset-0 bg-brand-secondary transform scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></div>
-                <span className="relative z-10 text-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute">Apply Now</span>
-              </Link>
-            </div>
+
 
             {/* Mobile menu button */}
             <div className="lg:hidden flex items-center">
@@ -226,15 +211,7 @@ const Navbar = () => {
                     )}
                   </div>
                 ))}
-                <div className="pt-4 mt-4 border-t border-gray-100">
-                  <Link
-                    to="/contact"
-                    className="flex items-center justify-center w-full bg-brand-primary text-white py-4 rounded-xl font-bold shadow-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Apply Now
-                  </Link>
-                </div>
+
               </div>
             </div>
           </motion.div>

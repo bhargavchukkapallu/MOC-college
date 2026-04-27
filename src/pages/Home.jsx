@@ -4,6 +4,7 @@ import AboutSection from '../components/home/AboutSection';
 import CoursesSection from '../components/home/CoursesSection';
 import CTASection from '../components/home/CTASection';
 import AffiliationsSection from '../components/home/AffiliationsSection';
+import ArticlesSection from '../components/home/ArticlesSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <CoursesSection />
       <CTASection />
       <AffiliationsSection />
+      <ArticlesSection />
       <TestimonialsSection />
     </div>
   );
