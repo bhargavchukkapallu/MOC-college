@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 const slides = [
   {
     id: 1,
-    image: '/images/MOC-Building.jpg',
+    image: `${import.meta.env.BASE_URL}images/MOC-Building.jpg`,
     title: 'Welcome to Matrusri Oriental College',
     subtitle: 'Nurturing Knowledge, Inspiring Futures since 1971',
     ctaText: 'Discover Our History',
@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 2,
-    image: '/images/MOC-Library-2.jpg',
+    image: `${import.meta.env.BASE_URL}images/MOC-Library-2.jpg`,
     title: 'Excellence in Classical Education',
     subtitle: 'Unique Gurukula System focusing on holistic development',
     ctaText: 'View Programs',
@@ -29,7 +29,7 @@ const slides = [
   },
   {
     id: 3,
-    image: '/images/moc-lab.jpg',
+    image: `${import.meta.env.BASE_URL}images/moc-lab.jpg`,
     title: 'Modern Facilities & Rich Heritage',
     subtitle: 'Blending traditional wisdom with modern technological education',
     ctaText: 'Explore Campus',

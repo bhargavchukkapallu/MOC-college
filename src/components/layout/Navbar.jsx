@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-3 min-h-[5rem]">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/MOC-Jillellamudi-Banner-Naac-B.png" alt="MOC Banner" className="h-16 md:h-28 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}MOC-Jillellamudi-Banner-Naac-B.png`} alt="MOC Banner" className="h-16 md:h-28 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

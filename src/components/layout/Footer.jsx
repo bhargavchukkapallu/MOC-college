@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Brand Info */}
           <div>
             <div className="mb-6 bg-white/95 p-1 rounded-full inline-block">
-              <img src="./MOC_Logo.png" alt="MOC Banner" className="h-24 w-auto object-contain" />
+              <img src={`${import.meta.env.BASE_URL}MOC_Logo.png`} alt="MOC Banner" className="h-24 w-auto object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               A Premier Educational Institution inaugurated by Viswajanani Jillellamudi AMMA on August 6, 1971. Emphasizing classical languages and modern education.

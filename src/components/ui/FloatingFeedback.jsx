@@ -45,7 +45,7 @@ const FloatingFeedback = () => {
           {/* Namaste Character Icon */}
           <div className="relative w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-2 border-brand-secondary/30 group-hover:border-brand-secondary transition-colors duration-300">
             <img 
-              src="/namaste_icon.png" 
+              src={`${import.meta.env.BASE_URL}namaste_icon.png`} 
               alt="Feedback" 
               className="w-[120%] h-[120%] object-cover object-center" 
               title="Namaste! Click to share feedback"
@@ -77,7 +77,7 @@ const FloatingFeedback = () => {
               <div className="bg-gradient-to-r from-brand-primary to-blue-800 p-6 flex justify-between items-center text-white">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden p-1">
-                    <img src="/namaste_icon.png" alt="Namaste" className="w-full h-full object-cover rounded-full" />
+                    <img src={`${import.meta.env.BASE_URL}namaste_icon.png`} alt="Namaste" className="w-full h-full object-cover rounded-full" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Share Your Feedback</h3>
