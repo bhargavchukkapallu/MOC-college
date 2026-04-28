@@ -64,9 +64,9 @@ const HeroSection = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-brand-dark leading-[0.95] tracking-tighter">
-                            We're The Best <br />
+                            A Premier <br />
                             <span className="text-brand-primary relative">
-                                Tech Leading
+                                Educational
                                 <motion.svg
                                     initial={{ pathLength: 0 }}
                                     animate={{ pathLength: 1 }}
@@ -78,7 +78,7 @@ const HeroSection = () => {
                                     <path d="M5 15C50 5 150 5 295 15" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
                                 </motion.svg>
                             </span> <br />
-                            College
+                            Institution
                         </h1>
                     </motion.div>
 
@@ -114,7 +114,7 @@ const HeroSection = () => {
                             </div>
                             <div>
                                 <p className="text-xs text-gray-400 font-black uppercase tracking-[0.2em]">Need Help?</p>
-                                <p className="text-brand-dark font-black text-xl lg:text-2xl group-hover:text-brand-primary transition-colors">+91 94406 72477</p>
+                                <p className="text-brand-dark font-black text-xl lg:text-2xl group-hover:text-brand-primary transition-colors">+91 77889 90685</p>
                             </div>
                         </div>
                     </motion.div>

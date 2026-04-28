@@ -14,7 +14,7 @@ const testimonials = [
     name: "Dr. K. Srinivas",
     role: "Alumni (Telugu Dept)",
     company: "University of Hyderabad",
-    quote: "The Gurukula system at Matrusri Oriental College didn't just teach me literature; it shaped my character. The values instilled here have been the foundation of my academic career.",
+    quote: "The Gurukula system at Matrusri Oriental College didn't just teach me literature; it shaped my character. The 53 years of legacy here have been the foundation of my academic career.",
     avatar: "https://i.pravatar.cc/150?img=11"
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     name: "P. Lakshmi",
     role: "Current Student",
     company: "B.Sc Comp. Sci.",
-    quote: "Blending modern computer science education with a deeply spiritual and disciplined environment is a rare find. The faculty is incredibly supportive and the campus is peaceful.",
+    quote: "Blending modern computer science education with a deeply spiritual environment guided by AMMA's principles is a rare find. The free education and meals make it accessible to everyone.",
     avatar: "https://i.pravatar.cc/150?img=5"
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
     name: "V. Ramana",
     role: "Alumni (Sanskrit Dept)",
     company: "Research Scholar",
-    quote: "The profound knowledge of Sanskrit and Vedas I acquired here has opened international doors for me. The college truly lives up to its heritage of academic excellence.",
+    quote: "The profound knowledge of Sanskrit I acquired here has opened international doors for me. The college truly lives up to its heritage of academic excellence since 1971.",
     avatar: "https://i.pravatar.cc/150?img=8"
   },
   {
@@ -38,8 +38,24 @@ const testimonials = [
     name: "S. Devi",
     role: "Parent",
     company: "Family Head",
-    quote: "Sending our daughter to MOC was the best decision. Not only does she receive free education and accommodation, but the safe, nurturing environment is exceptional.",
+    quote: "Sending our daughter to MOC was the best decision. Not only does she receive free education, accommodation, and medical facilities, but the safe, nurturing environment is exceptional.",
     avatar: "https://i.pravatar.cc/150?img=9"
+  },
+  {
+    id: 5,
+    name: "M. Venkatesh",
+    role: "Alumni",
+    company: "Government Employee",
+    quote: "The coaching for competitive exams provided alongside the regular curriculum helped me secure a government job. The holistic development approach here is truly unique.",
+    avatar: "https://i.pravatar.cc/150?img=12"
+  },
+  {
+    id: 6,
+    name: "K. Bhavani",
+    role: "Student",
+    company: "B.A.O.L (Telugu)",
+    quote: "The emphasis on physical and mental growth through yoga, meditation, and sports has made me a more balanced individual. The free books and supportive faculty are a blessing.",
+    avatar: "https://i.pravatar.cc/150?img=20"
   }
 ];
 
@@ -51,7 +67,7 @@ const TestimonialsSection = () => {
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="badgeGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="1"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#badgeGrid)" />
@@ -59,7 +75,7 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-16 relative z-10">
-        
+
         {/* Cinematic Header (Dribbble Style) */}
         <div className="text-center max-w-5xl mx-auto mb-20 lg:mb-28">
           <motion.div
@@ -69,19 +85,19 @@ const TestimonialsSection = () => {
             className="flex items-center justify-center gap-3 mb-6"
           >
             <span className="text-brand-primary/60 font-black uppercase tracking-[0.4em] text-xs lg:text-sm">
-              Social Proof • Trusted Results
+              Voices of MOC • 53 Years of Legacy
             </span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-[5rem] font-black text-brand-dark leading-[0.95] tracking-tight uppercase"
           >
-            Trusted By Scholars <br />
-            <span className="text-brand-primary">Backed By Heritage</span>
+            Empowering Students <br />
+            <span className="text-brand-primary">Guided By AMMA</span>
           </motion.h2>
         </div>
 
@@ -98,7 +114,7 @@ const TestimonialsSection = () => {
             spaceBetween={50}
             slidesPerView={1}
             autoplay={{ delay: 6000, disableOnInteraction: false }}
-            pagination={{ 
+            pagination={{
               clickable: true,
               dynamicBullets: true,
             }}
@@ -110,7 +126,7 @@ const TestimonialsSection = () => {
           >
             {testimonials.map((item) => (
               <SwiperSlide key={item.id} className="h-full">
-                <motion.div 
+                <motion.div
                   whileHover={{ y: -10, rotate: -1 }}
                   className="relative pt-12 h-full flex flex-col items-center"
                 >
@@ -124,7 +140,7 @@ const TestimonialsSection = () => {
 
                   {/* The Badge Card */}
                   <div className="w-full bg-white rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-gray-100 p-10 lg:p-12 flex flex-col h-full group relative overflow-hidden">
-                    
+
                     {/* Top Branding Area */}
                     <div className="flex justify-between items-start mb-10">
                       <div className="flex flex-col">

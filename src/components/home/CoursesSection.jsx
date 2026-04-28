@@ -12,7 +12,7 @@ const courses = [
     students: '120+',
     image: `${import.meta.env.BASE_URL}images/MOC-Building.jpg`,
     category: 'Literature',
-    description: 'Deep dive into classical Telugu literature, grammar, and history. Preparation for teaching, media, and civil services.',
+    description: 'Deep dive into classical Telugu literature. Eligible for Govt jobs: VRO, Panchayat Secretary, Police, Groups, and Media.',
     icon: <BookOpen className="w-6 h-6" />,
   },
   {
@@ -23,7 +23,7 @@ const courses = [
     students: '80+',
     image: `${import.meta.env.BASE_URL}images/MOC-Library-2.jpg`,
     category: 'Classical',
-    description: 'Mastery of ancient Sanskrit texts, Vedas, and literature. Opens paths for research, translation, and international teaching.',
+    description: 'Mastery of ancient Sanskrit texts. Opens paths for research, translators, and opportunities to work abroad for the proficient.',
     icon: <GraduationCap className="w-6 h-6" />,
   },
   {
