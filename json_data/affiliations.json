@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Acharya Nagarjuna University", "type": "Affiliated University", "abbr": "ANU" },
+  { "id": 2, "name": "Sri Venkateswara Vedic University", "type": "Affiliated University", "abbr": "SVVU" },
+  { "id": 3, "name": "UGC 2(F) & 12(B)", "type": "Recognized By", "abbr": "UGC" },
+  { "id": 4, "name": "NAAC Accredited", "type": "Assessment", "abbr": "NAAC" },
+  { "id": 5, "name": "Sree Viswajananee Parishat Trust", "type": "Managed By", "abbr": "SVP" }
+]

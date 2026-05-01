@@ -1,0 +1,44 @@
+[
+  {
+    "title": "B.A. O.L. (Telugu)",
+    "duration": "5 Years",
+    "eligibility": "10th Grade Pass",
+    "icon": "BookOpen",
+    "color": "bg-brand-primary",
+    "description": "An integrated five-year degree course designed to provide deep mastery over classical Telugu literature, linguistics, and grammar. This program prepares students for a variety of public and private sector roles.",
+    "features": [
+      "Comprehensive study of classical texts",
+      "Intensive grammar and linguistic training",
+      "Coaching for competitive exams included",
+      "Free education, accommodation, and meals"
+    ]
+  },
+  {
+    "title": "B.A. O.L. (Sanskrit)",
+    "duration": "3 or 5 Years",
+    "eligibility": "10th Pass (5 Yrs) / Inter with Sanskrit (3 Yrs)",
+    "icon": "GraduationCap",
+    "color": "bg-[#b8860b]",
+    "description": "A prestigious program focusing on the mastery of ancient Sanskrit texts, Vedas, and literature. Students gain profound knowledge that opens international doors for research and teaching.",
+    "features": [
+      "In-depth study of Vedas and Shastras",
+      "Opportunities for international translation work",
+      "Yoga and meditation practices integrated",
+      "Full scholarship including books and medical"
+    ]
+  },
+  {
+    "title": "B.Sc. Honours (Comp. Sci.)",
+    "duration": "4 Years",
+    "eligibility": "Intermediate (MPC)",
+    "icon": "Users",
+    "color": "bg-[#2c3e50]",
+    "description": "Blending modern computer science education with a deeply spiritual and disciplined environment. This program prepares students for the fast-paced tech industry while retaining core values.",
+    "features": [
+      "Modern programming and software dev",
+      "Access to state-of-the-art tech labs",
+      "Spoken English and personality development",
+      "Industry-ready curriculum"
+    ]
+  }
+]
