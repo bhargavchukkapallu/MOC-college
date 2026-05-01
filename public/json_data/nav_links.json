@@ -1,0 +1,36 @@
+[
+  { "name": "Home", "path": "/" },
+  {
+    "name": "About Us",
+    "path": "/about",
+    "megaMenu": [
+      { "name": "Brief History", "path": "/about#history", "icon": "BookOpen" },
+      { "name": "Trust", "path": "/about#trust", "icon": "Users" },
+      { "name": "Vision & Mission", "path": "/about#vision", "icon": "MessageSquare" },
+      { "name": "Principal’s Desk", "path": "/about#principal", "icon": "GraduationCap" },
+      { "name": "Correspondents", "path": "/about#correspondents", "icon": "Users" },
+      { "name": "Affiliations", "path": "/about#affiliations", "icon": "BookOpen" },
+      { "name": "Staff Details", "path": "/about#staff", "icon": "Users" }
+    ]
+  },
+  {
+    "name": "Academics",
+    "path": "/academics",
+    "megaMenu": [
+      { "name": "Programs Offered", "path": "/academics#programs", "icon": "GraduationCap" },
+      { "name": "Library", "path": "/academics#library", "icon": "BookOpen" },
+      { "name": "Computer Lab", "path": "/academics#computer-lab", "icon": "Menu" }
+    ]
+  },
+  {
+    "name": "Quality & Support",
+    "path": "/student-support",
+    "megaMenu": [
+      { "name": "IQAC", "path": "/student-support#iqac", "icon": "BookOpen" },
+      { "name": "NAAC", "path": "/student-support#naac", "icon": "GraduationCap" },
+      { "name": "Student Support", "path": "/student-support#support", "icon": "Users" }
+    ]
+  },
+  { "name": "Events & Blog", "path": "/events" },
+  { "name": "Contact Us", "path": "/contact" }
+]

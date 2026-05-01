@@ -1,58 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar, Tag, X, Clock, User, Share2, Bookmark } from 'lucide-react';
 
-import sanskritImg from '../../assets/article_sanskrit.png';
-import gurukulaImg from '../../assets/article_gurukula.png';
-import digitalImg from '../../assets/article_digital.png';
-
-const articles = [
-  {
-    id: 1,
-    title: "The Legacy of Sanskrit in Modern Times",
-    excerpt: "Exploring how the world's oldest language is finding new relevance in computational linguistics and quantum computing research.",
-    content: `
-      <p>Sanskrit, often referred to as the 'Mother of all languages,' is not just a relic of the past but a sophisticated system of communication that continues to influence modern science and technology. Its perfectly structured grammar, as codified by Panini, has drawn parallels with modern computer programming languages.</p>
-      <p>In recent years, researchers in computational linguistics have found that Sanskrit's unambiguous structure makes it an ideal candidate for natural language processing. Unlike many modern languages that rely heavily on context and syntax which can be ambiguous, Sanskrit's mathematical precision allows for clearer logical mapping.</p>
-      <p>Furthermore, the philosophical depth found in Sanskrit texts like the Upanishads and the Bhagavad Gita continues to provide ethical frameworks for modern AI development and quantum physics interpretations. At Matrusri Oriental College, we bridge this gap by teaching traditional Sanskrit alongside modern computer science, ensuring our students are equipped with both ancient wisdom and future-ready skills.</p>
-    `,
-    image: sanskritImg,
-    category: "Heritage",
-    date: "Oct 24, 2024",
-    readTime: "6 min read",
-    author: "Acharya V. Sharma"
-  },
-  {
-    id: 2,
-    title: "Gurukula System: A Holistic Approach",
-    excerpt: "Why the ancient Indian model of mentorship is more effective than modern classroom settings for character building.",
-    content: `
-      <p>The Gurukula system was once the cornerstone of Indian education, characterized by a deep bond between the teacher (Guru) and the student (Shishya). This wasn't just about academic learning; it was about life training, character building, and spiritual growth.</p>
-      <p>In today's fast-paced, digitized world, the personal touch in education is often lost. The Gurukula model brings back the importance of mentorship, discipline, and communal living. At our college, we maintain this tradition by providing a residential environment where learning happens 24/7, not just within the four walls of a classroom.</p>
-      <p>Students learn through observation, service, and dialogue. This holistic approach ensures that when a student graduates, they are not just degree-holders but well-rounded individuals ready to contribute meaningfully to society with a sense of duty (Dharma) and integrity.</p>
-    `,
-    image: gurukulaImg,
-    category: "Education",
-    date: "Nov 12, 2024",
-    readTime: "8 min read",
-    author: "Dr. S. Rajan"
-  },
-  {
-    id: 3,
-    title: "Ancient Wisdom & Digital Innovation",
-    excerpt: "Integrating Vedic mathematics and logic into modern algorithms to solve complex optimization problems.",
-    content: `
-      <p>The intersection of ancient Vedic logic and modern digital innovation is a frontier of immense potential. Vedic Mathematics, with its simple yet powerful sutras, provides shortcuts for complex calculations that can be translated into efficient algorithms for digital signal processing and cryptography.</p>
-      <p>At MOC, we encourage our students to look back into our heritage to find solutions for the future. The binary system itself finds its roots in the works of Pingala, an ancient Indian mathematician. By understanding these foundations, our students can innovate beyond conventional Western paradigms.</p>
-      <p>This article explores several case studies where Vedic principles have been applied to modern tech challenges, from optimizing search engines to creating more secure encryption methods. The future of innovation might just be hidden in our past.</p>
-    `,
-    image: digitalImg,
-    category: "Innovation",
-    date: "Dec 05, 2024",
-    readTime: "5 min read",
-    author: "Prof. K. Venkatesh"
-  }
-];
+const getImageUrl = (name) => {
+  return new URL(`../../assets/${name}`, import.meta.url).href;
+};
 
 const ArticleCard = ({ article, onClick }) => {
   return (
@@ -64,7 +16,7 @@ const ArticleCard = ({ article, onClick }) => {
       {/* Image Container */}
       <div className="relative h-64 overflow-hidden">
         <motion.img
-          src={article.image}
+          src={getImageUrl(article.image)}
           alt={article.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
@@ -146,7 +98,7 @@ const ArticleModal = ({ article, onClose }) => {
         {/* Visual Sidebar */}
         <div className="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
           <img 
-            src={article.image} 
+            src={getImageUrl(article.image)} 
             alt={article.title} 
             className="w-full h-full object-cover"
           />
@@ -210,7 +162,15 @@ const ArticleModal = ({ article, onClose }) => {
 };
 
 const ArticlesSection = () => {
+  const [articles, setArticles] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/articles.json`)
+      .then(res => res.json())
+      .then(data => setArticles(data))
+      .catch(err => console.error("Error loading articles:", err));
+  }, []);
 
   return (
     <section className="py-24 lg:py-32 bg-white relative overflow-hidden">

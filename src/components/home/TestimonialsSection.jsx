@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
@@ -8,58 +8,15 @@ import { Star, ExternalLink, MessageSquare, Quote } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Dr. K. Srinivas",
-    role: "Alumni (Telugu Dept)",
-    company: "University of Hyderabad",
-    quote: "The Gurukula system at Matrusri Oriental College didn't just teach me literature; it shaped my character. The 53 years of legacy here have been the foundation of my academic career.",
-    avatar: "https://i.pravatar.cc/150?img=11"
-  },
-  {
-    id: 2,
-    name: "P. Lakshmi",
-    role: "Current Student",
-    company: "B.Sc Comp. Sci.",
-    quote: "Blending modern computer science education with a deeply spiritual environment guided by AMMA's principles is a rare find. The free education and meals make it accessible to everyone.",
-    avatar: "https://i.pravatar.cc/150?img=5"
-  },
-  {
-    id: 3,
-    name: "V. Ramana",
-    role: "Alumni (Sanskrit Dept)",
-    company: "Research Scholar",
-    quote: "The profound knowledge of Sanskrit I acquired here has opened international doors for me. The college truly lives up to its heritage of academic excellence since 1971.",
-    avatar: "https://i.pravatar.cc/150?img=8"
-  },
-  {
-    id: 4,
-    name: "S. Devi",
-    role: "Parent",
-    company: "Family Head",
-    quote: "Sending our daughter to MOC was the best decision. Not only does she receive free education, accommodation, and medical facilities, but the safe, nurturing environment is exceptional.",
-    avatar: "https://i.pravatar.cc/150?img=9"
-  },
-  {
-    id: 5,
-    name: "M. Venkatesh",
-    role: "Alumni",
-    company: "Government Employee",
-    quote: "The coaching for competitive exams provided alongside the regular curriculum helped me secure a government job. The holistic development approach here is truly unique.",
-    avatar: "https://i.pravatar.cc/150?img=12"
-  },
-  {
-    id: 6,
-    name: "K. Bhavani",
-    role: "Student",
-    company: "B.A.O.L (Telugu)",
-    quote: "The emphasis on physical and mental growth through yoga, meditation, and sports has made me a more balanced individual. The free books and supportive faculty are a blessing.",
-    avatar: "https://i.pravatar.cc/150?img=20"
-  }
-];
-
 const TestimonialsSection = () => {
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/testimonials.json`)
+      .then(res => res.json())
+      .then(data => setTestimonials(data))
+      .catch(err => console.error("Error loading testimonials:", err));
+  }, []);
   return (
     <section className="py-24 lg:py-32 bg-[#F8F8F8] relative overflow-hidden">
       {/* Geometric Grid Background */}

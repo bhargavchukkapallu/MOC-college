@@ -11,6 +11,10 @@
   body {
     @apply bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-secondary selection:text-white overflow-x-hidden;
   }
+  
+  button, a {
+    @apply cursor-pointer;
+  }
 }
 
 ::-webkit-scrollbar {

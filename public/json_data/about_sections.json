@@ -1,0 +1,9 @@
+[
+  { "id": "history", "name": "Brief History", "icon": "History" },
+  { "id": "trust", "name": "Trust", "icon": "ShieldCheck" },
+  { "id": "vision", "name": "Vision & Mission", "icon": "Target" },
+  { "id": "principal", "name": "Principal’s Desk", "icon": "GraduationCap" },
+  { "id": "correspondents", "name": "Correspondents", "icon": "Users" },
+  { "id": "affiliations", "name": "Affiliations", "icon": "Award" },
+  { "id": "staff", "name": "Staff Details", "icon": "Users" }
+]

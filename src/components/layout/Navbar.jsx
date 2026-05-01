@@ -1,46 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, ArrowRight } from 'lucide-react';
 
-const navLinks = [
-  { name: 'Home', path: '/' },
-  {
-    name: 'About Us',
-    path: '/about',
-    megaMenu: [
-      { name: 'Brief History', path: '/about#history', icon: <BookOpen className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Trust', path: '/about#trust', icon: <Users className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Vision & Mission', path: '/about#vision', icon: <MessageSquare className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Principal’s Desk', path: '/about#principal', icon: <GraduationCap className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Correspondents', path: '/about#correspondents', icon: <Users className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Affiliations', path: '/about#affiliations', icon: <BookOpen className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Staff Details', path: '/about#staff', icon: <Users className="w-5 h-5 text-brand-primary" /> },
-    ]
-  },
-  {
-    name: 'Academics',
-    path: '/academics',
-    megaMenu: [
-      { name: 'Programs Offered', path: '/academics#programs', icon: <GraduationCap className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Library', path: '/academics#library', icon: <BookOpen className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Computer Lab', path: '/academics#computer-lab', icon: <Menu className="w-5 h-5 text-brand-primary" /> },
-    ]
-  },
-  {
-    name: 'Quality & Support',
-    path: '/student-support',
-    megaMenu: [
-      { name: 'IQAC', path: '/student-support#iqac', icon: <BookOpen className="w-5 h-5 text-brand-primary" /> },
-      { name: 'NAAC', path: '/student-support#naac', icon: <GraduationCap className="w-5 h-5 text-brand-primary" /> },
-      { name: 'Student Support', path: '/student-support#support', icon: <Users className="w-5 h-5 text-brand-primary" /> },
-    ]
-  },
-  { name: 'Events & Blog', path: '/events' },
-  { name: 'Contact Us', path: '/contact' },
-];
+const iconMap = {
+  BookOpen: <BookOpen />,
+  Users: <Users />,
+  MessageSquare: <MessageSquare />,
+  GraduationCap: <GraduationCap />,
+  Menu: <Menu />
+};
 
 const Navbar = () => {
+  const [navLinks, setNavLinks] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/nav_links.json`)
+      .then(res => res.json())
+      .then(data => setNavLinks(data))
+      .catch(err => console.error("Error loading nav links:", err));
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
@@ -113,9 +92,9 @@ const Navbar = () => {
                                   to={item.path}
                                   className="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
                                 >
-                                  <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
-                                    {React.cloneElement(item.icon, { className: "w-5 h-5 transition-colors" })}
-                                  </div>
+                                    <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
+                                      {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
+                                    </div>
                                   <div className="ml-3 text-left">
                                     <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
                                       {item.name}
@@ -192,7 +171,7 @@ const Navbar = () => {
                                   className="flex items-center px-6 py-3 text-sm text-gray-600 hover:text-brand-primary transition-colors"
                                   onClick={() => setIsOpen(false)}
                                 >
-                                  <span className="mr-3 text-brand-primary/60">{item.icon}</span>
+                                  <span className="mr-3 text-brand-primary/60">{iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-4 h-4" }) : null}</span>
                                   {item.name}
                                 </Link>
                               ))}

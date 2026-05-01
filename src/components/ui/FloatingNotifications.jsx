@@ -1,35 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, X, ChevronRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const notifications = [
-  {
-    id: 1,
-    title: "Admissions Open for 2025",
-    date: "May 01, 2025",
-    type: "new",
-    desc: "Applications are now open for BA, B.Com, and traditional Oriental studies courses."
-  },
-  {
-    id: 2,
-    title: "Sanskrit Workshop",
-    date: "May 10, 2025",
-    type: "event",
-    desc: "Join our 3-day intensive workshop on spoken Sanskrit and ancient literature."
-  },
-  {
-    id: 3,
-    title: "Exam Timetable Released",
-    date: "April 28, 2025",
-    type: "update",
-    desc: "Semester end examination schedule is now available on the student portal."
-  }
-];
-
 const FloatingNotifications = () => {
+  const [notifications, setNotifications] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [hasUnread, setHasUnread] = useState(true);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/notifications.json`)
+      .then(res => res.json())
+      .then(data => setNotifications(data))
+      .catch(err => console.error("Error loading notifications:", err));
+  }, []);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);

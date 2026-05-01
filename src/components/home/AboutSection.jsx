@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Play, History } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const featuresList = [
-  'Unique Gurukula System focusing on holistic development',
-  'Promoting harmony, universal love, and brotherhood',
-  'Offering computer courses and competitive exam training',
-  'Fostering cooperation beyond caste, religion, or community'
-];
-
 const AboutSection = () => {
+  const [featuresList, setFeaturesList] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/about_features.json`)
+      .then(res => res.json())
+      .then(data => setFeaturesList(data))
+      .catch(err => console.error("Error loading features:", err));
+  }, []);
   return (
     <section className="py-24 lg:py-32 bg-[#fafcff] relative z-10 overflow-hidden">
       {/* Decorative Background Elements (Design System Consistency) */}

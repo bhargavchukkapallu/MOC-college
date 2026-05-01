@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Using placeholder icons/text for affiliations since we don't have actual logo images uploaded
 // In a real scenario, these would be high-quality PNGs or SVGs of the university logos
-const affiliations = [
-  { id: 1, name: 'Acharya Nagarjuna University', type: 'Affiliated University', abbr: 'ANU' },
-  { id: 2, name: 'Sri Venkateswara Vedic University', type: 'Affiliated University', abbr: 'SVVU' },
-  { id: 3, name: 'UGC 2(F) & 12(B)', type: 'Recognized By', abbr: 'UGC' },
-  { id: 4, name: 'NAAC Accredited', type: 'Assessment', abbr: 'NAAC' },
-  { id: 5, name: 'Sree Viswajananee Parishat Trust', type: 'Managed By', abbr: 'SVP' },
-];
 
 const AffiliationsSection = () => {
+  const [affiliations, setAffiliations] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/affiliations.json`)
+      .then(res => res.json())
+      .then(data => setAffiliations(data))
+      .catch(err => console.error("Error loading affiliations:", err));
+  }, []);
   return (
     <section className="py-20 bg-white border-y border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

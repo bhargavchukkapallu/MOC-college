@@ -3,37 +3,41 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Phone, GraduationCap, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const heroBackgrounds = [
-    'images/MOC-Building.jpg',
-    'images/mog-gate.jpg',
-    'images/MOC-Library-2.jpg',
-    'images/moc-lab.jpg'
-];
-
 const HeroSection = () => {
+    const [heroBackgrounds, setHeroBackgrounds] = useState([]);
     const [currentBg, setCurrentBg] = useState(0);
 
     useEffect(() => {
+        fetch(`${import.meta.env.BASE_URL}json_data/hero_backgrounds.json`)
+            .then(res => res.json())
+            .then(data => setHeroBackgrounds(data))
+            .catch(err => console.error("Error loading hero backgrounds:", err));
+    }, []);
+
+    useEffect(() => {
+        if (heroBackgrounds.length === 0) return;
         const timer = setInterval(() => {
             setCurrentBg((prev) => (prev + 1) % heroBackgrounds.length);
         }, 5000);
         return () => clearInterval(timer);
-    }, []);
+    }, [heroBackgrounds]);
     return (
         <section className="relative h-screen w-full overflow-hidden bg-brand-dark">
             {/* 1. Full-Width Background Image Carousel */}
             <div className="absolute inset-0 z-0 bg-brand-dark">
                 <AnimatePresence>
-                    <motion.img
-                        key={currentBg}
-                        initial={{ opacity: 0, scale: 1.05 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                        src={`${import.meta.env.BASE_URL}${heroBackgrounds[currentBg]}`}
-                        alt="MOC Campus Background"
-                        className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    {heroBackgrounds.length > 0 && (
+                        <motion.img
+                            key={currentBg}
+                            initial={{ opacity: 0, scale: 1.05 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            src={`${import.meta.env.BASE_URL}${heroBackgrounds[currentBg]}`}
+                            alt="MOC Campus Background"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                    )}
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-brand-dark/30 mix-blend-overlay z-10 pointer-events-none"></div>
             </div>

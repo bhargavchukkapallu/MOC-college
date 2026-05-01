@@ -1,9 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, GraduationCap, Users, Clock, CheckCircle2, ArrowRight, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const iconMap = {
+  BookOpen: <BookOpen className="w-8 h-8" />,
+  GraduationCap: <GraduationCap className="w-8 h-8" />,
+  Users: <Users className="w-8 h-8" />
+};
+
 const Academics = () => {
+  const [programs, setPrograms] = useState([]);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -15,50 +22,12 @@ const Academics = () => {
     transition: { duration: 0.6 }
   };
 
-  const programs = [
-    {
-      title: 'B.A. O.L. (Telugu)',
-      duration: '5 Years',
-      eligibility: '10th Grade Pass',
-      icon: <BookOpen className="w-8 h-8" />,
-      color: 'bg-brand-primary',
-      description: 'An integrated five-year degree course designed to provide deep mastery over classical Telugu literature, linguistics, and grammar. This program prepares students for a variety of public and private sector roles.',
-      features: [
-        'Comprehensive study of classical texts',
-        'Intensive grammar and linguistic training',
-        'Coaching for competitive exams included',
-        'Free education, accommodation, and meals'
-      ]
-    },
-    {
-      title: 'B.A. O.L. (Sanskrit)',
-      duration: '3 or 5 Years',
-      eligibility: '10th Pass (5 Yrs) / Inter with Sanskrit (3 Yrs)',
-      icon: <GraduationCap className="w-8 h-8" />,
-      color: 'bg-[#b8860b]',
-      description: 'A prestigious program focusing on the mastery of ancient Sanskrit texts, Vedas, and literature. Students gain profound knowledge that opens international doors for research and teaching.',
-      features: [
-        'In-depth study of Vedas and Shastras',
-        'Opportunities for international translation work',
-        'Yoga and meditation practices integrated',
-        'Full scholarship including books and medical'
-      ]
-    },
-    {
-      title: 'B.Sc. Honours (Comp. Sci.)',
-      duration: '4 Years',
-      eligibility: 'Intermediate (MPC)',
-      icon: <Users className="w-8 h-8" />,
-      color: 'bg-[#2c3e50]',
-      description: 'Blending modern computer science education with a deeply spiritual and disciplined environment. This program prepares students for the fast-paced tech industry while retaining core values.',
-      features: [
-        'Modern programming and software dev',
-        'Access to state-of-the-art tech labs',
-        'Spoken English and personality development',
-        'Industry-ready curriculum'
-      ]
-    }
-  ];
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/academics_programs.json`)
+      .then(res => res.json())
+      .then(data => setPrograms(data))
+      .catch(err => console.error("Error loading programs:", err));
+  }, []);
 
   return (
     <div className="bg-[#fafcff] min-h-screen">
@@ -108,7 +77,7 @@ const Academics = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10">
                   <div className="lg:w-1/3 border-b lg:border-b-0 lg:border-r border-gray-100 pb-8 lg:pb-0 lg:pr-8 flex flex-col justify-center">
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 ${program.color}`}>
-                      {program.icon}
+                      {iconMap[program.icon]}
                     </div>
                     <h2 className="text-3xl font-black text-brand-dark mb-4 leading-tight">{program.title}</h2>
                     

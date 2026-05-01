@@ -1,45 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Clock, BookOpen, ArrowRight, GraduationCap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const courses = [
-  {
-    id: 1,
-    title: 'B.A. O.L. (Telugu)',
-    duration: '5 Yrs',
-    eligibility: '10th Pass',
-    students: '120+',
-    image: `${import.meta.env.BASE_URL}images/MOC-Building.jpg`,
-    category: 'Literature',
-    description: 'Deep dive into classical Telugu literature. Eligible for Govt jobs: VRO, Panchayat Secretary, Police, Groups, and Media.',
-    icon: <BookOpen className="w-6 h-6" />,
-  },
-  {
-    id: 2,
-    title: 'B.A. O.L. (Sanskrit)',
-    duration: '3/5 Yrs',
-    eligibility: 'Inter/10th',
-    students: '80+',
-    image: `${import.meta.env.BASE_URL}images/MOC-Library-2.jpg`,
-    category: 'Classical',
-    description: 'Mastery of ancient Sanskrit texts. Opens paths for research, translators, and opportunities to work abroad for the proficient.',
-    icon: <GraduationCap className="w-6 h-6" />,
-  },
-  {
-    id: 3,
-    title: 'B.Sc. Honours (Comp. Sci.)',
-    duration: '4 Yrs',
-    eligibility: 'Intermediate',
-    students: '200+',
-    image: `${import.meta.env.BASE_URL}images/moc-lab.jpg`,
-    category: 'Science',
-    description: 'Modern technical education blending programming, algorithms, and software development for the digital age.',
-    icon: <Users className="w-6 h-6" />,
-  }
-];
+const iconMap = {
+  BookOpen: <BookOpen className="w-6 h-6" />,
+  GraduationCap: <GraduationCap className="w-6 h-6" />,
+  Users: <Users className="w-6 h-6" />
+};
 
 const CoursesSection = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/courses.json`)
+      .then(res => res.json())
+      .then(data => setCourses(data))
+      .catch(err => console.error("Error loading courses:", err));
+  }, []);
   return (
     <section className="py-24 lg:py-32 bg-[#f8fbff] relative overflow-hidden">
       {/* Decorative Background Elements (Matching Hero Style) */}
@@ -115,7 +93,7 @@ const CoursesSection = () => {
               {/* Card Image Wrapper */}
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src={course.image}
+                  src={`${import.meta.env.BASE_URL}images/${course.image}`}
                   alt={course.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -129,7 +107,7 @@ const CoursesSection = () => {
 
                 {/* Floating Icon */}
                 <div className="absolute -bottom-6 right-8 w-14 h-14 bg-brand-primary text-white rounded-2xl flex items-center justify-center shadow-xl transform group-hover:rotate-[15deg] transition-transform duration-500 z-10">
-                  {course.icon}
+                  {iconMap[course.icon]}
                 </div>
               </div>
 

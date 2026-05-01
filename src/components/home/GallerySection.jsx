@@ -1,26 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, Maximize2 } from 'lucide-react';
-
-const galleryImages = [
-  '20250702_120215.jpg',
-  '20250702_123001.jpg',
-  '20250702_123013.jpg',
-  '20250702_124052.jpg',
-  '20250702_124106.jpg',
-  '20250702_124114.jpg',
-  'GMC07032026_150543.jpg',
-  'GMC07032026_150558.jpg',
-  'IMG-20230930-WA0015.jpg',
-  'IMG-20240212-WA0005.jpg',
-  'IMG-20240212-WA0007.jpg',
-  'img.jpeg'
-];
-
-// Divide images into 3 rows
-const row1 = galleryImages.slice(0, 4);
-const row2 = galleryImages.slice(4, 8);
-const row3 = galleryImages.slice(8, 12);
 
 const GalleryRow = ({ images, direction = 1, speed = 20, onImageClick }) => {
   return (
@@ -59,7 +39,19 @@ const GalleryRow = ({ images, direction = 1, speed = 20, onImageClick }) => {
 };
 
 const GallerySection = () => {
+  const [galleryImages, setGalleryImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/gallery_images.json`)
+      .then(res => res.json())
+      .then(data => setGalleryImages(data))
+      .catch(err => console.error("Error loading gallery images:", err));
+  }, []);
+
+  const row1 = galleryImages.slice(0, 4);
+  const row2 = galleryImages.slice(4, 8);
+  const row3 = galleryImages.slice(8, 12);
 
   return (
     <section className="py-24 bg-white overflow-hidden">

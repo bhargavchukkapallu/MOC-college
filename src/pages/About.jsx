@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { 
@@ -14,18 +14,25 @@ import {
   Target
 } from 'lucide-react';
 
-const sections = [
-  { id: 'history', name: 'Brief History', icon: <History className="w-5 h-5" /> },
-  { id: 'trust', name: 'Trust', icon: <ShieldCheck className="w-5 h-5" /> },
-  { id: 'vision', name: 'Vision & Mission', icon: <Target className="w-5 h-5" /> },
-  { id: 'principal', name: 'Principal’s Desk', icon: <GraduationCap className="w-5 h-5" /> },
-  { id: 'correspondents', name: 'Correspondents', icon: <Users className="w-5 h-5" /> },
-  { id: 'affiliations', name: 'Affiliations', icon: <Award className="w-5 h-5" /> },
-  { id: 'staff', name: 'Staff Details', icon: <Users className="w-5 h-5" /> },
-];
+const iconMap = {
+  History: <History className="w-5 h-5" />,
+  ShieldCheck: <ShieldCheck className="w-5 h-5" />,
+  Target: <Target className="w-5 h-5" />,
+  GraduationCap: <GraduationCap className="w-5 h-5" />,
+  Users: <Users className="w-5 h-5" />,
+  Award: <Award className="w-5 h-5" />
+};
 
 const About = () => {
   const { hash } = useLocation();
+  const [sections, setSections] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}json_data/about_sections.json`)
+      .then(res => res.json())
+      .then(data => setSections(data))
+      .catch(err => console.error("Error loading about sections:", err));
+  }, []);
 
   useEffect(() => {
     if (hash) {

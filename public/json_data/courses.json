@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "B.A. O.L. (Telugu)",
+    "duration": "5 Yrs",
+    "eligibility": "10th Pass",
+    "students": "120+",
+    "image": "MOC-Building.jpg",
+    "category": "Literature",
+    "description": "Deep dive into classical Telugu literature. Eligible for Govt jobs: VRO, Panchayat Secretary, Police, Groups, and Media.",
+    "icon": "BookOpen"
+  },
+  {
+    "id": 2,
+    "title": "B.A. O.L. (Sanskrit)",
+    "duration": "3/5 Yrs",
+    "eligibility": "Inter/10th",
+    "students": "80+",
+    "image": "MOC-Library-2.jpg",
+    "category": "Classical",
+    "description": "Mastery of ancient Sanskrit texts. Opens paths for research, translators, and opportunities to work abroad for the proficient.",
+    "icon": "GraduationCap"
+  },
+  {
+    "id": 3,
+    "title": "B.Sc. Honours (Comp. Sci.)",
+    "duration": "4 Yrs",
+    "eligibility": "Intermediate",
+    "students": "200+",
+    "image": "moc-lab.jpg",
+    "category": "Science",
+    "description": "Modern technical education blending programming, algorithms, and software development for the digital age.",
+    "icon": "Users"
+  }
+]
