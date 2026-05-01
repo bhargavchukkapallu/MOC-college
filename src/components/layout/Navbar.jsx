@@ -57,12 +57,12 @@ const Navbar = () => {
   return (
     <header className="fixed w-full z-50 transition-all duration-300 pt-4 lg:pt-6 pointer-events-none">
       <div className={`mx-auto transition-all duration-500 ease-in-out pointer-events-auto ${scrolled
-          ? 'max-w-full px-0 -mt-4 lg:-mt-6'
-          : 'max-w-[95%] lg:max-w-[90%] px-4 sm:px-6'
+        ? 'max-w-full px-0 -mt-4 lg:-mt-6'
+        : 'max-w-[95%] lg:max-w-[90%] px-4 sm:px-6'
         }`}>
-        <nav className={`transition-all duration-500 ease-in-out ${scrolled
-            ? 'bg-white shadow-xl p-3 border-b border-gray-100 rounded-none'
-            : 'bg-white/95 backdrop-blur-md shadow-lg py-3 lg:py-4 px-6 lg:px-10 rounded-[2rem] lg:rounded-full border border-white/20'
+        <nav className={`transition-all bg-white duration-500 ease-in-out ${scrolled
+          ? 'shadow-xl p-3 border-b border-gray-100 rounded-none'
+          : 'backdrop-blur-md shadow-lg py-3 lg:py-4 px-6 lg:px-10 rounded-[2rem] lg:rounded-full border border-white/20'
           }`}>
           <div className="flex justify-between items-center">
             {/* Logo */}

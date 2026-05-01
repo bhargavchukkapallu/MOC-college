@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FloatingFeedback from './components/ui/FloatingFeedback';
+import FloatingNotifications from './components/ui/FloatingNotifications';
 import Home from './pages/Home';
 import About from './pages/About';
 import Academics from './pages/Academics';
@@ -25,6 +26,7 @@ function App() {
         </main>
         <Footer />
         <FloatingFeedback />
+        <FloatingNotifications />
       </div>
     </Router>
   );
