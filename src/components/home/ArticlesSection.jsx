@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Tag, X, Clock, User, Share2, Bookmark } from 'lucide-react';
 
 const getImageUrl = (name) => {
-  return new URL(`../../assets/${name}`, import.meta.url).href;
+  return `${import.meta.env.BASE_URL}images/${name}`;
 };
 
 const ArticleCard = ({ article, onClick }) => {
@@ -214,10 +215,10 @@ const ArticlesSection = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <button className="group flex items-center gap-4 px-8 py-4 bg-brand-dark text-white rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-brand-primary transition-all duration-500 shadow-xl">
+            <Link to="/insights?tab=articles" className="group flex items-center gap-4 px-8 py-4 bg-brand-dark text-white rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-brand-primary transition-all duration-500 shadow-xl">
               View All Publications
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-            </button>
+            </Link>
           </motion.div>
         </div>
 

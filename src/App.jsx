@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Academics from './pages/Academics';
 import Contact from './pages/Contact';
-import Events from './pages/Events';
+import Insights from './pages/Insights';
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/academics" element={<Academics />} />
-            <Route path="/events" element={<Events />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/events" element={<Insights />} /> {/* Keep redirect/compatibility */}
             <Route path="/contact" element={<Contact />} />
             {/* Fallback route for empty pages */}
             <Route path="*" element={<div className="min-h-[50vh] flex items-center justify-center text-2xl font-semibold text-brand-primary">Coming Soon</div>} />

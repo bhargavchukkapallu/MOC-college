@@ -8,7 +8,8 @@
     "category": "Heritage",
     "date": "Oct 24, 2024",
     "readTime": "6 min read",
-    "author": "Acharya V. Sharma"
+    "author": "Acharya V. Sharma",
+    "gallery": ["gallery/20250702_120215.jpg", "gallery/20250702_123001.jpg"]
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "category": "Education",
     "date": "Nov 12, 2024",
     "readTime": "8 min read",
-    "author": "Dr. S. Rajan"
+    "author": "Dr. S. Rajan",
+    "gallery": ["gallery/20250702_124106.jpg", "gallery/20250702_124114.jpg"]
   },
   {
     "id": 3,
@@ -30,6 +32,7 @@
     "category": "Innovation",
     "date": "Dec 05, 2024",
     "readTime": "5 min read",
-    "author": "Prof. K. Venkatesh"
+    "author": "Prof. K. Venkatesh",
+    "gallery": ["gallery/GMC07032026_150543.jpg", "gallery/GMC07032026_150558.jpg"]
   }
 ]
