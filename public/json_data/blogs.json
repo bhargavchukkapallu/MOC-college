@@ -9,7 +9,11 @@
     "excerpt": "Sanskrit is often perceived as a classical language confined to rituals, but its profound grammatical structure and vast literature hold immense value for modern linguistics and computer science.",
     "readTime": "5 min read",
     "fullContent": "Sanskrit is often perceived as a classical language confined to rituals, but its profound grammatical structure and vast literature hold immense value for modern linguistics and computer science. The language's highly logical rules, formulated by Panini, have been recognized by modern computer scientists as an ideal framework for natural language processing. Beyond technology, the vast repositories of Sanskrit texts offer insights into mathematics, astronomy, medicine (Ayurveda), and philosophy. By studying Sanskrit, we unlock a treasure trove of ancient knowledge that continues to inspire and inform contemporary research across diverse fields.",
-    "gallery": ["gallery/img.jpeg", "gallery/20250702_123001.jpg", "gallery/20250702_123013.jpg"]
+    "gallery": [
+      "gallery/img.jpeg",
+      "gallery/20250702_123001.jpg",
+      "gallery/20250702_123013.jpg"
+    ]
   },
   {
     "id": 2,
@@ -21,7 +25,11 @@
     "excerpt": "Living in a Gurukula environment fosters not just academic growth but a deep sense of community and spiritual well-being. Here is a glimpse into our daily lives.",
     "readTime": "4 min read",
     "fullContent": "Living in a Gurukula environment fosters not just academic growth but a deep sense of community and spiritual well-being. A typical day begins before dawn with prayers and meditation, instilling discipline and focus. We study closely with our teachers, forming bonds that go beyond the typical classroom dynamic. The emphasis is on holistic development—intellectual, moral, and physical. We learn the value of simple living, mutual cooperation, and respect for all life. This immersive educational experience shapes our character and prepares us to face the world with resilience and grace.",
-    "gallery": ["gallery/20250702_124106.jpg", "gallery/20250702_124114.jpg", "gallery/GMC07032026_150543.jpg"]
+    "gallery": [
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg",
+      "gallery/GMC07032026_150543.jpg"
+    ]
   },
   {
     "id": 3,
@@ -33,7 +41,11 @@
     "excerpt": "Exploring the foundational teachings of Viswajanani Jillellamudi Amma and how her vision continues to shape the ethos of Matrusri Oriental College.",
     "readTime": "6 min read",
     "fullContent": "Exploring the foundational teachings of Viswajanani Jillellamudi Amma reveals a profound philosophy centered on universal love and brotherhood. Amma taught that true education must elevate the spirit and cultivate compassion. She believed that humanity is one family, and differences of caste or creed are superficial. At Matrusri Oriental College, this vision is integrated into our daily practices. We are taught to serve selflessly, to see the divine in all beings, and to foster harmony in our interactions. Amma's teachings continue to guide our institution, creating an atmosphere of warmth, inclusivity, and spiritual awakening.",
-    "gallery": ["amma_portrait.png", "gallery/IMG-20230930-WA0015.jpg", "gallery/IMG-20240212-WA0005.jpg"]
+    "gallery": [
+      "amma_portrait.png",
+      "gallery/IMG-20230930-WA0015.jpg",
+      "gallery/IMG-20240212-WA0005.jpg"
+    ]
   },
   {
     "id": 4,
@@ -45,6 +57,111 @@
     "excerpt": "Our commitment to a greener campus through solar energy, water harvesting, and organic farming.",
     "readTime": "3 min read",
     "fullContent": "Matrusri Oriental College is committed to environmental stewardship. Our campus sustainability initiatives include the installation of solar panels on academic buildings, rainwater harvesting systems to recharge groundwater, and an organic vegetable garden tended by students. These practices not only reduce our ecological footprint but also serve as practical lessons in sustainable living for our students. We believe that caring for the earth is an integral part of our spiritual and social responsibility.",
-    "gallery": ["moc-lab.jpg", "mog-gate.jpg", "MOC-Building.jpg"]
+    "gallery": [
+      "moc-lab.jpg",
+      "mog-gate.jpg",
+      "MOC-Building.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "The Gurukula System: A Foundation for Character Building",
+    "author": "R. Sri Vidya",
+    "date": "January 20, 2026",
+    "category": "Campus Life",
+    "image": "youth_festival.png",
+    "excerpt": "A look into how the traditional Gurukula system at MOC shapes students into responsible citizens.",
+    "readTime": "5 min read",
+    "fullContent": "The Gurukula system at Matrusri Oriental College is more than just a method of instruction; it is a way of life that fosters character, discipline, and social responsibility. Rooted in ancient Indian traditions, this system emphasizes close interaction between students and teachers, creating a nurturing environment conducive to holistic development. Daily rituals, including Vedic chanting and meditation, instill a sense of mindfulness and spiritual awareness from a young age. Furthermore, the emphasis on community living teaches students the values of cooperation, empathy, and service to others. This unique educational approach ensures that our graduates are not only academically proficient but also morally upright and socially conscious individuals prepared to contribute positively to society.",
+    "gallery": [
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg",
+      "gallery/GMC07032026_150543.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "The Journey of a Sanskrit Scholar: Insights and Experiences",
+    "author": "Dr. P. V. Acharya",
+    "date": "December 15, 2025",
+    "category": "Academic Insights",
+    "image": "sanskrit_event.png",
+    "excerpt": "A renowned Sanskrit scholar shares his lifelong journey of exploring ancient texts and their relevance today.",
+    "readTime": "7 min read",
+    "fullContent": "The journey of a Sanskrit scholar is one filled with intellectual discovery and spiritual enrichment. Starting from the fundamentals of grammar and phonetics, one gradually delves into the vast ocean of classical literature, philosophy, and science. The rigorous training in Sanskrit equips scholars with analytical skills and a deep understanding of human thought and culture. In today's fast-paced world, the wisdom contained in Sanskrit texts offers valuable perspectives on ethics, governance, and sustainable living. My own experience has shown that this ancient language is not a relic of the past but a living tradition that continues to inspire and guide us toward a more meaningful existence. The insights gained from studying texts like the Vedas, Upanishads, and classical dramas are invaluable for anyone seeking wisdom and clarity in life.",
+    "gallery": [
+      "gallery/20250702_123001.jpg",
+      "gallery/20250702_123013.jpg",
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Sustainable Practices on a Gurukula Campus",
+    "author": "S. Swetha",
+    "date": "November 22, 2025",
+    "category": "Campus News",
+    "image": "moc-lab.jpg",
+    "excerpt": "Discover how Matrusri Oriental College integrates environmental consciousness into its daily operations.",
+    "readTime": "4 min read",
+    "fullContent": "Matrusri Oriental College is committed to environmental stewardship through its comprehensive sustainability initiatives. The campus actively practices waste management, emphasizing reduction, reuse, and recycling to minimize its ecological footprint. Solar energy powers many of the college buildings, reducing reliance on conventional electricity sources and promoting renewable energy adoption. A well-maintained organic garden provides fresh produce for the students, fostering an understanding of sustainable agriculture. Additionally, rainwater harvesting systems are in place to conserve water resources. These practices not only contribute to a greener environment but also serve as practical learning opportunities for students, instilling in them a sense of responsibility towards nature. The serene and eco-friendly campus atmosphere enhances the overall learning experience, creating a harmonious blend of education and environmental consciousness.",
+    "gallery": [
+      "moc-lab.jpg",
+      "mog-gate.jpg",
+      "MOC-Building.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "The Role of Philosophy in Modern Education",
+    "author": "Dr. K. S. Murthy",
+    "date": "October 15, 2025",
+    "category": "Academic Insights",
+    "image": "library_study.png",
+    "excerpt": "Exploring how philosophical thinking enhances critical reasoning and ethical development in students.",
+    "readTime": "5 min read",
+    "fullContent": "In today's rapidly changing world, the study of philosophy plays a crucial role in shaping well-rounded individuals. Philosophical inquiry encourages students to think critically, question assumptions, and develop logical reasoning skills. It provides a framework for understanding complex ethical dilemmas and making informed decisions that align with moral values. At Matrusri Oriental College, we integrate philosophical discussions into our curriculum to foster intellectual curiosity and ethical awareness. The ancient wisdom of Indian philosophy, combined with modern critical thinking approaches, equips our students with the tools needed to navigate the challenges of the 21st century. This emphasis on philosophical education ensures that our graduates are not only academically proficient but also ethically grounded and socially responsible citizens.",
+    "gallery": [
+      "library_study.png",
+      "gallery/20250702_123001.jpg",
+      "gallery/20250702_123013.jpg",
+      "gallery/20250702_124052.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "A Day in the Life of a Gurukula Student",
+    "author": "A Student Volunteer",
+    "date": "September 5, 2025",
+    "category": "Campus Life",
+    "image": "youth_festival.png",
+    "excerpt": "Experience the unique rhythm of life at our Gurukula campus through the eyes of a student.",
+    "readTime": "6 min read",
+    "fullContent": "Waking up before sunrise to the sound of chanting bells sets the tone for a fulfilling day at the Gurukula. The morning begins with yoga and meditation, preparing the mind and body for the day's learning. After a nutritious breakfast, students head to classes where Sanskrit and ancient texts are studied alongside modern subjects. The close-knit community fosters a sense of family, with everyone contributing to the daily chores and activities. Evenings are filled with discussions, cultural performances, or time spent in the library exploring vast collections of knowledge. This immersive environment teaches discipline, respect, and a deep appreciation for learning. It's a life that balances ancient wisdom with modern education, creating memories and values that last a lifetime.",
+    "gallery": [
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg",
+      "gallery/GMC07032026_150543.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "The Significance of Vedic Chanting",
+    "author": "Smt. K. Ratnavali",
+    "date": "August 20, 2025",
+    "category": "Spiritual Teachings",
+    "image": "vedic_chanting.png",
+    "excerpt": "Understanding the profound spiritual and scientific benefits of Vedic chanting.",
+    "readTime": "4 min read",
+    "fullContent": "Vedic chanting is a sacred practice that has been preserved for thousands of years, carrying profound spiritual and scientific significance. The precise intonation and rhythmic recitation of Vedic mantras create specific vibrational frequencies that promote mental clarity, emotional balance, and spiritual elevation. Beyond its spiritual dimensions, Vedic chanting has been shown to enhance memory, improve concentration, and reduce stress. At Matrusri Oriental College, we teach students the art of Vedic chanting as part of our commitment to preserving India's rich cultural heritage. This practice instills discipline, devotion, and a deeper connection to the timeless wisdom of the Vedas. Whether performed individually or in a group, Vedic chanting creates a harmonious atmosphere that nurtures the mind, body, and spirit.",
+    "gallery": [
+      "vedic_chanting.png",
+      "gallery/GMC07032026_150543.jpg",
+      "gallery/GMC07032026_150558.jpg",
+      "gallery/20250702_124114.jpg"
+    ]
   }
 ]

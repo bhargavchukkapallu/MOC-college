@@ -22,7 +22,7 @@ const ArticleCard = ({ article, onClick }) => {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-        
+
         {/* Category Tag */}
         <div className="absolute top-4 left-4">
           <span className="px-4 py-1.5 bg-brand-secondary text-brand-dark text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
@@ -47,7 +47,7 @@ const ArticleCard = ({ article, onClick }) => {
         <h3 className="text-2xl font-black text-brand-dark leading-tight mb-4 group-hover:text-brand-primary transition-colors line-clamp-2">
           {article.title}
         </h3>
-        
+
         <p className="text-gray-500 text-sm leading-relaxed mb-8 line-clamp-3">
           {article.excerpt}
         </p>
@@ -60,7 +60,7 @@ const ArticleCard = ({ article, onClick }) => {
             </div>
             <span className="text-xs font-bold text-brand-dark uppercase tracking-wide">{article.author}</span>
           </div>
-          <motion.div 
+          <motion.div
             whileHover={{ x: 5 }}
             className="text-brand-primary flex items-center gap-2 font-black text-[10px] uppercase tracking-widest"
           >
@@ -89,7 +89,7 @@ const ArticleModal = ({ article, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-6 right-6 z-50 p-3 bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-brand-dark rounded-full transition-all duration-300"
         >
@@ -98,13 +98,13 @@ const ArticleModal = ({ article, onClose }) => {
 
         {/* Visual Sidebar */}
         <div className="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
-          <img 
-            src={getImageUrl(article.image)} 
-            alt={article.title} 
+          <img
+            src={getImageUrl(article.image)}
+            alt={article.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay" />
-          
+
           <div className="absolute bottom-10 left-10 right-10 text-white">
             <span className="px-4 py-1.5 bg-brand-secondary text-brand-dark text-[10px] font-black uppercase tracking-widest rounded-full mb-4 inline-block">
               {article.category}
@@ -133,7 +133,7 @@ const ArticleModal = ({ article, onClose }) => {
               </span>
             </div>
 
-            <div 
+            <div
               className="prose prose-lg prose-brand max-w-none text-gray-600 leading-relaxed font-medium space-y-6"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
@@ -148,7 +148,7 @@ const ArticleModal = ({ article, onClose }) => {
                   <Bookmark className="w-4 h-4" /> Save
                 </button>
               </div>
-              <button 
+              <button
                 onClick={onClose}
                 className="bg-brand-primary text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-dark transition-colors shadow-lg"
               >
@@ -196,8 +196,8 @@ const ArticlesSection = () => {
                 Insights & Updates
               </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -224,7 +224,7 @@ const ArticlesSection = () => {
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {articles.map((article, index) => (
+          {articles.slice(0, 3).map((article, index) => (
             <motion.div
               key={article.id}
               initial={{ opacity: 0, y: 50 }}
@@ -241,14 +241,15 @@ const ArticlesSection = () => {
       {/* Article Detail Modal */}
       <AnimatePresence>
         {selectedArticle && (
-          <ArticleModal 
-            article={selectedArticle} 
-            onClose={() => setSelectedArticle(null)} 
+          <ArticleModal
+            article={selectedArticle}
+            onClose={() => setSelectedArticle(null)}
           />
         )}
       </AnimatePresence>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }

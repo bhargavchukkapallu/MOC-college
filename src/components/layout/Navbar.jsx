@@ -40,7 +40,7 @@ const Navbar = () => {
         : 'max-w-[95%] lg:max-w-[90%] px-4 sm:px-6'
         }`}>
         <nav className={`transition-all bg-white duration-500 ease-in-out ${scrolled
-          ? 'shadow-xl p-3 border-b border-gray-100 rounded-none'
+          ? 'shadow-xl py-3 px-6 lg:px-10 border-b border-gray-100 rounded-none'
           : 'backdrop-blur-md shadow-lg py-3 lg:py-4 px-6 lg:px-10 rounded-[2rem] lg:rounded-full border border-white/20'
           }`}>
           <div className="flex justify-between items-center">
@@ -92,9 +92,9 @@ const Navbar = () => {
                                   to={item.path}
                                   className="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
                                 >
-                                    <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
-                                      {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
-                                    </div>
+                                  <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
+                                    {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
+                                  </div>
                                   <div className="ml-3 text-left">
                                     <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
                                       {item.name}

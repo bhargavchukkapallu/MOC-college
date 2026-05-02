@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Search, X, Share2, Bookmark } from 'lucide-react';
 
-const EventsTab = ({ events, searchQuery }) => {
+const EventsTab = ({ events, searchQuery, direction }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
@@ -20,9 +20,9 @@ const EventsTab = ({ events, searchQuery }) => {
     <>
       <motion.div
         key="events-view"
-        initial={{ opacity: 0, x: -20 }}
+        initial={{ opacity: 0, x: direction * 50 }}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 20 }}
+        exit={{ opacity: 0, x: -direction * 50 }}
         transition={{ duration: 0.4 }}
         className="grid md:grid-cols-2 gap-8"
       >

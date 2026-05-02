@@ -12,6 +12,16 @@ const Insights = () => {
   const initialTab = queryParams.get('tab') || 'events';
 
   const [activeTab, setActiveTab] = useState(initialTab);
+  const [direction, setDirection] = useState(0); // 1 for right, -1 for left
+  const tabOrder = ['events', 'blog', 'articles'];
+
+  const handleTabChange = (newTab) => {
+    const currentIndex = tabOrder.indexOf(activeTab);
+    const newIndex = tabOrder.indexOf(newTab);
+    setDirection(newIndex > currentIndex ? 1 : -1);
+    setActiveTab(newTab);
+  };
+
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsData, setEventsData] = useState([]);
@@ -20,7 +30,12 @@ const Insights = () => {
 
   useEffect(() => {
     setActiveTab(initialTab);
+    window.scrollTo(0, 0);
   }, [initialTab]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab, currentPage]);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}json_data/events.json`)
@@ -46,21 +61,21 @@ const Insights = () => {
   }, [activeTab, searchQuery]);
 
   const filteredEvents = eventsData.filter(event =>
-    event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    event.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    event.description.toLowerCase().includes(searchQuery.toLowerCase())
+    (event.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (event.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (event.description || '').toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const filteredBlogs = blogData.filter(blog =>
-    blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    blog.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    (blog.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (blog.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (blog.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const filteredArticles = articlesData.filter(article =>
-    article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    (article.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (article.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (article.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const getPaginatedData = () => {
@@ -124,19 +139,19 @@ const Insights = () => {
             />
 
             <button
-              onClick={() => setActiveTab('events')}
+              onClick={() => handleTabChange('events')}
               className={`relative z-10 px-4 py-3 rounded-full font-bold text-sm sm:text-base transition-colors duration-300 w-28 sm:w-40 ${activeTab === 'events' ? 'text-white' : 'text-gray-600 hover:text-brand-primary'}`}
             >
               Events
             </button>
             <button
-              onClick={() => setActiveTab('blog')}
+              onClick={() => handleTabChange('blog')}
               className={`relative z-10 px-4 py-3 rounded-full font-bold text-sm sm:text-base transition-colors duration-300 w-28 sm:w-40 ${activeTab === 'blog' ? 'text-white' : 'text-gray-600 hover:text-brand-primary'}`}
             >
               Blog
             </button>
             <button
-              onClick={() => setActiveTab('articles')}
+              onClick={() => handleTabChange('articles')}
               className={`relative z-10 px-4 py-3 rounded-full font-bold text-sm sm:text-base transition-colors duration-300 w-28 sm:w-40 ${activeTab === 'articles' ? 'text-white' : 'text-gray-600 hover:text-brand-primary'}`}
             >
               Articles
@@ -171,6 +186,7 @@ const Insights = () => {
                 key="events-tab"
                 events={getPaginatedData()} 
                 searchQuery={searchQuery} 
+                direction={direction}
               />
             )}
             {activeTab === 'blog' && (
@@ -178,6 +194,7 @@ const Insights = () => {
                 key="blog-tab"
                 blogs={getPaginatedData()} 
                 searchQuery={searchQuery} 
+                direction={direction}
               />
             )}
             {activeTab === 'articles' && (
@@ -185,6 +202,7 @@ const Insights = () => {
                 key="articles-tab"
                 articles={getPaginatedData()} 
                 searchQuery={searchQuery} 
+                direction={direction}
               />
             )}
           </AnimatePresence>

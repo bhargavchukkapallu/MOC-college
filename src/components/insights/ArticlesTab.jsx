@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, User, Clock, ChevronRight, Search, BookOpen, X, Share2, Bookmark } from 'lucide-react';
 
-const ArticlesTab = ({ articles, searchQuery }) => {
+const ArticlesTab = ({ articles, searchQuery, direction }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
 
   useEffect(() => {
@@ -20,9 +20,9 @@ const ArticlesTab = ({ articles, searchQuery }) => {
     <>
       <motion.div
         key="articles-view"
-        initial={{ opacity: 0, x: 20 }}
+        initial={{ opacity: 0, x: direction * 50 }}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -20 }}
+        exit={{ opacity: 0, x: -direction * 50 }}
         transition={{ duration: 0.4 }}
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
       >

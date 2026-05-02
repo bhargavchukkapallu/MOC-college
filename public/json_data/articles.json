@@ -8,8 +8,7 @@
     "category": "Heritage",
     "date": "Oct 24, 2024",
     "readTime": "6 min read",
-    "author": "Acharya V. Sharma",
-    "gallery": ["gallery/20250702_120215.jpg", "gallery/20250702_123001.jpg"]
+    "author": "Acharya V. Sharma"
   },
   {
     "id": 2,
@@ -20,8 +19,7 @@
     "category": "Education",
     "date": "Nov 12, 2024",
     "readTime": "8 min read",
-    "author": "Dr. S. Rajan",
-    "gallery": ["gallery/20250702_124106.jpg", "gallery/20250702_124114.jpg"]
+    "author": "Dr. S. Rajan"
   },
   {
     "id": 3,
@@ -32,7 +30,61 @@
     "category": "Innovation",
     "date": "Dec 05, 2024",
     "readTime": "5 min read",
-    "author": "Prof. K. Venkatesh",
-    "gallery": ["gallery/GMC07032026_150543.jpg", "gallery/GMC07032026_150558.jpg"]
+    "author": "Prof. K. Venkatesh"
+  },
+  {
+    "id": 4,
+    "title": "The Art of Sanskrit Poetry: A Journey of Expression",
+    "excerpt": "Discover the beauty and depth of Sanskrit poetry, a timeless tradition that continues to inspire and enlighten.",
+    "content": "<p>Sanskrit poetry, with its intricate linguistic structures and profound philosophical insights, offers a unique window into the Indian cultural heritage. From the epic narratives of the Ramayana and Mahabharata to the lyrical verses of Kalidasa, Sanskrit poetry has evolved over centuries, adapting to changing times while preserving its core essence.</p><p>The beauty of Sanskrit poetry lies in its ability to convey deep emotions and complex ideas through precise and evocative language. The use of meters, rhetorical devices, and symbolic imagery creates a rich tapestry of meaning that resonates with readers on multiple levels. Whether exploring themes of love, nature, duty, or spiritual realization, Sanskrit poets have crafted verses that continue to inspire and guide us.</p><p>At Matrusri Oriental College, we are committed to preserving and promoting this rich literary tradition. Our students engage in the study of classical Sanskrit poetry, learning to appreciate its aesthetic qualities and understand its philosophical underpinnings. Through this exploration, they develop not only linguistic proficiency but also a deeper connection to their cultural roots.</p>",
+    "image": "article_sanskrit_poetry.png",
+    "category": "Literature",
+    "date": "Jan 15, 2025",
+    "readTime": "6 min read",
+    "author": "Acharya V. Sharma"
+  },
+  {
+    "id": 5,
+    "title": "Spiritual Wisdom for Modern Challenges: Insights from Amma",
+    "excerpt": "Exploring the profound teachings of Viswajanani Jillellamudi Amma and their relevance in today's world.",
+    "content": "<p>In a world grappling with stress, division, and uncertainty, the spiritual wisdom of Viswajanani Jillellamudi Amma offers a beacon of hope and guidance. Amma's teachings, centered on universal love, compassion, and self-realization, provide practical solutions to modern challenges and inspire individuals to lead more meaningful lives.</p><p>Amma emphasized that spirituality is not about elaborate rituals or dogmatic beliefs, but about cultivating inner transformation and extending love to all beings. Her simple yet profound message—that 'God is love, and love is for all'—resonates deeply with people from all walks of life. Through her own example, she demonstrated the power of selfless service and unconditional acceptance.</p><p>At Matrusri Oriental College, we are inspired by Amma's teachings and strive to integrate them into our educational philosophy. Our students learn the importance of compassion, humility, and service to the community. By studying Amma's message, they gain not only spiritual insight but also the practical wisdom needed to navigate life's complexities with grace and integrity.</p>",
+    "image": "article_amma.png",
+    "category": "Spirituality",
+    "date": "Feb 20, 2025",
+    "readTime": "7 min read",
+    "author": "Dr. S. Rajan"
+  },
+  {
+    "id": 6,
+    "title": "Holistic Education: Balancing Mind, Body, and Spirit",
+    "excerpt": "How the Gurukula system at Matrusri Oriental College nurtures students into well-rounded individuals.",
+    "content": "<p>In our modern educational landscape, there is an increasing recognition that true education must encompass more than just academic achievement. A holistic approach that addresses the intellectual, physical, and spiritual dimensions of a student is essential for developing well-rounded individuals capable of navigating life's complexities. At Matrusri Oriental College, we embrace this philosophy through our time-tested Gurukula system.</p><p>Rooted in ancient Indian wisdom, our approach emphasizes the importance of balance. Academic learning is complemented by physical education, meditation, and yogic practices that enhance concentration and overall well-being. This integration ensures that students develop not only sharp minds but also healthy bodies and disciplined spirits.</p><p>Furthermore, the residential nature of our Gurukula fosters a strong sense of community and social responsibility. Students learn to live harmoniously with others, developing empathy, cooperation, and respect for diversity. This immersive environment nurtures character, integrity, and leadership qualities that extend far beyond the classroom.</p>",
+    "image": "article_holistic.png",
+    "category": "Education",
+    "date": "Mar 10, 2025",
+    "readTime": "6 min read",
+    "author": "Acharya V. Sharma"
+  },
+  {
+    "id": 7,
+    "title": "Sanskrit and Science: A Harmonious Integration",
+    "excerpt": "Exploring the surprising connections between ancient Sanskrit texts and modern scientific discoveries.",
+    "content": "<p>While Sanskrit is often perceived as a language of religion and philosophy, it also contains a wealth of scientific knowledge that predates modern discoveries. Ancient Sanskrit texts reveal a deep understanding of mathematics, astronomy, medicine, and even concepts that resonate with modern physics. At Matrusri Oriental College, we believe in the importance of studying Sanskrit not just for its linguistic beauty but also for the scientific insights it offers.</p><p>Consider, for example, the Vedic mathematical sutras, which provide elegant and efficient methods for complex calculations. These principles have found applications in modern computer algorithms and computational linguistics. Furthermore, astronomical observations recorded in ancient texts demonstrate a sophisticated understanding of celestial movements long before the advent of modern telescopes.</p><p>The Ayurvedic texts, written in Sanskrit, detail natural healing practices that are gaining renewed interest in the modern wellness movement. By studying Sanskrit, our students gain access to this repository of ancient wisdom, enabling them to appreciate the harmonious relationship between science and spirituality. This interdisciplinary approach fosters critical thinking and innovation, preparing students to bridge the gap between tradition and modernity.</p>",
+    "image": "article_sanskrit_science.png",
+    "category": "Science",
+    "date": "Apr 5, 2025",
+    "readTime": "7 min read",
+    "author": "Prof. K. Venkatesh"
+  },
+  {
+    "id": 8,
+    "title": "The Power of Yoga: Ancient Practice for Modern Well-being",
+    "excerpt": "Discover how the practice of yoga, deeply rooted in Indian tradition, can transform physical and mental health.",
+    "content": "<p>In today's fast-paced world, stress and lifestyle-related health issues are on the rise. Yoga, an ancient Indian practice documented in Sanskrit texts like the Yoga Sutras of Patanjali, offers a time-tested solution for both physical and mental well-being. At Matrusri Oriental College, we integrate yoga into our daily curriculum, allowing students to experience its transformative benefits firsthand.</p><p>Yoga is more than just physical exercise; it is a holistic discipline that combines asanas (postures), pranayama (breathing techniques), and meditation to harmonize the mind, body, and spirit. Regular practice can improve flexibility, strength, and balance, while also reducing stress, anxiety, and improving mental clarity. The emphasis on mindful movement and breath awareness helps practitioners develop a deeper connection with themselves and the present moment.</p><p>Our trained yoga instructors guide students through various practices tailored to different needs and abilities. Whether for physical fitness, mental relaxation, or spiritual growth, yoga provides a comprehensive approach to health that is both effective and accessible. As students engage in this ancient practice, they not only enhance their own well-being but also carry forward a valuable cultural heritage.</p>",
+    "image": "article_yoga.png",
+    "category": "Health",
+    "date": "May 20, 2025",
+    "readTime": "6 min read",
+    "author": "Dr. S. Rajan"
   }
 ]
