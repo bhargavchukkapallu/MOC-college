@@ -8,7 +8,13 @@
     "category": "Cultural",
     "image": "sanskrit_event.png",
     "description": "Join us for a grand celebration of Sanskrit literature featuring recitations, dramas, and scholarly discussions by eminent speakers from across the country.",
-    "fullContent": "The Sanskrit Sahitya Utsav is our flagship cultural event celebrating the rich heritage of Sanskrit literature. The event will span a full day and feature traditional Vedic chanting, dramatic interpretations of Kalidasa's works, and panel discussions by leading oriental scholars. Students will have the opportunity to showcase their linguistic proficiency through debates and poetry recitations. The festival aims to highlight the enduring relevance of Sanskrit and its timeless beauty in the modern world."
+    "fullContent": "The Sanskrit Sahitya Utsav is our flagship cultural event celebrating the rich heritage of Sanskrit literature. The event will span a full day and feature traditional Vedic chanting, dramatic interpretations of Kalidasa's works, and panel discussions by leading oriental scholars. Students will have the opportunity to showcase their linguistic proficiency through debates and poetry recitations. The festival aims to highlight the enduring relevance of Sanskrit and its timeless beauty in the modern world.",
+    "gallery": [
+      "gallery/20250702_120215.jpg",
+      "gallery/20250702_123001.jpg",
+      "gallery/20250702_123013.jpg",
+      "gallery/20250702_124052.jpg"
+    ]
   },
   {
     "id": 2,
@@ -19,7 +25,13 @@
     "category": "Spiritual",
     "image": "amma_portrait.png",
     "description": "A day-long retreat focused on traditional Gurukula practices, meditation, and understanding the core philosophies of Viswajanani Jillellamudi Amma.",
-    "fullContent": "Our Annual Gurukula Retreat is designed to provide students and staff with a profound spiritual reset. Set against the serene backdrop of our campus grounds, participants will engage in early morning yoga, guided meditation sessions, and interactive workshops on the philosophy of universal love as taught by Viswajanani Jillellamudi Amma. The retreat fosters a deep sense of community, mutual respect, and holistic well-being, reflecting the core values of our institution."
+    "fullContent": "Our Annual Gurukula Retreat is designed to provide students and staff with a profound spiritual reset. Set against the serene backdrop of our campus grounds, participants will engage in early morning yoga, guided meditation sessions, and interactive workshops on the philosophy of universal love as taught by Viswajanani Jillellamudi Amma. The retreat fosters a deep sense of community, mutual respect, and holistic well-being, reflecting the core values of our institution.",
+    "gallery": [
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg",
+      "gallery/GMC07032026_150543.jpg",
+      "gallery/GMC07032026_150558.jpg"
+    ]
   },
   {
     "id": 3,
@@ -30,83 +42,165 @@
     "category": "Academic",
     "image": "library_study.png",
     "description": "An academic conference bringing together researchers and students to discuss the relevance of ancient oriental studies in the modern digital era.",
-    "fullContent": "The National Conference on Oriental Studies serves as a premier academic forum for researchers, educators, and students. This year's theme focuses on 'Integrating Ancient Wisdom with Digital Innovation.' Keynote speakers will explore the digitization of ancient manuscripts, computational linguistics applied to Sanskrit, and the role of oriental philosophy in modern ethics. The conference includes paper presentations, poster sessions, and networking opportunities for budding scholars."
+    "fullContent": "The National Conference on Oriental Studies serves as a premier academic forum for researchers, educators, and students. This year's theme focuses on 'Integrating Ancient Wisdom with Digital Innovation.' Keynote speakers will explore the digitization of ancient manuscripts, computational linguistics applied to Sanskrit, and the role of oriental philosophy in modern ethics. The conference includes paper presentations, poster sessions, and networking opportunities for budding scholars.",
+    "gallery": [
+      "gallery/IMG-20230930-WA0015.jpg",
+      "gallery/IMG-20240212-WA0005.jpg",
+      "gallery/IMG-20240212-WA0007.jpg",
+      "MOC-Library-2.jpg"
+    ]
   },
   {
     "id": 4,
-    "title": "Annual Gurukula Retreat",
-    "date": "September 5, 2026",
-    "time": "8:00 AM - 6:00 PM",
-    "location": "Campus Grounds",
-    "category": "Spiritual",
-    "image": "amma_portrait.png",
-    "description": "A day-long retreat focused on traditional Gurukula practices, meditation, and understanding the core philosophies of Viswajanani Jillellamudi Amma.",
-    "fullContent": "Our Annual Gurukula Retreat is designed to provide students and staff with a profound spiritual reset. Set against the serene backdrop of our campus grounds, participants will engage in early morning yoga, guided meditation sessions, and interactive workshops on the philosophy of universal love as taught by Viswajanani Jillellamudi Amma. The retreat fosters a deep sense of community, mutual respect, and holistic well-being, reflecting the core values of our institution."
+    "title": "Youth Festival",
+    "date": "February 28, 2026",
+    "time": "9:00 AM - 6:00 PM",
+    "location": "Main Auditorium, MOC",
+    "category": "Cultural",
+    "image": "youth_festival.png",
+    "description": "A vibrant festival celebrating youth talent with competitions, performances, and inspiring speakers.",
+    "fullContent": "The Annual Youth Festival is a dynamic showcase of talent, creativity, and leadership. This year's theme, 'Youth for Unity,' brings together students from various colleges for a day of inspiring competitions and cultural exchange. The event features a range of activities including singing, dancing, debate, and drama, providing a platform for young minds to express themselves and connect with peers. The festival culminates in an awards ceremony recognizing excellence in various fields.",
+    "gallery": [
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg",
+      "gallery/GMC07032026_150543.jpg"
+    ]
   },
   {
     "id": 5,
-    "title": "National Conference on Oriental Studies",
-    "date": "October 20, 2026",
-    "time": "9:00 AM - 5:00 PM",
-    "location": "Seminar Hall",
-    "category": "Academic",
-    "image": "library_study.png",
-    "description": "An academic conference bringing together researchers and students to discuss the relevance of ancient oriental studies in the modern digital era.",
-    "fullContent": "The National Conference on Oriental Studies serves as a premier academic forum for researchers, educators, and students. This year's theme focuses on 'Integrating Ancient Wisdom with Digital Innovation.' Keynote speakers will explore the digitization of ancient manuscripts, computational linguistics applied to Sanskrit, and the role of oriental philosophy in modern ethics. The conference includes paper presentations, poster sessions, and networking opportunities for budding scholars."
+    "title": "International Yoga Day Celebration",
+    "date": "June 21, 2026",
+    "time": "6:00 AM - 9:00 AM",
+    "location": "Campus Grounds",
+    "category": "Wellness",
+    "image": "yoga_day.png",
+    "description": "Join us for a rejuvenating morning of yoga, meditation, and wellness activities to celebrate International Yoga Day.",
+    "fullContent": "Embrace wellness with our International Yoga Day celebration. This event is dedicated to promoting physical and mental well-being through the practice of yoga. Participants will engage in guided yoga sessions suitable for all levels, learn meditation techniques, and explore breathing exercises that enhance focus and reduce stress. The event emphasizes the importance of incorporating yoga into daily life for a balanced and fulfilling lifestyle.",
+    "gallery": [
+      "gallery/IMG-20240212-WA0005.jpg",
+      "gallery/IMG-20240212-WA0007.jpg",
+      "gallery/IMG-20230930-WA0015.jpg",
+      "gallery/MOC-Library-2.jpg"
+    ]
   },
   {
     "id": 6,
-    "title": "Annual Gurukula Retreat",
-    "date": "September 5, 2026",
-    "time": "8:00 AM - 6:00 PM",
-    "location": "Campus Grounds",
-    "category": "Spiritual",
-    "image": "amma_portrait.png",
-    "description": "A day-long retreat focused on traditional Gurukula practices, meditation, and understanding the core philosophies of Viswajanani Jillellamudi Amma.",
-    "fullContent": "Our Annual Gurukula Retreat is designed to provide students and staff with a profound spiritual reset. Set against the serene backdrop of our campus grounds, participants will engage in early morning yoga, guided meditation sessions, and interactive workshops on the philosophy of universal love as taught by Viswajanani Jillellamudi Amma. The retreat fosters a deep sense of community, mutual respect, and holistic well-being, reflecting the core values of our institution."
+    "title": "Workshop on Digital Humanities",
+    "date": "November 10, 2026",
+    "time": "10:00 AM - 4:00 PM",
+    "location": "Seminar Hall",
+    "category": "Academic",
+    "image": "digital_humanities.png",
+    "description": "A practical workshop exploring the intersection of technology and humanities, focusing on digital tools for research and analysis.",
+    "fullContent": "This workshop introduces participants to the emerging field of Digital Humanities, where computational methods are applied to study and understand human culture. Sessions will cover topics such as digital text analysis, data visualization of historical texts, and the creation of digital archives. The workshop is ideal for students and researchers interested in leveraging technology to explore humanities subjects in innovative ways.",
+    "gallery": [
+      "gallery/20250702_123013.jpg",
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg",
+      "gallery/20250702_124114.jpg"
+    ]
   },
   {
     "id": 7,
-    "title": "National Conference on Oriental Studies",
-    "date": "October 20, 2026",
-    "time": "9:00 AM - 5:00 PM",
-    "location": "Seminar Hall",
-    "category": "Academic",
-    "image": "library_study.png",
-    "description": "An academic conference bringing together researchers and students to discuss the relevance of ancient oriental studies in the modern digital era.",
-    "fullContent": "The National Conference on Oriental Studies serves as a premier academic forum for researchers, educators, and students. This year's theme focuses on 'Integrating Ancient Wisdom with Digital Innovation.' Keynote speakers will explore the digitization of ancient manuscripts, computational linguistics applied to Sanskrit, and the role of oriental philosophy in modern ethics. The conference includes paper presentations, poster sessions, and networking opportunities for budding scholars."
+    "title": "Founder's Day Celebration",
+    "date": "December 15, 2026",
+    "time": "5:00 PM - 9:00 PM",
+    "location": "Main Auditorium",
+    "category": "Spiritual & Cultural",
+    "image": "amma_portrait.png",
+    "description": "A special evening commemorating the anniversary of our revered founder, Sri Swamy Jillellamudi.",
+    "fullContent": "The Founder's Day celebration is a heartfelt tribute to our spiritual guide, Sri Swamy Jillellamudi. The event features spiritual discourses, devotional music, and a documentary screening that highlights his life and teachings. It is a time for the MOC family to come together, reflect on his vision of universal love, and reaffirm our commitment to his timeless message. The evening concludes with a community dinner.",
+    "gallery": [
+      "gallery/GMC07032026_150543.jpg",
+      "gallery/GMC07032026_150558.jpg",
+      "gallery/GMC07032026_150644.jpg",
+      "gallery/GMC07032026_150701.jpg"
+    ]
   },
   {
     "id": 8,
-    "title": "Sanskrit Sahitya Utsav",
-    "date": "August 15, 2026",
-    "time": "10:00 AM - 4:00 PM",
-    "location": "Main Auditorium, MOC",
-    "category": "Cultural",
-    "image": "sanskrit_event.png",
-    "description": "Join us for a grand celebration of Sanskrit literature featuring recitations, dramas, and scholarly discussions by eminent speakers from across the country.",
-    "fullContent": "The Sanskrit Sahitya Utsav is our flagship cultural event celebrating the rich heritage of Sanskrit literature. The event will span a full day and feature traditional Vedic chanting, dramatic interpretations of Kalidasa's works, and panel discussions by leading oriental scholars. Students will have the opportunity to showcase their linguistic proficiency through debates and poetry recitations. The festival aims to highlight the enduring relevance of Sanskrit and its timeless beauty in the modern world."
+    "title": "TEDx MOC",
+    "date": "November 20, 2026",
+    "time": "10:00 AM - 5:00 PM",
+    "location": "Campus Auditorium",
+    "category": "Academic & Cultural",
+    "image": "tedx_mockup.png",
+    "description": "An independent TEDx event featuring inspiring talks and performances from innovators, thinkers, and artists.",
+    "fullContent": "TEDx MOC brings together a curated selection of speakers to share ideas worth spreading. This year's theme, 'Ideas in Bloom,' explores the evolution of knowledge and the power of innovation. From scientific breakthroughs to artistic expressions, TEDx MOC showcases a diverse range of perspectives that challenge convention and inspire change. The event includes engaging sessions, interactive discussions, and networking opportunities.",
+    "gallery": [
+      "gallery/MOC-Library-2.jpg",
+      "gallery/IMG-20230930-WA0015.jpg",
+      "gallery/IMG-20240212-WA0005.jpg",
+      "gallery/20250702_123013.jpg"
+    ]
   },
   {
     "id": 9,
-    "title": "Annual Gurukula Retreat",
-    "date": "September 5, 2026",
-    "time": "8:00 AM - 6:00 PM",
-    "location": "Campus Grounds",
-    "category": "Spiritual",
-    "image": "amma_portrait.png",
-    "description": "A day-long retreat focused on traditional Gurukula practices, meditation, and understanding the core philosophies of Viswajanani Jillellamudi Amma.",
-    "fullContent": "Our Annual Gurukula Retreat is designed to provide students and staff with a profound spiritual reset. Set against the serene backdrop of our campus grounds, participants will engage in early morning yoga, guided meditation sessions, and interactive workshops on the philosophy of universal love as taught by Viswajanani Jillellamudi Amma. The retreat fosters a deep sense of community, mutual respect, and holistic well-being, reflecting the core values of our institution."
+    "title": "Annual Athletics Meet",
+    "date": "January 10-12, 2027",
+    "time": "8:00 AM - 5:00 PM",
+    "location": "Sports Ground",
+    "category": "Sports & Wellness",
+    "image": "athletics_meet.png",
+    "description": "A three-day inter-college athletics meet featuring track and field events, promoting sportsmanship and physical fitness.",
+    "fullContent": "The Annual Athletics Meet is a much-anticipated event that brings together athletes from across the region. Held over three days, the meet includes a wide range of track and field competitions such as sprinting, long jump, high jump, shot put, and relay races. The event fosters a spirit of healthy competition and encourages students to pursue physical fitness. Professional coaches will be present to provide guidance, and top performers will be recognized with medals and certificates.",
+    "gallery": [
+      "gallery/20250702_123001.jpg",
+      "gallery/20250702_123013.jpg",
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg"
+    ]
   },
   {
     "id": 10,
-    "title": "National Conference on Oriental Studies",
-    "date": "October 20, 2026",
-    "time": "9:00 AM - 5:00 PM",
-    "location": "Seminar Hall",
+    "title": "Research Symposium",
+    "date": "March 5, 2027",
+    "time": "9:30 AM - 4:30 PM",
+    "location": "Seminar Hall & Research Labs",
     "category": "Academic",
-    "image": "library_study.png",
-    "description": "An academic conference bringing together researchers and students to discuss the relevance of ancient oriental studies in the modern digital era.",
-    "fullContent": "The National Conference on Oriental Studies serves as a premier academic forum for researchers, educators, and students. This year's theme focuses on 'Integrating Ancient Wisdom with Digital Innovation.' Keynote speakers will explore the digitization of ancient manuscripts, computational linguistics applied to Sanskrit, and the role of oriental philosophy in modern ethics. The conference includes paper presentations, poster sessions, and networking opportunities for budding scholars."
+    "image": "research_symposium.png",
+    "description": "A platform for students and faculty to present their research findings, fostering innovation and academic collaboration.",
+    "fullContent": "The Research Symposium is a premier academic event that showcases the research contributions of our students and faculty. This year's symposium features presentations on topics ranging from sustainable energy to advanced artificial intelligence. The event includes keynote addresses by eminent scientists, interactive poster sessions, and technical workshops. It provides an invaluable opportunity for participants to engage with peers, receive feedback on their work, and explore potential collaborations.",
+    "gallery": [
+      "gallery/IMG-20240212-WA0007.jpg",
+      "gallery/IMG-20230930-WA0015.jpg",
+      "gallery/MOC-Library-2.jpg",
+      "gallery/GMC07032026_150644.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Vedic Chanting Competition",
+    "date": "April 15, 2027",
+    "time": "10:00 AM - 1:00 PM",
+    "location": "Veda Pathashala",
+    "category": "Cultural & Spiritual",
+    "image": "vedic_chanting.png",
+    "description": "A competition to preserve and promote the art of Vedic chanting with accuracy in pronunciation and rhythm.",
+    "fullContent": "The Vedic Chanting Competition celebrates the ancient tradition of reciting Vedic hymns with precision and devotion. Organized as part of our cultural heritage initiatives, the competition attracts participants from various religious and academic backgrounds. Judges evaluate entries based on adherence to traditional chanting styles, clarity of pronunciation, and rhythmic accuracy. The event not only preserves this sacred art form but also instills discipline and concentration among the participants.",
+    "gallery": [
+      "gallery/20250702_124114.jpg",
+      "gallery/20250702_124052.jpg",
+      "gallery/20250702_124106.jpg",
+      "gallery/GMC07032026_150558.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Green Initiative Day",
+    "date": "July 15, 2027",
+    "time": "9:00 AM - 4:00 PM",
+    "location": "Campus Grounds & Auditorium",
+    "category": "Environmental & Academic",
+    "image": "green_initiative.png",
+    "description": "A day dedicated to environmental awareness with tree plantation drives, eco-friendly workshops, and sustainability talks.",
+    "fullContent": "The Green Initiative Day focuses on our commitment to environmental sustainability. The day begins with a campus-wide tree plantation drive involving students and staff. Workshops will be conducted on topics such as waste management, organic gardening, and renewable energy solutions. In the afternoon, guest speakers from environmental organizations will share insights on climate change and conservation efforts. The event aims to inspire collective action towards a greener future.",
+    "gallery": [
+      "gallery/GMC07032026_150543.jpg",
+      "gallery/GMC07032026_150558.jpg",
+      "gallery/GMC07032026_150644.jpg",
+      "gallery/GMC07032026_150701.jpg"
+    ]
   }
 ]

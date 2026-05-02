@@ -31,6 +31,14 @@
       { "name": "Student Support", "path": "/student-support#support", "icon": "Users" }
     ]
   },
-  { "name": "Events & Blog", "path": "/events" },
+  {
+    "name": "Insights",
+    "path": "/insights",
+    "megaMenu": [
+      { "name": "Events", "path": "/insights?tab=events", "icon": "BookOpen" },
+      { "name": "Blog", "path": "/insights?tab=blog", "icon": "MessageSquare" },
+      { "name": "Articles", "path": "/insights?tab=articles", "icon": "GraduationCap" }
+    ]
+  },
   { "name": "Contact Us", "path": "/contact" }
 ]
