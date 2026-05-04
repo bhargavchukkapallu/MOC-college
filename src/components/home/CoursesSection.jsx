@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, BookOpen, ArrowRight, GraduationCap, Users } from 'lucide-react';
+import { HiClock, HiBookOpen, HiArrowRight, HiAcademicCap, HiUsers } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const iconMap = {
-  BookOpen: <BookOpen className="w-6 h-6" />,
-  GraduationCap: <GraduationCap className="w-6 h-6" />,
-  Users: <Users className="w-6 h-6" />
+  BookOpen: <HiBookOpen className="w-6 h-6" />,
+  GraduationCap: <HiAcademicCap className="w-6 h-6" />,
+  Users: <HiUsers className="w-6 h-6" />
 };
 
 const CoursesSection = () => {
@@ -126,14 +126,14 @@ const CoursesSection = () => {
                   <div className="flex flex-col">
                     <span className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1">Duration</span>
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-brand-primary" />
+                      <HiClock className="w-4 h-4 text-brand-primary" />
                       <span className="text-brand-dark font-bold">{course.duration}</span>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1">Eligibility</span>
                     <div className="flex items-center gap-2">
-                      <GraduationCap className="w-4 h-4 text-brand-primary" />
+                      <HiAcademicCap className="w-4 h-4 text-brand-primary" />
                       <span className="text-brand-dark font-bold">{course.eligibility}</span>
                     </div>
                   </div>
@@ -142,7 +142,7 @@ const CoursesSection = () => {
                 {/* Link Indicator */}
                 <div className="mt-8 flex items-center gap-2 text-brand-primary font-black uppercase tracking-widest text-xs group/link">
                   <span className="group-hover/link:mr-2 transition-all">View Details</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <HiArrowRight className="w-4 h-4" />
                 </div>
               </div>
             </motion.div>
@@ -163,7 +163,7 @@ const CoursesSection = () => {
           >
             Explore All Programs
             <div className="w-10 h-10 rounded-full bg-brand-primary/5 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
-              <ArrowRight className="w-5 h-5" />
+              <HiArrowRight className="w-5 h-5" />
             </div>
           </Link>
         </motion.div>

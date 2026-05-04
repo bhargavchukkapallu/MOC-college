@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { HiChatBubbleBottomCenterText } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const CTASection = () => {
@@ -24,7 +24,7 @@ const CTASection = () => {
           className="flex flex-col items-center"
         >
           <div className="w-16 h-16 bg-brand-secondary/20 rounded-full flex items-center justify-center mb-8 backdrop-blur-sm border border-brand-secondary/30">
-            <Quote className="w-8 h-8 text-brand-secondary fill-brand-secondary" />
+            <HiChatBubbleBottomCenterText className="w-8 h-8 text-brand-secondary" />
           </div>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight italic font-serif">

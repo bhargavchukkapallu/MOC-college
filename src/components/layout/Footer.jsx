@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { HiMapPin, HiPhone, HiEnvelope } from 'react-icons/hi2';
 
 const FacebookIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -85,15 +85,15 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400 text-sm">
-                <MapPin className="w-5 h-5 text-brand-secondary flex-shrink-0 mt-0.5" />
+                <HiMapPin className="w-5 h-5 text-brand-secondary flex-shrink-0 mt-0.5" />
                 <span>Jillellamudi, Bapatla District,<br />Andhra Pradesh, India - 522113</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
-                <Phone className="w-5 h-5 text-brand-secondary flex-shrink-0" />
+                <HiPhone className="w-5 h-5 text-brand-secondary flex-shrink-0" />
                 <span>+91 77889 90685, +91 94409 54934</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
-                <Mail className="w-5 h-5 text-brand-secondary flex-shrink-0" />
+                <HiEnvelope className="w-5 h-5 text-brand-secondary flex-shrink-0" />
                 <a href="mailto:info@mocjillellamudi.ac.in" className="hover:text-brand-secondary transition-colors">info@mocjillellamudi.ac.in</a>
               </li>
             </ul>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, X, ChevronRight, Sparkles } from 'lucide-react';
+import { HiBell, HiXMark, HiChevronRight, HiSparkles } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const FloatingNotifications = () => {
@@ -46,7 +46,7 @@ const FloatingNotifications = () => {
               transition={{ duration: 1, repeat: hasUnread ? Infinity : 0, repeatDelay: 2 }}
               className="origin-top"
             >
-              <Bell className="w-7 h-7" />
+              <HiBell className="w-7 h-7" />
             </motion.div>
             
             {/* Numeric Unread Badge */}
@@ -84,7 +84,7 @@ const FloatingNotifications = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/20 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-1">
-                    <Sparkles className="w-5 h-5 text-brand-secondary" />
+                    <HiSparkles className="w-5 h-5 text-brand-secondary" />
                     <h3 className="font-bold text-lg">News & Updates</h3>
                   </div>
                   <p className="text-gray-400 text-xs">Stay connected with MOC</p>
@@ -93,7 +93,7 @@ const FloatingNotifications = () => {
                   onClick={() => setIsOpen(false)}
                   className="relative z-10 p-2 hover:bg-white/10 rounded-full transition-colors"
                 >
-                  <X className="w-5 h-5" />
+                  <HiXMark className="w-5 h-5" />
                 </button>
               </div>
 
@@ -136,7 +136,7 @@ const FloatingNotifications = () => {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 text-sm font-bold text-brand-primary hover:text-brand-dark transition-colors"
                 >
-                  View All Announcements <ChevronRight className="w-4 h-4" />
+                  View All Announcements <HiChevronRight className="w-4 h-4" />
                 </Link>
               </div>
             </motion.div>

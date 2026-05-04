@@ -1,7 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Users, GraduationCap, Building2, UserCircle2, Briefcase } from 'lucide-react';
+import { 
+  HiShieldCheck, 
+  HiUsers, 
+  HiAcademicCap, 
+  HiBuildingLibrary, 
+  HiUserCircle, 
+  HiBriefcase 
+} from 'react-icons/hi2';
 import { Link, useLocation } from 'react-router-dom';
+import Breadcrumbs from '../components/layout/Breadcrumbs';
 import { ReactFlow, Controls, Background, applyNodeChanges, applyEdgeChanges, Handle, Position } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
@@ -134,10 +142,10 @@ const Administration = () => {
   };
 
   const adminStaff = [
-    { name: "Mr. B. Srinivasa Rao", role: "Office Superintendent", icon: <Briefcase className="w-6 h-6" /> },
-    { name: "Mrs. T. Lakshmi", role: "Senior Assistant", icon: <UserCircle2 className="w-6 h-6" /> },
-    { name: "Mr. K. Ramana", role: "Junior Assistant", icon: <UserCircle2 className="w-6 h-6" /> },
-    { name: "Mrs. V. Saraswathi", role: "Librarian", icon: <GraduationCap className="w-6 h-6" /> },
+    { name: "Mr. B. Srinivasa Rao", role: "Office Superintendent", icon: <HiBriefcase className="w-6 h-6" /> },
+    { name: "Mrs. T. Lakshmi", role: "Senior Assistant", icon: <HiUserCircle className="w-6 h-6" /> },
+    { name: "Mr. K. Ramana", role: "Junior Assistant", icon: <HiUserCircle className="w-6 h-6" /> },
+    { name: "Mrs. V. Saraswathi", role: "Librarian", icon: <HiAcademicCap className="w-6 h-6" /> },
   ];
 
   return (
@@ -163,10 +171,11 @@ const Administration = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               Our <span className="text-brand-secondary">Administration</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Guided by a commitment to excellence, our administrative team works tirelessly
               to ensure a supportive and enriching environment for all students and staff.
             </p>
+            <Breadcrumbs />
           </motion.div>
         </div>
       </section>
@@ -178,7 +187,7 @@ const Administration = () => {
           <section id="governing-body">
             <motion.div {...fadeInUp} className="text-center mb-16">
               <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary mx-auto mb-6">
-                <Building2 className="w-8 h-8" />
+                <HiBuildingLibrary className="w-8 h-8" />
               </div>
               <h2 className="text-4xl font-black text-brand-dark mb-4">Governing Body & Management</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -202,7 +211,7 @@ const Administration = () => {
                         <div className="absolute top-0 right-0 w-24 h-24 bg-brand-secondary/10 rounded-full blur-2xl -mr-12 -mt-12 group-hover:bg-brand-secondary/30 transition-colors"></div>
                         <div className="flex items-start gap-4 relative z-10">
                           <div className="w-12 h-12 bg-brand-primary/5 rounded-full flex items-center justify-center text-brand-primary shrink-0 group-hover:scale-110 transition-transform">
-                            <Users className="w-6 h-6" />
+                            <HiUsers className="w-6 h-6" />
                           </div>
                           <div>
                             <h3 className="text-lg font-bold text-brand-dark mb-1 leading-tight">{member.name}</h3>
@@ -293,7 +302,7 @@ const Administration = () => {
           <section id="office" className="text-center pb-12">
             <motion.div {...fadeInUp} className="max-w-2xl mx-auto bg-white rounded-[3rem] p-12 shadow-xl border border-gray-100 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-primary to-brand-secondary"></div>
-              <ShieldCheck className="w-16 h-16 text-brand-primary mx-auto mb-6" />
+              <HiShieldCheck className="w-16 h-16 text-brand-primary mx-auto mb-6" />
               <h2 className="text-3xl font-black text-brand-dark mb-4">Administrative Office</h2>
               <p className="text-gray-600 mb-8 font-medium text-lg">
                 For administrative inquiries, certificates, and official documents, please visit our office during working hours.

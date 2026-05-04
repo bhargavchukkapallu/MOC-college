@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Play, History } from 'lucide-react';
+import { HiCheckCircle, HiArrowRight, HiPlay, HiClock } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
@@ -80,7 +80,7 @@ const AboutSection = () => {
               className="absolute -bottom-6 -left-6 lg:-left-12 bg-white p-8 rounded-[2rem] shadow-2xl z-20 flex items-center gap-5 border border-gray-100 group cursor-pointer hover:shadow-brand-primary/10 transition-shadow"
             >
               <div className="w-16 h-16 bg-brand-secondary rounded-2xl flex items-center justify-center text-brand-primary shadow-lg group-hover:scale-110 transition-transform">
-                <History className="w-8 h-8" />
+                <HiClock className="w-8 h-8" />
               </div>
               <div>
                 <span className="block text-4xl font-black text-brand-dark leading-none">53+</span>
@@ -139,7 +139,7 @@ const AboutSection = () => {
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-6 h-6 rounded-full bg-brand-secondary/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-brand-secondary transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-brand-primary" />
+                    <HiCheckCircle className="w-4 h-4 text-brand-primary" />
                   </div>
                   <span className="text-gray-600 font-bold text-sm lg:text-base leading-snug">{feature}</span>
                 </motion.div>
@@ -158,7 +158,7 @@ const AboutSection = () => {
                 className="inline-flex items-center gap-3 bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-5 rounded-full font-black text-lg transition-all shadow-xl shadow-brand-primary/20 group active:scale-95"
               >
                 Learn More About Us
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                <HiArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
           </div>

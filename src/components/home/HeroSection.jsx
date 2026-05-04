@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Phone, GraduationCap, Award } from 'lucide-react';
+import { HiArrowRight, HiAcademicCap } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -22,10 +22,10 @@ const HeroSection = () => {
         return () => clearInterval(timer);
     }, [heroBackgrounds]);
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-brand-dark">
+        <section className="relative h-auto lg:h-screen w-full overflow-hidden bg-brand-dark flex flex-col lg:block">
             {/* 1. Full-Width Background Image Carousel */}
-            <div className="absolute inset-0 z-0 bg-brand-dark">
-                <AnimatePresence>
+            <div className="relative lg:absolute lg:inset-0 z-0 bg-brand-dark order-1 lg:order-none min-h-[300px] sm:min-h-[400px] lg:min-h-0">
+                <AnimatePresence mode="wait">
                     {heroBackgrounds.length > 0 && (
                         <motion.img
                             key={currentBg}
@@ -35,15 +35,15 @@ const HeroSection = () => {
                             transition={{ duration: 1.5, ease: "easeInOut" }}
                             src={`${import.meta.env.BASE_URL}${heroBackgrounds[currentBg]}`}
                             alt="MOC Campus Background"
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover"
                         />
                     )}
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-brand-dark/30 mix-blend-overlay z-10 pointer-events-none"></div>
             </div>
 
-            {/* 2. Left Side Transparent SVG Mask Overlay */}
-            <div className="absolute top-0 left-0 w-full lg:w-[65%] h-full z-10 pointer-events-none">
+            {/* 2. Left Side Transparent SVG Mask Overlay - Desktop Only */}
+            <div className="hidden lg:block absolute top-0 left-0 w-full lg:w-[65%] h-full z-10 pointer-events-none">
                 <svg className="absolute w-0 h-0">
                     <defs>
                         <clipPath id="heroLeftMask" clipPathUnits="objectBoundingBox">
@@ -104,92 +104,83 @@ const HeroSection = () => {
             </div>
 
             {/* 3. Text Content */}
-            <div className="container mx-auto h-full px-6 lg:px-16 flex items-center relative z-20 pointer-events-none">
-                <div className="w-full lg:w-[55%] flex flex-col items-start gap-6 lg:gap-10 pointer-events-auto">
-                    {/* Elite Tagline */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="flex items-center gap-4"
-                    >
-                        <div className="h-[2px] w-12 bg-brand-primary"></div>
-                        <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-sm lg:text-base">
-                            Traditional Wisdom • Future Ready
-                        </span>
-                    </motion.div>
-
-                    {/* Epic Heading */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                        <h1 className="text-4xl md:text-6xl lg:text-[5.5rem] font-black text-brand-dark leading-[0.95] tracking-tighter">
-                            A Premier <br />
-                            <span className="text-brand-primary relative">
-                                Educational
-                                <motion.svg
-                                    initial={{ pathLength: 0 }}
-                                    animate={{ pathLength: 1 }}
-                                    transition={{ duration: 1, delay: 1 }}
-                                    className="absolute -bottom-2 left-0 w-full h-4 text-brand-secondary/40"
-                                    viewBox="0 0 300 20"
-                                    fill="none"
-                                >
-                                    <path d="M5 15C50 5 150 5 295 15" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
-                                </motion.svg>
-                            </span> <br />
-                            Institution
-                        </h1>
-                    </motion.div>
-
-                    {/* Premium Description */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-gray-600 text-lg lg:text-2xl max-w-2xl leading-relaxed font-medium"
-                    >
-                        Nurturing Vedic knowledge and Oriental studies since 1971. We blend timeless heritage with modern academic brilliance to shape tomorrow's scholars.
-                    </motion.p>
-
-                    {/* High-Conversion Actions */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-wrap items-center gap-10 mt-4 lg:mt-6"
-                    >
-                        <Link
-                            to="/about"
-                            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-12 py-6 rounded-full font-black text-xl transition-all shadow-2xl shadow-brand-primary/30 flex items-center gap-3 group active:scale-95"
+            <div className="relative lg:absolute lg:inset-0 z-20 order-2 bg-[#f3f9ff] lg:bg-transparent pointer-events-none">
+                <div className="container mx-auto h-full px-6 lg:px-16 flex items-center py-12 lg:py-0">
+                    <div className="w-full lg:w-[55%] flex flex-col items-start gap-6 lg:gap-10 pointer-events-auto">
+                        {/* Elite Tagline */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="flex items-center gap-4"
                         >
-                            Read More
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                        </Link>
+                            <div className="h-[2px] w-12 bg-brand-primary"></div>
+                            <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-sm lg:text-base">
+                                Traditional Wisdom • Future Ready
+                            </span>
+                        </motion.div>
 
-                        {/* <div className="flex items-center gap-6 group cursor-pointer">
-                            <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center text-brand-primary shadow-xl group-hover:scale-110 transition-transform relative">
-                                <Phone className="w-8 h-8" />
-                                <div className="absolute inset-0 rounded-full animate-ping bg-brand-secondary/40 -z-10"></div>
-                            </div>
-                            <div>
-                                <p className="text-xs text-gray-400 font-black uppercase tracking-[0.2em]">Need Help?</p>
-                                <p className="text-brand-dark font-black text-xl lg:text-2xl group-hover:text-brand-primary transition-colors">+91 77889 90685</p>
-                            </div>
-                        </div> */}
-                    </motion.div>
+                        {/* Epic Heading */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <h1 className="text-4xl md:text-6xl lg:text-[5.5rem] font-black text-brand-dark leading-[0.95] tracking-tighter">
+                                A Premier <br />
+                                <span className="text-brand-primary relative">
+                                    Educational
+                                    <motion.svg
+                                        initial={{ pathLength: 0 }}
+                                        animate={{ pathLength: 1 }}
+                                        transition={{ duration: 1, delay: 1 }}
+                                        className="absolute -bottom-2 left-0 w-full h-4 text-brand-secondary/40"
+                                        viewBox="0 0 300 20"
+                                        fill="none"
+                                    >
+                                        <path d="M5 15C50 5 150 5 295 15" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                    </motion.svg>
+                                </span> <br />
+                                Institution
+                            </h1>
+                        </motion.div>
+
+                        {/* Premium Description */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-gray-600 text-lg lg:text-2xl max-w-2xl leading-relaxed font-medium"
+                        >
+                            Nurturing Vedic knowledge and Oriental studies since 1971. We blend timeless heritage with modern academic brilliance to shape tomorrow's scholars.
+                        </motion.p>
+
+                        {/* High-Conversion Actions */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className="flex flex-wrap items-center gap-10 mt-4 lg:mt-6"
+                        >
+                            <Link
+                                to="/about"
+                                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-10 py-5 lg:px-12 lg:py-6 rounded-full font-black text-lg lg:text-xl transition-all shadow-2xl shadow-brand-primary/30 flex items-center gap-3 group active:scale-95"
+                            >
+                                Read More
+                                <HiArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
             {/* 4. Award Badge - Positioned on the wave edge of the left mask */}
-            <div className="absolute bottom-[20%] left-[45%] lg:bottom-[0px] lg:left-[52%] -translate-y-1/2 -translate-x-1/2 z-30 opacity-90 lg:opacity-100 pointer-events-auto">
+            <div className="absolute top-[250px] sm:top-[350px] right-4 lg:top-auto lg:bottom-[0px] lg:left-[52%] lg:-translate-y-1/2 lg:-translate-x-1/2 z-30 opacity-90 lg:opacity-100 pointer-events-auto">
                 <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ delay: 1.2, type: "spring", stiffness: 100 }}
-                    className="relative w-32 h-32 md:w-40 md:h-40 lg:w-64 lg:h-64 drop-shadow-[0_20px_50px_rgba(128,0,0,0.2)]"
+                    className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-64 lg:h-64 drop-shadow-[0_20px_50px_rgba(128,0,0,0.2)]"
                 >
                     <motion.div
                         animate={{ rotate: 360 }}

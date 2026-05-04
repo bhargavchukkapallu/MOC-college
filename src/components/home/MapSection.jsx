@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { HiMapPin, HiPhone, HiEnvelope, HiClock } from 'react-icons/hi2';
 
 const MapSection = () => {
   return (
@@ -15,7 +15,7 @@ const MapSection = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center text-white shadow-lg">
-              <MapPin className="w-5 h-5" />
+              <HiMapPin className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-black text-brand-dark text-lg leading-tight">Visit Our Campus</h3>
@@ -26,7 +26,7 @@ const MapSection = () => {
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-1">
-                <MapPin className="w-4 h-4 text-brand-primary" />
+                <HiMapPin className="w-4 h-4 text-brand-primary" />
               </div>
               <p className="text-gray-600 text-sm font-medium leading-relaxed">
                 Matrusri Oriental College, Jillellamudi, <br />
@@ -36,14 +36,14 @@ const MapSection = () => {
 
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-4 h-4 text-brand-primary" />
+                <HiPhone className="w-4 h-4 text-brand-primary" />
               </div>
               <p className="text-gray-600 text-sm font-bold">+91 94402 12138</p>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0">
-                <Clock className="w-4 h-4 text-brand-primary" />
+                <HiClock className="w-4 h-4 text-brand-primary" />
               </div>
               <p className="text-gray-600 text-sm font-medium">Mon - Sat: 9:00 AM - 5:00 PM</p>
             </div>

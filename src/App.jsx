@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Insights from './pages/Insights';
 import Administration from './pages/Administration';
 import Committees from './pages/Committees';
+import ArticleDetail from './pages/ArticleDetail';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/committees" element={<Committees />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/:type/:id" element={<ArticleDetail />} />
             <Route path="/events" element={<Insights />} /> {/* Keep redirect/compatibility */}
             <Route path="/contact" element={<Contact />} />
             {/* Fallback route for empty pages */}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import { Star, ExternalLink, MessageSquare, Quote } from 'lucide-react';
+import { HiStar, HiArrowTopRightOnSquare, HiChatBubbleLeftEllipsis, HiChatBubbleBottomCenterText } from 'react-icons/hi2';
 
 // Swiper Styles
 import 'swiper/css';
@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
                         <span className="text-sm font-black text-brand-dark uppercase">MOC • {new Date().getFullYear()}</span>
                       </div>
                       <div className="text-brand-primary/10 group-hover:text-brand-primary/20 transition-colors">
-                        <Quote className="w-12 h-12 rotate-180" />
+                        <HiChatBubbleBottomCenterText className="w-12 h-12 rotate-180" />
                       </div>
                     </div>
 
@@ -130,7 +130,7 @@ const TestimonialsSection = () => {
                         </div>
                       </div>
                       <div className="w-10 h-10 bg-brand-primary/5 text-brand-primary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all cursor-pointer shadow-sm">
-                        <ExternalLink className="w-5 h-5" />
+                        <HiArrowTopRightOnSquare className="w-5 h-5" />
                       </div>
                     </div>
 

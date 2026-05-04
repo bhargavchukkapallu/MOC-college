@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, GraduationCap, Users, Clock, CheckCircle2, ArrowRight, Briefcase } from 'lucide-react';
+import { 
+  HiBookOpen, 
+  HiAcademicCap, 
+  HiUsers, 
+  HiClock, 
+  HiCheckCircle, 
+  HiArrowRight, 
+  HiBriefcase 
+} from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+import Breadcrumbs from '../components/layout/Breadcrumbs';
 
 const iconMap = {
-  BookOpen: <BookOpen className="w-8 h-8" />,
-  GraduationCap: <GraduationCap className="w-8 h-8" />,
-  Users: <Users className="w-8 h-8" />
+  BookOpen: <HiBookOpen className="w-8 h-8" />,
+  GraduationCap: <HiAcademicCap className="w-8 h-8" />,
+  Users: <HiUsers className="w-8 h-8" />
 };
 
 const Academics = () => {
@@ -52,10 +61,11 @@ const Academics = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               Our <span className="text-brand-secondary">Programs</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Discover programs designed to nurture both intellect and character. 
               We offer free, high-quality education through the unique Gurukula system.
             </p>
+            <Breadcrumbs />
           </motion.div>
         </div>
       </section>
@@ -83,14 +93,14 @@ const Academics = () => {
                     
                     <div className="space-y-4 text-sm font-bold text-gray-600">
                       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
-                        <Clock className="w-5 h-5 text-brand-primary" />
+                        <HiClock className="w-5 h-5 text-brand-primary" />
                         <div>
                           <span className="block text-[10px] uppercase tracking-widest text-gray-400">Duration</span>
                           {program.duration}
                         </div>
                       </div>
                       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
-                        <GraduationCap className="w-5 h-5 text-brand-primary" />
+                        <HiAcademicCap className="w-5 h-5 text-brand-primary" />
                         <div>
                           <span className="block text-[10px] uppercase tracking-widest text-gray-400">Eligibility</span>
                           {program.eligibility}
@@ -107,7 +117,7 @@ const Academics = () => {
                     <div className="grid sm:grid-cols-2 gap-4">
                       {program.features.map((feature, fIdx) => (
                         <div key={fIdx} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-brand-secondary flex-shrink-0 mt-0.5" />
+                          <HiCheckCircle className="w-5 h-5 text-brand-secondary flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700 font-medium">{feature}</span>
                         </div>
                       ))}
@@ -125,7 +135,7 @@ const Academics = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(128,0,0,0.15),transparent_50%)]"></div>
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Briefcase className="w-16 h-16 text-brand-secondary mx-auto mb-6" />
+            <HiBriefcase className="w-16 h-16 text-brand-secondary mx-auto mb-6" />
             <h2 className="text-4xl lg:text-5xl font-black mb-6">Career Opportunities</h2>
             <p className="text-white/80 text-lg leading-relaxed">
               Graduates of our courses are highly sought after and eligible for numerous prestigious positions across various sectors.
@@ -164,7 +174,7 @@ const Academics = () => {
               className="inline-flex items-center gap-3 bg-brand-primary text-white px-10 py-5 rounded-full font-black text-lg hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20 active:scale-95"
             >
               Contact Admissions
-              <ArrowRight className="w-5 h-5" />
+              <HiArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>

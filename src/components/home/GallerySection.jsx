@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, Maximize2 } from 'lucide-react';
+import { HiXMark, HiMagnifyingGlassPlus, HiArrowsPointingOut } from 'react-icons/hi2';
 
 const GalleryRow = ({ images, direction = 1, speed = 20, onImageClick }) => {
   return (
@@ -29,7 +29,7 @@ const GalleryRow = ({ images, direction = 1, speed = 20, onImageClick }) => {
               className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
             />
             <div className="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <Maximize2 className="text-white w-8 h-8 transform scale-50 group-hover/item:scale-100 transition-transform duration-300" />
+              <HiArrowsPointingOut className="text-white w-8 h-8 transform scale-50 group-hover/item:scale-100 transition-transform duration-300" />
             </div>
           </div>
         ))}
@@ -117,7 +117,7 @@ const GallerySection = () => {
                 onClick={() => setSelectedImage(null)}
                 className="absolute -top-12 right-0 md:-right-12 text-white hover:text-brand-secondary transition-colors"
               >
-                <X className="w-8 h-8" />
+                <HiXMark className="w-8 h-8" />
               </button>
               <img
                 src={selectedImage}

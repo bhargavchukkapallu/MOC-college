@@ -2,25 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import {
-  BookOpen,
-  Users,
-  MessageSquare,
-  GraduationCap,
-  History,
-  Award,
-  CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
-  Target
-} from 'lucide-react';
+  HiBookOpen,
+  HiUsers,
+  HiChatBubbleLeftEllipsis,
+  HiAcademicCap,
+  HiClock,
+  HiTrophy,
+  HiCheckCircle,
+  HiArrowRight,
+  HiShieldCheck,
+  HiFlag
+} from 'react-icons/hi2';
+import Breadcrumbs from '../components/layout/Breadcrumbs';
 
 const iconMap = {
-  History: <History className="w-5 h-5" />,
-  ShieldCheck: <ShieldCheck className="w-5 h-5" />,
-  Target: <Target className="w-5 h-5" />,
-  GraduationCap: <GraduationCap className="w-5 h-5" />,
-  Users: <Users className="w-5 h-5" />,
-  Award: <Award className="w-5 h-5" />
+  History: <HiClock className="w-5 h-5" />,
+  ShieldCheck: <HiShieldCheck className="w-5 h-5" />,
+  Target: <HiFlag className="w-5 h-5" />,
+  GraduationCap: <HiAcademicCap className="w-5 h-5" />,
+  Users: <HiUsers className="w-5 h-5" />,
+  Award: <HiTrophy className="w-5 h-5" />
 };
 
 const About = () => {
@@ -75,10 +76,11 @@ const About = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               About <span className="text-brand-secondary">Us</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Nurturing wisdom and culture since 1971. A sanctuary of oriental learning
               founded on the principles of universal love and harmony.
             </p>
+            <Breadcrumbs />
           </motion.div>
         </div>
       </section>
@@ -152,7 +154,7 @@ const About = () => {
             <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-8">
               <div className="bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary mb-6">
-                  <BookOpen className="w-7 h-7" />
+                  <HiBookOpen className="w-7 h-7" />
                 </div>
                 <h3 className="text-2xl font-bold text-brand-dark mb-4">Academic Offerings</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -172,7 +174,7 @@ const About = () => {
 
               <div className="bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 bg-brand-secondary/20 rounded-2xl flex items-center justify-center text-brand-dark mb-6">
-                  <ShieldCheck className="w-7 h-7" />
+                  <HiShieldCheck className="w-7 h-7" />
                 </div>
                 <h3 className="text-2xl font-bold text-brand-dark mb-4">Holistic Development</h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -185,7 +187,7 @@ const About = () => {
                     "Secure environment for focused studies"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
-                      <CheckCircle2 className="w-5 h-5 text-brand-primary" />
+                      <HiCheckCircle className="w-5 h-5 text-brand-primary" />
                       {item}
                     </li>
                   ))}
@@ -200,7 +202,7 @@ const About = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
               <div className="relative z-10 text-center max-w-3xl mx-auto">
                 <div className="inline-flex p-4 bg-brand-primary/10 rounded-2xl text-brand-primary mb-8">
-                  <ShieldCheck className="w-12 h-12" />
+                  <HiShieldCheck className="w-12 h-12" />
                 </div>
                 <h2 className="text-4xl font-black text-brand-dark mb-6">The Matrusri Vidya Parishat</h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-10 font-medium">
@@ -251,7 +253,7 @@ const About = () => {
                 className="bg-brand-primary p-12 rounded-[2.5rem] text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-brand-primary/20 transition-all duration-500 flex flex-col justify-center"
               >
                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform duration-500">
-                  <Target className="w-24 h-24" />
+                  <HiFlag className="w-24 h-24" />
                 </div>
                 <h2 className="text-3xl font-black mb-6">Our Vision</h2>
                 <p className="text-lg text-white/90 leading-relaxed font-medium">
@@ -264,7 +266,7 @@ const About = () => {
                 className="bg-brand-secondary p-12 rounded-[2.5rem] text-brand-primary relative overflow-hidden group hover:shadow-2xl hover:shadow-brand-secondary/20 transition-all duration-500"
               >
                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform duration-500">
-                  <CheckCircle2 className="w-24 h-24" />
+                  <HiCheckCircle className="w-24 h-24" />
                 </div>
                 <h2 className="text-3xl font-black mb-6 text-brand-dark">Our Mission</h2>
                 <ul className="space-y-4">
@@ -300,7 +302,7 @@ const About = () => {
                       />
                     </div>
                     <div className="absolute -bottom-6 -right-6 bg-brand-secondary p-4 rounded-2xl shadow-lg">
-                      <GraduationCap className="w-8 h-8 text-brand-primary" />
+                      <HiAcademicCap className="w-8 h-8 text-brand-primary" />
                     </div>
                   </div>
                 </div>
@@ -329,7 +331,7 @@ const About = () => {
                       </div>
                     </div>
                     <div className="absolute -bottom-6 -left-6 bg-brand-primary p-4 rounded-2xl shadow-lg">
-                      <Users className="w-8 h-8 text-white" />
+                      <HiUsers className="w-8 h-8 text-white" />
                     </div>
                   </div>
                 </div>
@@ -355,9 +357,9 @@ const About = () => {
               <h2 className="text-4xl font-black text-brand-dark mb-12">Recognitions & Affiliations</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  { title: "University", desc: "Affiliated to Acharya Nagarjuna University (ANU), Guntur.", icon: <BookOpen /> },
-                  { title: "Accreditation", desc: "Recognized by NAAC with B++ Grade.", icon: <Award /> },
-                  { title: "Government", desc: "Recognized by the Government of Andhra Pradesh.", icon: <ShieldCheck /> }
+                  { title: "University", desc: "Affiliated to Acharya Nagarjuna University (ANU), Guntur.", icon: <HiBookOpen /> },
+                  { title: "Accreditation", desc: "Recognized by NAAC with B++ Grade.", icon: <HiTrophy /> },
+                  { title: "Government", desc: "Recognized by the Government of Andhra Pradesh.", icon: <HiShieldCheck /> }
                 ].map((item, i) => (
                   <div key={i} className="p-8 bg-white rounded-3xl shadow-lg border border-gray-100 hover:border-brand-primary/20 transition-all group">
                     <div className="w-16 h-16 bg-brand-primary/5 rounded-2xl flex items-center justify-center text-brand-primary mb-6 mx-auto group-hover:bg-brand-primary group-hover:text-white transition-all">
@@ -438,7 +440,7 @@ const About = () => {
                 <div className="flex flex-wrap justify-center gap-6">
                   <a href="/academics" className="bg-brand-primary text-white px-10 py-5 rounded-full font-black text-lg hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20 flex items-center gap-3">
                     View Academic Programs
-                    <ArrowRight className="w-5 h-5" />
+                    <HiArrowRight className="w-5 h-5" />
                   </a>
                   <a href="/contact" className="bg-white text-brand-dark px-10 py-5 rounded-full font-black text-lg hover:bg-gray-100 transition-all shadow-xl flex items-center gap-3">
                     Contact Us

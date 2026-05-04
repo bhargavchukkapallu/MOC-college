@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, ArrowRight, Shield } from 'lucide-react';
+import { 
+  HiChevronDown, 
+  HiBars3, 
+  HiXMark, 
+  HiChatBubbleLeftEllipsis, 
+  HiAcademicCap, 
+  HiUsers, 
+  HiBookOpen, 
+  HiArrowRight, 
+  HiShieldCheck 
+} from 'react-icons/hi2';
 
 const iconMap = {
-  BookOpen: <BookOpen />,
-  Users: <Users />,
-  MessageSquare: <MessageSquare />,
-  GraduationCap: <GraduationCap />,
-  Menu: <Menu />,
-  Shield: <Shield />
+  BookOpen: <HiBookOpen />,
+  Users: <HiUsers />,
+  MessageSquare: <HiChatBubbleLeftEllipsis />,
+  GraduationCap: <HiAcademicCap />,
+  Menu: <HiBars3 />,
+  Shield: <HiShieldCheck />
 };
 
 const Navbar = () => {
@@ -77,7 +87,7 @@ const Navbar = () => {
                       className="flex items-center px-3 xl:px-4 py-2 text-[15px] font-bold text-gray-800 hover:text-brand-primary transition-colors relative"
                     >
                       {link.name}
-                      {link.megaMenu && <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeMegaMenu === link.name ? 'rotate-180' : ''}`} />}
+                      {link.megaMenu && <HiChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeMegaMenu === link.name ? 'rotate-180' : ''}`} />}
                       <motion.span
                         className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                       />
@@ -92,34 +102,39 @@ const Navbar = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 15, scale: 0.95 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className={`absolute left-1/2 -translate-x-1/2 mt-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ${link.megaMenuSections ? 'w-[800px]' : 'w-[550px]'}`}
+                            className={`absolute left-1/2 -translate-x-1/2 mt-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden w-max max-w-[calc(100vw-40px)] min-w-[500px]`}
                           >
-                            <div className="flex bg-gradient-to-b from-white to-gray-50">
+                            <div className="flex items-stretch bg-gradient-to-b from-white to-gray-50">
                               {/* Main Mega Menu Items */}
-                              <div className={`grid gap-2 p-5 ${link.megaMenuSections ? 'grid-cols-2 w-2/3 border-r border-gray-100' : 'grid-cols-2 w-full'}`}>
-                                {link.megaMenu?.map((item) => (
-                                  <Link
-                                    key={item.name}
-                                    to={item.path}
-                                    className="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
-                                  >
-                                    <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
-                                      {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
-                                    </div>
-                                    <div className="ml-3 text-left">
-                                      <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
-                                        {item.name}
-                                      </p>
-                                      <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-1">Explore our {item.name.toLowerCase()}</p>
-                                    </div>
-                                  </Link>
-                                ))}
+                              <div className={`flex flex-col p-6 h-full ${link.megaMenuSections ? 'min-w-[450px] border-r border-gray-100' : 'w-full'}`}>
+                                <h3 className="text-[14px] font-black text-brand-primary uppercase tracking-[0.2em] border-b border-brand-primary/10 pb-2 mb-4 mx-2">
+                                  {link.name}
+                                </h3>
+                                <div className="grid grid-cols-2 gap-2">
+                                  {link.megaMenu?.map((item) => (
+                                    <Link
+                                      key={item.name}
+                                      to={item.path}
+                                      className="flex items-center p-3 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
+                                    >
+                                      <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
+                                        {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
+                                      </div>
+                                      <div className="ml-3 text-left">
+                                        <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                                          {item.name}
+                                        </p>
+                                        <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-1">Explore our {item.name.toLowerCase()}</p>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
                               </div>
 
                               {/* Separate Block for Categories (e.g., Administration, Committees) */}
                               {link.megaMenuSections && (
-                                <div className="w-1/3 bg-gray-50/50 p-6 max-h-[600px] overflow-y-auto custom-scrollbar">
-                                  <div className="space-y-8">
+                                <div className="bg-gray-50/50 p-8 h-full">
+                                  <div className="flex items-start gap-12">
                                     {link.megaMenuSections.map((section) => (
                                       <div key={section.title} className="space-y-4">
                                         <h3 className="text-[14px] font-black text-brand-primary uppercase tracking-[0.2em] border-b border-brand-primary/10 pb-2 mb-4">
@@ -151,7 +166,7 @@ const Navbar = () => {
                               <p className="text-xs text-brand-primary font-medium">
                                 Matrusri Oriental College Excellence
                               </p>
-                              <ArrowRight className="w-4 h-4 text-brand-primary" />
+                              <HiArrowRight className="w-4 h-4 text-brand-primary" />
                             </div>
                           </motion.div>
                         )}
@@ -170,7 +185,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className={`p-2 rounded-lg transition-colors ${isOpen ? 'bg-brand-primary text-white' : 'text-gray-700 hover:bg-gray-100'}`}
               >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isOpen ? <HiXMark className="w-6 h-6" /> : <HiBars3 className="w-6 h-6" />}
               </button>
             </div>
           </div>
@@ -197,7 +212,7 @@ const Navbar = () => {
                           className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-bold text-gray-900 hover:bg-brand-primary/5 hover:text-brand-primary transition-colors"
                         >
                           {link.name}
-                          <ChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === link.name ? 'rotate-180' : ''}`} />
+                          <HiChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === link.name ? 'rotate-180' : ''}`} />
                         </button>
                         <AnimatePresence>
                           {activeMegaMenu === link.name && (

@@ -1,7 +1,16 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, BookOpen, GraduationCap, AlertTriangle, Scale, Heart } from 'lucide-react';
+import { 
+  HiShieldCheck, 
+  HiUsers, 
+  HiBookOpen, 
+  HiAcademicCap, 
+  HiExclamationTriangle, 
+  HiScale, 
+  HiHeart 
+} from 'react-icons/hi2';
 import { useLocation } from 'react-router-dom';
+import Breadcrumbs from '../components/layout/Breadcrumbs';
 
 const Committees = () => {
   const { hash } = useLocation();
@@ -30,49 +39,49 @@ const Committees = () => {
     {
       id: "grievance",
       title: "Grievances Redressal Cell",
-      icon: <Scale className="w-8 h-8" />,
+      icon: <HiScale className="w-8 h-8" />,
       description: "A dedicated platform for students and staff to voice their concerns and seek fair resolutions for any institutional grievances.",
       members: ["Principal (Chairman)", "Senior Faculty Member (Convener)", "Two Faculty Representatives", "Student Representative"]
     },
     {
       id: "anti-ragging",
       title: "Anti Ragging Cell",
-      icon: <Shield className="w-8 h-8" />,
+      icon: <HiShieldCheck className="w-8 h-8" />,
       description: "Ensuring a zero-tolerance environment for ragging. Our cell works to prevent any form of harassment and maintain a safe campus for newcomers.",
       members: ["Principal", "HODs of all Departments", "Local Police Representative", "Parent Representatives", "Student Representatives"]
     },
     {
       id: "rti",
       title: "Right to Information (RTI)",
-      icon: <BookOpen className="w-8 h-8" />,
+      icon: <HiBookOpen className="w-8 h-8" />,
       description: "Committed to transparency and accountability. The RTI cell handles information requests as per the government guidelines.",
       members: ["Public Information Officer", "Appellate Authority"]
     },
     {
       id: "admission",
       title: "Admission Committee",
-      icon: <Users className="w-8 h-8" />,
+      icon: <HiUsers className="w-8 h-8" />,
       description: "Overseeing the fair and merit-based admission process for various programs offered by the college.",
       members: ["Admission Director", "Department Coordinators", "Administrative Staff"]
     },
     {
       id: "examination",
       title: "Examination Committee",
-      icon: <GraduationCap className="w-8 h-8" />,
+      icon: <HiAcademicCap className="w-8 h-8" />,
       description: "Responsible for the smooth conduct of internal and external examinations, evaluation processes, and result declarations.",
       members: ["Chief Superintendent", "Controller of Examinations", "Invigilators Team"]
     },
     {
       id: "discipline",
       title: "General Discipline Committee",
-      icon: <AlertTriangle className="w-8 h-8" />,
+      icon: <HiExclamationTriangle className="w-8 h-8" />,
       description: "Upholding the code of conduct and maintaining a disciplined academic atmosphere conducive to learning.",
       members: ["Disciplinary Head", "Physical Director", "Faculty Members"]
     },
     {
       id: "isr",
       title: "Institutional Social Responsibility (ISR)",
-      icon: <Heart className="w-8 h-8" />,
+      icon: <HiHeart className="w-8 h-8" />,
       description: "Engaging students in social welfare activities, community service, and awareness programs to foster social responsibility.",
       members: ["ISR Convener", "NSS/NCC Officers", "Student Volunteers"]
     }
@@ -98,10 +107,11 @@ const Committees = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               College <span className="text-brand-secondary">Committees</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Our committees and cells work collaboratively to ensure academic excellence, 
               student welfare, and operational transparency across the institution.
             </p>
+            <Breadcrumbs />
           </motion.div>
         </div>
       </section>
@@ -139,7 +149,7 @@ const Committees = () => {
 
                   <div className="bg-gray-50 rounded-2xl p-6 lg:p-8">
                     <h3 className="text-sm font-black text-brand-dark uppercase tracking-widest mb-4 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-brand-primary" />
+                      <HiUsers className="w-4 h-4 text-brand-primary" />
                       Committee Structure
                     </h3>
                     <ul className="grid sm:grid-cols-2 gap-3">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { HiPhone, HiEnvelope, HiMapPin, HiClock, HiPaperAirplane } from 'react-icons/hi2';
+import Breadcrumbs from '../components/layout/Breadcrumbs';
 
 const Contact = () => {
   const fadeInUp = {
@@ -30,9 +31,10 @@ const Contact = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               Contact <span className="text-brand-secondary">Us</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Have questions about admissions, courses, or facilities? We're here to help you begin your journey with Matrusri Oriental College.
             </p>
+            <Breadcrumbs />
           </motion.div>
         </div>
       </section>
@@ -41,19 +43,19 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {[
             {
-              icon: <Phone className="w-8 h-8" />,
+              icon: <HiPhone className="w-8 h-8" />,
               title: "Call Us",
               details: ["+91 77889 90685", "+91 94409 54934"],
               subtitle: "For admissions and general queries"
             },
             {
-              icon: <MapPin className="w-8 h-8" />,
+              icon: <HiMapPin className="w-8 h-8" />,
               title: "Visit Campus",
               details: ["Matrusri Oriental College", "Jillellamudi, Andhra Pradesh"],
               subtitle: "Open Monday - Saturday"
             },
             {
-              icon: <Clock className="w-8 h-8" />,
+              icon: <HiClock className="w-8 h-8" />,
               title: "Office Hours",
               details: ["9:00 AM - 5:00 PM"],
               subtitle: "Closed on Sundays and Public Holidays"
@@ -99,7 +101,7 @@ const Contact = () => {
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6" />
+                      <HiPhone className="w-6 h-6" />
                     </div>
                     <div>
                       <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-1">Admissions Helpline</p>
@@ -141,7 +143,7 @@ const Contact = () => {
                 </div>
                 <button type="button" className="w-full bg-brand-primary text-white font-black text-lg py-5 rounded-xl hover:bg-brand-primary/90 transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
                   Send Message
-                  <Send className="w-5 h-5" />
+                  <HiPaperAirplane className="w-5 h-5" />
                 </button>
               </form>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send } from 'lucide-react';
+import { HiXMark, HiPaperAirplane, HiCheckCircle } from 'react-icons/hi2';
 
 const FloatingFeedback = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,7 +88,7 @@ const FloatingFeedback = () => {
                   onClick={() => setIsOpen(false)}
                   className="p-1 hover:bg-white/20 rounded-full transition-colors"
                 >
-                  <X className="w-5 h-5" />
+                  <HiXMark className="w-5 h-5" />
                 </button>
               </div>
 
@@ -100,9 +100,7 @@ const FloatingFeedback = () => {
                     className="flex flex-col items-center justify-center py-8 text-center"
                   >
                     <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
-                      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                      <HiCheckCircle className="w-8 h-8" />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h4>
                     <p className="text-gray-600">Your feedback has been submitted successfully.</p>
@@ -168,7 +166,7 @@ const FloatingFeedback = () => {
                       type="submit"
                       className="w-full bg-brand-primary hover:bg-blue-900 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors duration-300"
                     >
-                      <Send className="w-4 h-4" />
+                      <HiPaperAirplane className="w-4 h-4" />
                       Submit Feedback
                     </button>
                   </form>
