@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-import { 
-  BookOpen, 
-  Users, 
-  MessageSquare, 
-  GraduationCap, 
-  History, 
-  Award, 
+import {
+  BookOpen,
+  Users,
+  MessageSquare,
+  GraduationCap,
+  History,
+  Award,
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
@@ -62,7 +62,7 @@ const About = () => {
             <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" fillOpacity="0.05" />
           </svg>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,7 @@ const About = () => {
               About <span className="text-brand-secondary">Us</span>
             </h1>
             <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed">
-              Nurturing wisdom and culture since 1971. A sanctuary of oriental learning 
+              Nurturing wisdom and culture since 1971. A sanctuary of oriental learning
               founded on the principles of universal love and harmony.
             </p>
           </motion.div>
@@ -99,7 +99,7 @@ const About = () => {
                 }}
               >
                 <span className="p-1.5 rounded-lg bg-gray-100 group-hover:bg-brand-primary/10 transition-colors">
-                  {section.icon}
+                  {iconMap[section.icon]}
                 </span>
                 {section.name}
               </a>
@@ -110,10 +110,10 @@ const About = () => {
 
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-5xl mx-auto space-y-32">
-          
+
           {/* History Section */}
           <section id="history" className="scroll-mt-40">
-            <motion.div {...fadeInUp} className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeInUp} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-[2px] w-12 bg-brand-primary"></div>
@@ -125,26 +125,71 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                   <p>
-                    Matrusri Oriental College (MOC) was established in 1971 in the serene village of Jillellamudi, Guntur district, Andhra Pradesh. It was inaugurated by <span className="font-bold text-brand-dark">Viswajanani Jillellamudi Amma</span>, who envisioned a sanctuary for classical learning.
+                    Welcome to <span className="font-bold text-brand-dark">Sree Viswajananee Parishat</span>, a symbol of socio-spiritual advancement since 1971 under the divine guidance of Matrusri Anasuya Devi, fondly known as <span className="font-bold text-brand-dark">Jillellamudi AMMA</span>. Our institution, Matrusri Oriental College, was established to provide free education to the economically disadvantaged, rooted in the ethos of service.
                   </p>
                   <p>
-                    The college specializes in oriental languages like <span className="font-bold text-brand-dark">Sanskrit and Telugu</span>, providing a unique Gurukula-style environment where students live, learn, and grow together in a spirit of harmony.
+                    From modest beginnings, our college has flourished, emphasizing the preservation of Indian culture through <span className="font-bold text-brand-dark">Sanskrit education</span>. With over 2000 students graduated in the past half-century, our dedicated faculty, including esteemed scholars and doctorate holders, ensures academic excellence.
                   </p>
                   <p>
-                    Over the past 50 years, MOC has evolved into a premier institution, blending traditional wisdom with modern educational needs, producing scholars and leaders who carry forward our rich cultural heritage.
+                    Guided by tradition, discipline, and familial bonds, Sree Viswajananee Parishat Trust remains steadfast in our pursuit of socio-spiritual upliftment through education and service. We owe much to our supportive AMMA devotees and alumni, whose generous contributions sustain our growth and mission.
                   </p>
                 </div>
               </div>
               <div className="relative">
                 <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white bg-gray-100 aspect-[4/5] relative z-10">
-                   <img 
-                    src={`${import.meta.env.BASE_URL}images/amma_portrait.png`} 
-                    alt="Viswajanani Jillellamudi Amma" 
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/amma_portrait.png`}
+                    alt="Viswajanani Jillellamudi Amma"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-10 -right-10 w-full h-full bg-brand-primary/10 rounded-[2.5rem] -z-10"></div>
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-brand-secondary/20 rounded-full blur-3xl"></div>
+              </div>
+            </motion.div>
+
+            {/* Extended Info Cards */}
+            <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-8">
+              <div className="bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary mb-6">
+                  <BookOpen className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-brand-dark mb-4">Academic Offerings</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Currently enrolling 119 students with a balanced gender ratio, we offer <span className="font-bold text-brand-dark">BA (OL) Sanskrit and Telugu</span> courses to enrich educational opportunities.
+                </p>
+                <div className="flex gap-4 mt-6">
+                  <div className="bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-50 flex-1 text-center">
+                    <span className="block text-2xl font-black text-brand-primary">2000+</span>
+                    <span className="text-xs font-bold uppercase text-gray-500">Graduates</span>
+                  </div>
+                  <div className="bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-50 flex-1 text-center">
+                    <span className="block text-2xl font-black text-brand-primary">119</span>
+                    <span className="text-xs font-bold uppercase text-gray-500">Students</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-brand-secondary/20 rounded-2xl flex items-center justify-center text-brand-dark mb-6">
+                  <ShieldCheck className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-brand-dark mb-4">Holistic Development</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  The uniqueness of our college lies in its holistic approach. Students not only gain academic knowledge but also develop essential life skills such as empathy, community responsibility, and spirituality.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "Free comfortable hostel accommodations",
+                    "Dedicated free food and healthcare",
+                    "Secure environment for focused studies"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-brand-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </section>
@@ -181,20 +226,39 @@ const About = () => {
 
           {/* Vision & Mission */}
           <section id="vision" className="scroll-mt-40">
+            {/* College Motto */}
+            <motion.div
+              {...fadeInUp}
+              className="mb-12 bg-white rounded-[2.5rem] p-10 md:p-14 text-center shadow-xl border border-gray-100 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(128,0,0,0.05),transparent_50%)]"></div>
+              <div className="relative z-10 max-w-4xl mx-auto">
+                <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-[0.2em] uppercase bg-brand-primary/10 text-brand-primary rounded-full">
+                  College Motto
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 leading-relaxed" style={{ fontFamily: 'sans-serif' }}>
+                  किं किं न साधयति कल्पलतेव विदया
+                </h2>
+                <p className="text-xl md:text-2xl text-gray-500 font-medium italic">
+                  "What doesn't knowledge accomplish? like a wish-granting-tree"
+                </p>
+              </div>
+            </motion.div>
+
             <div className="grid lg:grid-cols-2 gap-12">
-              <motion.div 
+              <motion.div
                 {...fadeInUp}
-                className="bg-brand-primary p-12 rounded-[2.5rem] text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-brand-primary/20 transition-all duration-500"
+                className="bg-brand-primary p-12 rounded-[2.5rem] text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-brand-primary/20 transition-all duration-500 flex flex-col justify-center"
               >
                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform duration-500">
                   <Target className="w-24 h-24" />
                 </div>
                 <h2 className="text-3xl font-black mb-6">Our Vision</h2>
-                <p className="text-lg text-white/80 leading-relaxed">
-                  To create an enlightened society based on the principles of harmony, universal love, and brotherhood, where education serves as a bridge between tradition and modernity.
+                <p className="text-lg text-white/90 leading-relaxed font-medium">
+                  To serve as the instrument in promoting <span className="font-bold text-white">SANATHANA DHARMA</span> upholding Indian Vedic Cultural Values and heritage while providing the opportunity of Education, Empowerment and Employment to the needy sections of the rural community.
                 </p>
               </motion.div>
-              <motion.div 
+              <motion.div
                 {...fadeInUp}
                 transition={{ delay: 0.2 }}
                 className="bg-brand-secondary p-12 rounded-[2.5rem] text-brand-primary relative overflow-hidden group hover:shadow-2xl hover:shadow-brand-secondary/20 transition-all duration-500"
@@ -205,14 +269,15 @@ const About = () => {
                 <h2 className="text-3xl font-black mb-6 text-brand-dark">Our Mission</h2>
                 <ul className="space-y-4">
                   {[
-                    "To provide high-quality oriental education.",
-                    "To instill spiritual discipline and moral values.",
-                    "To foster cooperation beyond caste and religion.",
-                    "To prepare students for a modern global society."
+                    "To provide opportunities of Equity, Equality, Gender Equity through quality Education integrated with ethics and human values.",
+                    "To Achieve holistic development of character through opportunities for Physical, Intellectual, Emotional and Spiritual development.",
+                    "To enhance higher order thinking skills to make the learners competent and confident contributors in promoting social and cultural heritage.",
+                    "To follow sustainable measures and save mother nature.",
+                    "To keep pace with Contemporary Developments Technology and Integrate them in the Teaching Learning Process for better Global Opportunities."
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-brand-dark/80 font-bold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2"></span>
-                      {item}
+                    <li key={i} className="flex items-start gap-3 text-brand-dark/90 font-medium">
+                      <span className="w-2 h-2 shrink-0 rounded-full bg-brand-primary mt-2"></span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -222,66 +287,66 @@ const About = () => {
 
           {/* Principal & Correspondents */}
           <section id="principal" className="scroll-mt-40">
-             <div className="flex flex-col gap-32">
-                {/* Principal */}
-                <motion.div {...fadeInUp} className="flex flex-col lg:flex-row gap-16 items-center">
-                  <div className="lg:w-1/3">
-                    <div className="relative">
-                      <div className="aspect-[4/5] bg-gray-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                         <img 
-                          src={`${import.meta.env.BASE_URL}images/principal_portrait.png`} 
-                          alt="Principal" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute -bottom-6 -right-6 bg-brand-secondary p-4 rounded-2xl shadow-lg">
-                        <GraduationCap className="w-8 h-8 text-brand-primary" />
-                      </div>
+            <div className="flex flex-col gap-32">
+              {/* Principal */}
+              <motion.div {...fadeInUp} className="flex flex-col lg:flex-row gap-16 items-center">
+                <div className="lg:w-1/3">
+                  <div className="relative">
+                    <div className="aspect-[4/5] bg-gray-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                      <img
+                        src={`${import.meta.env.BASE_URL}images/principal_portrait.png`}
+                        alt="Principal"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-6 -right-6 bg-brand-secondary p-4 rounded-2xl shadow-lg">
+                      <GraduationCap className="w-8 h-8 text-brand-primary" />
                     </div>
                   </div>
-                  <div className="lg:w-2/3">
-                    <h2 className="text-3xl font-black text-brand-dark mb-2">Principal’s Desk</h2>
-                    <p className="text-brand-primary font-bold mb-6 text-lg tracking-wide uppercase">Dr. M. Sitaramaiah, M.A., Ph.D.</p>
-                    <div className="space-y-4 text-gray-600 text-lg italic leading-relaxed">
-                      <p>
-                        "Education at Matrusri Oriental College is not just about academic results, but about character building. We strive to provide our students with the tools they need to succeed in the world while remaining rooted in the spiritual values given by Amma."
-                      </p>
-                      <p>
-                        "Our focus is on creating a supportive environment where every student can realize their full potential."
-                      </p>
-                    </div>
+                </div>
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl font-black text-brand-dark mb-2">Principal’s Desk</h2>
+                  <p className="text-brand-primary font-bold mb-6 text-lg tracking-wide uppercase">Dr. M. Sitaramaiah, M.A., Ph.D.</p>
+                  <div className="space-y-4 text-gray-600 text-lg italic leading-relaxed">
+                    <p>
+                      "Education at Matrusri Oriental College is not just about academic results, but about character building. We strive to provide our students with the tools they need to succeed in the world while remaining rooted in the spiritual values given by Amma."
+                    </p>
+                    <p>
+                      "Our focus is on creating a supportive environment where every student can realize their full potential."
+                    </p>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Correspondent */}
-                <motion.div id="correspondents" {...fadeInUp} className="flex flex-col lg:flex-row-reverse gap-16 items-center scroll-mt-40">
-                  <div className="lg:w-1/3">
-                    <div className="relative">
-                      <div className="aspect-[4/5] bg-gray-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                        {/* <img src="/correspondent.jpg" alt="Correspondent" className="w-full h-full object-cover" /> */}
-                         <div className="w-full h-full flex items-center justify-center bg-brand-primary/5 text-brand-primary/20 italic">
-                            Photo Pending
-                         </div>
-                      </div>
-                      <div className="absolute -bottom-6 -left-6 bg-brand-primary p-4 rounded-2xl shadow-lg">
-                        <Users className="w-8 h-8 text-white" />
+              {/* Correspondent */}
+              <motion.div id="correspondents" {...fadeInUp} className="flex flex-col lg:flex-row-reverse gap-16 items-center scroll-mt-40">
+                <div className="lg:w-1/3">
+                  <div className="relative">
+                    <div className="aspect-[4/5] bg-gray-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                      {/* <img src="/correspondent.jpg" alt="Correspondent" className="w-full h-full object-cover" /> */}
+                      <div className="w-full h-full flex items-center justify-center bg-brand-primary/5 text-brand-primary/20 italic">
+                        Photo Pending
                       </div>
                     </div>
-                  </div>
-                  <div className="lg:w-2/3">
-                    <h2 className="text-3xl font-black text-brand-dark mb-2">Correspondent’s Message</h2>
-                    <p className="text-brand-primary font-bold mb-6 text-lg tracking-wide uppercase">Sri P. Rama Krishna Babu</p>
-                    <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                      <p>
-                        "The Matrusri Vidya Parishat is committed to sustaining the vision of Amma. We ensure that our students receive the best possible care and guidance."
-                      </p>
-                      <p>
-                        "Our administration works tirelessly to maintain the infrastructure and academic standards that have made MOC a respected name in oriental education."
-                      </p>
+                    <div className="absolute -bottom-6 -left-6 bg-brand-primary p-4 rounded-2xl shadow-lg">
+                      <Users className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                </motion.div>
-             </div>
+                </div>
+                <div className="lg:w-2/3">
+                  <h2 className="text-3xl font-black text-brand-dark mb-2">Correspondent’s Message</h2>
+                  <p className="text-brand-primary font-bold mb-6 text-lg tracking-wide uppercase">Sri P. Rama Krishna Babu</p>
+                  <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+                    <p>
+                      "The Matrusri Vidya Parishat is committed to sustaining the vision of Amma. We ensure that our students receive the best possible care and guidance."
+                    </p>
+                    <p>
+                      "Our administration works tirelessly to maintain the infrastructure and academic standards that have made MOC a respected name in oriental education."
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </section>
 
           {/* Affiliations */}
@@ -363,7 +428,7 @@ const About = () => {
 
           {/* CTA Section */}
           <section className="pb-20">
-            <motion.div 
+            <motion.div
               {...fadeInUp}
               className="bg-brand-dark rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden"
             >

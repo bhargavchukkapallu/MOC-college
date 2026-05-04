@@ -1,44 +1,181 @@
 [
-  { "name": "Home", "path": "/" },
+  {
+    "name": "Home",
+    "path": "/"
+  },
   {
     "name": "About Us",
     "path": "/about",
     "megaMenu": [
-      { "name": "Brief History", "path": "/about#history", "icon": "BookOpen" },
-      { "name": "Trust", "path": "/about#trust", "icon": "Users" },
-      { "name": "Vision & Mission", "path": "/about#vision", "icon": "MessageSquare" },
-      { "name": "Principal’s Desk", "path": "/about#principal", "icon": "GraduationCap" },
-      { "name": "Correspondents", "path": "/about#correspondents", "icon": "Users" },
-      { "name": "Affiliations", "path": "/about#affiliations", "icon": "BookOpen" },
-      { "name": "Staff Details", "path": "/about#staff", "icon": "Users" }
+      {
+        "name": "Brief History",
+        "path": "/about#history",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Trust",
+        "path": "/about#trust",
+        "icon": "Users"
+      },
+      {
+        "name": "Vision & Mission",
+        "path": "/about#vision",
+        "icon": "MessageSquare"
+      },
+      {
+        "name": "Principal’s Desk",
+        "path": "/about#principal",
+        "icon": "GraduationCap"
+      },
+      {
+        "name": "Correspondents",
+        "path": "/about#correspondents",
+        "icon": "Users"
+      },
+      {
+        "name": "Affiliations",
+        "path": "/about#affiliations",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Staff Details",
+        "path": "/about#staff",
+        "icon": "Users"
+      }
+    ],
+    "megaMenuSections": [
+      {
+        "title": "Administration",
+        "items": [
+          {
+            "name": "Governing Body",
+            "path": "/administration#governing-body",
+            "icon": "Users"
+          },
+          {
+            "name": "Organisational Structure",
+            "path": "/administration#org-structure",
+            "icon": "Menu"
+          },
+          {
+            "name": "Administrative Staff",
+            "path": "/administration#staff",
+            "icon": "Users"
+          },
+          {
+            "name": "Office Hours",
+            "path": "/administration#office",
+            "icon": "MessageSquare"
+          }
+        ]
+      },
+      {
+        "title": "Committees",
+        "items": [
+          {
+            "name": "Grievances Redressal Cell",
+            "path": "/committees#grievance",
+            "icon": "Shield"
+          },
+          {
+            "name": "Anti Ragging Cell",
+            "path": "/committees#anti-ragging",
+            "icon": "Shield"
+          },
+          {
+            "name": "RTI",
+            "path": "/committees#rti",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "Admission Committee",
+            "path": "/committees#admission",
+            "icon": "Users"
+          },
+          {
+            "name": "Examination Committee",
+            "path": "/committees#examination",
+            "icon": "GraduationCap"
+          },
+          {
+            "name": "General Discipline Committee",
+            "path": "/committees#discipline",
+            "icon": "Shield"
+          },
+          {
+            "name": "Institutional Social Responsibility Committee",
+            "path": "/committees#isr",
+            "icon": "Users"
+          }
+        ]
+      }
     ]
   },
   {
     "name": "Academics",
     "path": "/academics",
     "megaMenu": [
-      { "name": "Programs Offered", "path": "/academics#programs", "icon": "GraduationCap" },
-      { "name": "Library", "path": "/academics#library", "icon": "BookOpen" },
-      { "name": "Computer Lab", "path": "/academics#computer-lab", "icon": "Menu" }
+      {
+        "name": "Programs Offered",
+        "path": "/academics#programs",
+        "icon": "GraduationCap"
+      },
+      {
+        "name": "Library",
+        "path": "/academics#library",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Computer Lab",
+        "path": "/academics#computer-lab",
+        "icon": "Menu"
+      }
     ]
   },
   {
     "name": "Quality & Support",
     "path": "/student-support",
     "megaMenu": [
-      { "name": "IQAC", "path": "/student-support#iqac", "icon": "BookOpen" },
-      { "name": "NAAC", "path": "/student-support#naac", "icon": "GraduationCap" },
-      { "name": "Student Support", "path": "/student-support#support", "icon": "Users" }
+      {
+        "name": "IQAC",
+        "path": "/student-support#iqac",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "NAAC",
+        "path": "/student-support#naac",
+        "icon": "GraduationCap"
+      },
+      {
+        "name": "Student Support",
+        "path": "/student-support#support",
+        "icon": "Users"
+      }
     ]
   },
   {
     "name": "Insights",
     "path": "/insights",
     "megaMenu": [
-      { "name": "Events", "path": "/insights?tab=events", "icon": "BookOpen" },
-      { "name": "Blog", "path": "/insights?tab=blog", "icon": "MessageSquare" },
-      { "name": "Articles", "path": "/insights?tab=articles", "icon": "GraduationCap" }
+      {
+        "name": "Events",
+        "path": "/insights?tab=events",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Blog",
+        "path": "/insights?tab=blog",
+        "icon": "MessageSquare"
+      },
+      {
+        "name": "Articles",
+        "path": "/insights?tab=articles",
+        "icon": "GraduationCap"
+      }
     ]
   },
-  { "name": "Contact Us", "path": "/contact" }
+  {
+    "name": "Contact Us",
+    "path": "/contact"
+  }
 ]

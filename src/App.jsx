@@ -9,6 +9,8 @@ import About from './pages/About';
 import Academics from './pages/Academics';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
+import Administration from './pages/Administration';
+import Committees from './pages/Committees';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/administration" element={<Administration />} />
+            <Route path="/committees" element={<Committees />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/events" element={<Insights />} /> {/* Keep redirect/compatibility */}

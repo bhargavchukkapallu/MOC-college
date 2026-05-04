@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, ArrowRight } from 'lucide-react';
+import { ChevronDown, Menu, X, MessageSquare, GraduationCap, Users, BookOpen, ArrowRight, Shield } from 'lucide-react';
 
 const iconMap = {
   BookOpen: <BookOpen />,
   Users: <Users />,
   MessageSquare: <MessageSquare />,
   GraduationCap: <GraduationCap />,
-  Menu: <Menu />
+  Menu: <Menu />,
+  Shield: <Shield />
 };
 
 const Navbar = () => {
@@ -49,8 +50,16 @@ const Navbar = () => {
               <img
                 src={`${import.meta.env.BASE_URL}MOC-Jillellamudi-Banner-Naac-B.png`}
                 alt="MOC Banner"
-                className={`transition-all duration-300 object-contain ${scrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'}`}
+                className={`hidden 2xl:block transition-all duration-300 object-contain ${scrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'}`}
               />
+              <div className='2xl:hidden flex flex-row items-center gap-3'>
+                <img
+                  src={`${import.meta.env.BASE_URL}MOC_Logo.png`}
+                  alt="MOC Logo"
+                  className={`transition-all duration-300 object-contain ${scrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'}`}
+                />
+                <span className="block lg:hidden min-[1210px]:block text-brand-primary font-bold text-[16px] lg:text-[20px]">Matrusri Oriental <br /> College</span>
+              </div>
             </Link>
 
             {/* Desktop Navigation - Right Aligned */}
@@ -75,7 +84,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* Mega Menu Dropdown */}
-                    {link.megaMenu && (
+                    {(link.megaMenu || link.megaMenuSections) && (
                       <AnimatePresence>
                         {activeMegaMenu === link.name && (
                           <motion.div
@@ -83,26 +92,60 @@ const Navbar = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 15, scale: 0.95 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="absolute left-1/2 -translate-x-1/2 mt-4 w-[550px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                            className={`absolute left-1/2 -translate-x-1/2 mt-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ${link.megaMenuSections ? 'w-[800px]' : 'w-[550px]'}`}
                           >
-                            <div className="grid grid-cols-2 gap-2 p-5 bg-gradient-to-b from-white to-gray-50">
-                              {link.megaMenu.map((item) => (
-                                <Link
-                                  key={item.name}
-                                  to={item.path}
-                                  className="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
-                                >
-                                  <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
-                                    {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
+                            <div className="flex bg-gradient-to-b from-white to-gray-50">
+                              {/* Main Mega Menu Items */}
+                              <div className={`grid gap-2 p-5 ${link.megaMenuSections ? 'grid-cols-2 w-2/3 border-r border-gray-100' : 'grid-cols-2 w-full'}`}>
+                                {link.megaMenu?.map((item) => (
+                                  <Link
+                                    key={item.name}
+                                    to={item.path}
+                                    className="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-200 group/item border border-transparent hover:border-brand-primary/10"
+                                  >
+                                    <div className="bg-brand-primary/5 p-2.5 rounded-lg group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors text-brand-primary">
+                                      {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
+                                    </div>
+                                    <div className="ml-3 text-left">
+                                      <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
+                                        {item.name}
+                                      </p>
+                                      <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-1">Explore our {item.name.toLowerCase()}</p>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+
+                              {/* Separate Block for Categories (e.g., Administration, Committees) */}
+                              {link.megaMenuSections && (
+                                <div className="w-1/3 bg-gray-50/50 p-6 max-h-[600px] overflow-y-auto custom-scrollbar">
+                                  <div className="space-y-8">
+                                    {link.megaMenuSections.map((section) => (
+                                      <div key={section.title} className="space-y-4">
+                                        <h3 className="text-[14px] font-black text-brand-primary uppercase tracking-[0.2em] border-b border-brand-primary/10 pb-2 mb-4">
+                                          {section.title}
+                                        </h3>
+                                        <div className="space-y-1">
+                                          {section.items.map((item) => (
+                                            <Link
+                                              key={item.name}
+                                              to={item.path}
+                                              className="flex items-center gap-3 p-2 rounded-xl hover:bg-white hover:shadow-sm transition-all group/subitem border border-transparent hover:border-brand-primary/5"
+                                            >
+                                              <div className="w-7 h-7 flex items-center justify-center bg-white rounded-lg text-brand-primary/60 group-hover/subitem:text-brand-primary group-hover/subitem:scale-110 transition-all shadow-sm">
+                                                {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-3.5 h-3.5" }) : null}
+                                              </div>
+                                              <span className="text-[14px] font-bold text-gray-700 group-hover/subitem:text-brand-primary transition-colors leading-tight">
+                                                {item.name}
+                                              </span>
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ))}
                                   </div>
-                                  <div className="ml-3 text-left">
-                                    <p className="text-[14px] font-bold text-gray-900 group-hover/item:text-brand-primary transition-colors">
-                                      {item.name}
-                                    </p>
-                                    <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-1">Explore our {item.name.toLowerCase()}</p>
-                                  </div>
-                                </Link>
-                              ))}
+                                </div>
+                              )}
                             </div>
                             <div className="bg-brand-primary/5 px-6 py-4 border-t border-gray-100 flex items-center justify-between">
                               <p className="text-xs text-brand-primary font-medium">
@@ -164,7 +207,7 @@ const Navbar = () => {
                               exit={{ height: 0, opacity: 0 }}
                               className="overflow-hidden bg-gray-50/50 rounded-xl mx-2"
                             >
-                              {link.megaMenu.map((item) => (
+                              {link.megaMenu?.map((item) => (
                                 <Link
                                   key={item.name}
                                   to={item.path}
@@ -174,6 +217,24 @@ const Navbar = () => {
                                   <span className="mr-3 text-brand-primary/60">{iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-4 h-4" }) : null}</span>
                                   {item.name}
                                 </Link>
+                              ))}
+
+                              {/* Render Sections in Mobile */}
+                              {link.megaMenuSections?.map((section) => (
+                                <div key={section.title} className="mt-4 pt-4 border-t border-gray-100">
+                                  <p className="px-6 mb-2 text-[10px] font-black text-brand-primary uppercase tracking-widest">{section.title}</p>
+                                  {section.items.map((item) => (
+                                    <Link
+                                      key={item.name}
+                                      to={item.path}
+                                      className="flex items-center px-6 py-3 text-sm text-gray-600 hover:text-brand-primary transition-colors"
+                                      onClick={() => setIsOpen(false)}
+                                    >
+                                      <span className="mr-3 text-brand-primary/60">{iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-4 h-4" }) : null}</span>
+                                      {item.name}
+                                    </Link>
+                                  ))}
+                                </div>
                               ))}
                             </motion.div>
                           )}
