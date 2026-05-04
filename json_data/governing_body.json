@@ -1,0 +1,23 @@
+[
+  {
+    "category": "Trust Board Members",
+    "members": [
+      { "name": "V S R Moorty", "role": "Chairman", "desc": "SVJP Trust(s)" },
+      { "name": "P Prem Gopal", "role": "Vice-Chairman", "desc": "SVJP Trust(s)" },
+      { "name": "P Giridhar Kumar", "role": "Managing Trustee", "desc": "SVJP Trust(s)" },
+      { "name": "D V N Kamaraju", "role": "Joint Managing Trustee", "desc": "SVJP Trust(s)" },
+      { "name": "B Ravindra Rao", "role": "Trustee", "desc": "SVJP Trust(s)" },
+      { "name": "B Seshu", "role": "Trustee", "desc": "SVJP Trust(s)" }
+    ]
+  },
+  {
+    "category": "College Management Committee",
+    "members": [
+      { "name": "Dr B V Subbalakshmi", "role": "Convener", "desc": "Management Committee" },
+      { "name": "G Raghavendra Rao", "role": "Correspondent", "desc": "MOC" },
+      { "name": "Dr U Varalakshmi", "role": "Member", "desc": "Management Committee" },
+      { "name": "P Madhavi Latha", "role": "Member", "desc": "Management Committee" },
+      { "name": "B Hyma", "role": "Member", "desc": "Management Committee" }
+    ]
+  }
+]

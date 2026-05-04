@@ -1,0 +1,110 @@
+{
+  "trust": {
+    "id": "trust",
+    "label": "Sree Viswajananee Parishat Trust",
+    "members": [
+      "Dr. P. R. Krishna Babu (President)",
+      "Sri M. Sitaramaiah (Secretary)",
+      "Sri K. V. Rao (Treasurer)",
+      "Smt. L. Padmavathi (Member)"
+    ]
+  },
+  "management": {
+    "id": "management",
+    "label": "College Management Committee",
+    "members": [
+      "Committee Members",
+      "Executive Council"
+    ]
+  },
+  "correspondent": {
+    "id": "correspondent",
+    "label": "Correspondent",
+    "members": [
+      "Sri P. Rama Krishna Babu"
+    ]
+  },
+  "principal": {
+    "id": "principal",
+    "label": "Principal",
+    "members": [
+      "Dr. M. Sitaramaiah"
+    ]
+  },
+  "academic": {
+    "id": "academic",
+    "label": "Academic Committees",
+    "members": [
+      "Academic Coordinators",
+      "Senior Faculty Members"
+    ]
+  },
+  "administrative": {
+    "id": "administrative",
+    "label": "Administrative Committees",
+    "members": [
+      "Office Superintendent",
+      "Admin Staff"
+    ]
+  },
+  "iqac": {
+    "id": "iqac",
+    "label": "IQAC",
+    "members": [
+      "IQAC Coordinator",
+      "Quality Assurance Members"
+    ]
+  },
+  "hod": {
+    "id": "hod",
+    "label": "Head of the Dept's",
+    "members": [
+      "HOD - Sanskrit",
+      "HOD - Telugu",
+      "HOD - History",
+      "HOD - Oriental Languages"
+    ]
+  },
+  "lecturers": {
+    "id": "lecturers",
+    "label": "Lecturers",
+    "members": [
+      "Sanskrit Lecturers",
+      "Telugu Lecturers",
+      "History Lecturers",
+      "Other Faculty"
+    ]
+  },
+  "students": {
+    "id": "students",
+    "label": "Students",
+    "members": [
+      "BA (OL) Students",
+      "Student Representatives"
+    ]
+  },
+  "jrAssistant": {
+    "id": "jrAssistant",
+    "label": "Jr. Assistant",
+    "members": [
+      "Mr. K. Ramana",
+      "Junior Clerks"
+    ]
+  },
+  "computerOperator": {
+    "id": "computerOperator",
+    "label": "Computer Operator",
+    "members": [
+      "IT Support",
+      "Data Entry Operators"
+    ]
+  },
+  "officeSubOrdinates": {
+    "id": "officeSubOrdinates",
+    "label": "Office Sub-Ordinates",
+    "members": [
+      "Attenders",
+      "Support Staff"
+    ]
+  }
+}
