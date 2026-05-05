@@ -141,13 +141,13 @@ const DesktopNavItem = ({ link, activeMegaMenu, setActiveMegaMenu, currentPath }
                       <Link
                         key={item.name}
                         to={item.path}
-                        className={`flex items-center p-3 rounded-xl transition-all duration-200 group/item border ${isPathActive(item.path) ? 'bg-white shadow-md border-brand-primary/20' : 'hover:bg-white hover:shadow-md border-transparent hover:border-brand-primary/10'}`}
+                        className="flex items-center p-3 rounded-xl transition-all duration-200 group/item border hover:bg-white hover:shadow-md border-transparent hover:border-brand-primary/10"
                       >
-                        <div className={`p-2.5 rounded-lg transition-colors ${isPathActive(item.path) ? 'bg-brand-primary text-white' : 'bg-brand-primary/5 text-brand-primary group-hover/item:bg-brand-primary group-hover/item:text-white'}`}>
+                        <div className="p-2.5 rounded-lg transition-colors bg-brand-primary/5 text-brand-primary group-hover/item:bg-brand-primary group-hover/item:text-white">
                           {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-5 h-5 transition-colors" }) : null}
                         </div>
                         <div className="ml-3 text-left">
-                          <p className={`text-[14px] font-bold transition-colors ${isPathActive(item.path) ? 'text-brand-primary' : 'text-gray-900 group-hover/item:text-brand-primary'}`}>
+                          <p className="text-[14px] font-bold transition-colors text-gray-900 group-hover/item:text-brand-primary">
                             {item.name}
                           </p>
                           <p className="text-[12px] text-gray-500 mt-0.5 line-clamp-2">Explore our {item.name.toLowerCase()}</p>
@@ -171,12 +171,12 @@ const DesktopNavItem = ({ link, activeMegaMenu, setActiveMegaMenu, currentPath }
                               <Link
                                 key={item.name}
                                 to={item.path}
-                                className={`flex items-center gap-3 p-2 rounded-xl transition-all group/subitem border ${isPathActive(item.path) ? 'bg-white shadow-sm border-brand-primary/10' : 'hover:bg-white hover:shadow-sm border-transparent hover:border-brand-primary/5'}`}
+                                className="flex items-center gap-3 p-2 rounded-xl transition-all group/subitem border hover:bg-white hover:shadow-sm border-transparent hover:border-brand-primary/5"
                               >
-                                <div className={`w-7 h-7 flex items-center justify-center rounded-lg transition-all shadow-sm ${isPathActive(item.path) ? 'bg-brand-primary text-white scale-110' : 'bg-white text-brand-primary/60 group-hover/subitem:text-brand-primary group-hover/subitem:scale-110'}`}>
+                                <div className="w-7 h-7 flex items-center justify-center rounded-lg transition-all shadow-sm bg-white text-brand-primary/60 group-hover/subitem:text-brand-primary group-hover/subitem:scale-110">
                                   {iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-3.5 h-3.5" }) : null}
                                 </div>
-                                <span className={`text-[14px] font-bold transition-colors leading-tight ${isPathActive(item.path) ? 'text-brand-primary' : 'text-gray-700 group-hover/subitem:text-brand-primary'}`}>
+                                <span className="text-[14px] font-bold transition-colors leading-tight text-gray-700 group-hover/subitem:text-brand-primary">
                                   {item.name}
                                 </span>
                               </Link>
@@ -337,7 +337,7 @@ const Navbar = () => {
                                 <Link
                                   key={item.name}
                                   to={item.path}
-                                  className={`flex items-center px-6 py-3 text-sm transition-colors ${isPathActive(item.path) ? 'text-brand-primary font-bold bg-brand-primary/5' : 'text-gray-600 hover:text-brand-primary'}`}
+                                  className="flex items-center px-6 py-3 text-sm transition-colors text-gray-600 hover:text-brand-primary"
                                   onClick={() => setIsOpen(false)}
                                 >
                                   <span className="mr-3 text-brand-primary/60">{iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-4 h-4" }) : null}</span>
@@ -353,7 +353,7 @@ const Navbar = () => {
                                     <Link
                                       key={item.name}
                                       to={item.path}
-                                      className={`flex items-center px-6 py-3 text-sm transition-colors ${isPathActive(item.path) ? 'text-brand-primary font-bold bg-brand-primary/5' : 'text-gray-600 hover:text-brand-primary'}`}
+                                      className="flex items-center px-6 py-3 text-sm transition-colors text-gray-600 hover:text-brand-primary"
                                       onClick={() => setIsOpen(false)}
                                     >
                                       <span className="mr-3 text-brand-primary/60">{iconMap[item.icon] ? React.cloneElement(iconMap[item.icon], { className: "w-4 h-4" }) : null}</span>

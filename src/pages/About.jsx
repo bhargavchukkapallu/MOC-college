@@ -65,7 +65,7 @@ const About = () => {
   return (
     <div className="bg-brand-light">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+      <section className="relative pt-34 pb-0 lg:pt-38 lg:pb-0 overflow-hidden bg-brand-primary">
         <BannerBackground />
 
         <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
@@ -74,13 +74,13 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
               Discover Our Legacy
             </span>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
               About <span className="text-brand-secondary">Us</span>
             </h1>
-            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-base md:text-lg font-medium leading-relaxed mb-8">
               Nurturing wisdom and culture since 1971. A sanctuary of oriental learning
               founded on the principles of universal love and harmony.
             </p>

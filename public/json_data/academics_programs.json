@@ -11,7 +11,8 @@
       "Intensive grammar and linguistic training",
       "Coaching for competitive exams included",
       "Free education, accommodation, and meals"
-    ]
+    ],
+    "syllabus": "pdfs/BA-OL-Telugu-Syllabus-ANU.pdf"
   },
   {
     "title": "B.A. O.L. (Sanskrit)",
@@ -25,7 +26,8 @@
       "Opportunities for international translation work",
       "Yoga and meditation practices integrated",
       "Full scholarship including books and medical"
-    ]
+    ],
+    "syllabus": "pdfs/BA-OL-Syllabus-SVVU.pdf"
   },
   {
     "title": "B.Sc. Honours (Comp. Sci.)",
@@ -39,6 +41,7 @@
       "Access to state-of-the-art tech labs",
       "Spoken English and personality development",
       "Industry-ready curriculum"
-    ]
+    ],
+    "syllabus": "pdfs/BA-OL-Syllabus-SVVU.pdf"
   }
 ]

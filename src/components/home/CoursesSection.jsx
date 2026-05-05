@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiClock, HiBookOpen, HiArrowRight, HiAcademicCap, HiUsers } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+import PDFModal from '../ui/PDFModal';
 
 const iconMap = {
   BookOpen: <HiBookOpen className="w-6 h-6" />,
@@ -11,6 +12,8 @@ const iconMap = {
 
 const CoursesSection = () => {
   const [courses, setCourses] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}json_data/courses.json`)
@@ -139,15 +142,35 @@ const CoursesSection = () => {
                   </div>
                 </div>
 
-                {/* Link Indicator */}
-                <div className="mt-8 flex items-center gap-2 text-brand-primary font-black uppercase tracking-widest text-xs group/link">
-                  <span className="group-hover/link:mr-2 transition-all">View Details</span>
-                  <HiArrowRight className="w-4 h-4" />
+                {/* Link Indicator & Syllabus Button */}
+                <div className="mt-8 flex items-center justify-between">
+                  <Link to="/academics" className="flex items-center gap-2 text-brand-primary font-black uppercase tracking-widest text-xs group/link">
+                    <span className="group-hover/link:mr-2 transition-all">View Details</span>
+                    <HiArrowRight className="w-4 h-4" />
+                  </Link>
+                  <button
+                    onClick={() => {
+                      setSelectedCourse(course);
+                      setIsModalOpen(true);
+                    }}
+                    className="flex items-center gap-2 text-gray-400 hover:text-brand-secondary font-black uppercase tracking-widest text-[10px] transition-colors"
+                  >
+                    <HiBookOpen className="w-4 h-4" />
+                    Syllabus
+                  </button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* PDF Modal */}
+        <PDFModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          pdfUrl={selectedCourse?.syllabus}
+          title={selectedCourse?.title}
+        />
 
         {/* Bottom CTA for Section */}
         <motion.div

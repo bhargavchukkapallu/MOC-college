@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  HiShieldCheck, 
-  HiUsers, 
-  HiBookOpen, 
-  HiAcademicCap, 
-  HiExclamationTriangle, 
-  HiScale, 
-  HiHeart 
+import {
+  HiShieldCheck,
+  HiUsers,
+  HiBookOpen,
+  HiAcademicCap,
+  HiExclamationTriangle,
+  HiScale,
+  HiHeart
 } from 'react-icons/hi2';
 import { useLocation } from 'react-router-dom';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
@@ -102,7 +102,7 @@ const Committees = () => {
   return (
     <div className="bg-[#fafcff] min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+      <section className="relative pt-34 pb-0 lg:pt-38 lg:pb-0 overflow-hidden bg-brand-primary">
         <BannerBackground />
 
         <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
@@ -111,14 +111,14 @@ const Committees = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
               Institutional Governance
             </span>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
               College <span className="text-brand-secondary">Committees</span>
             </h1>
-            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
-              Our committees and cells work collaboratively to ensure academic excellence, 
+            <p className="max-w-2xl text-white/80 text-base md:text-lg font-medium leading-relaxed mb-8">
+              Our committees and cells work collaboratively to ensure academic excellence,
               student welfare, and operational transparency across the institution.
             </p>
             <div className="pointer-events-auto">
@@ -134,12 +134,12 @@ const Committees = () => {
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto grid gap-12">
           {committeesList.map((committee, idx) => (
-            <section 
-              key={committee.id} 
+            <section
+              key={committee.id}
               id={committee.id}
               className="scroll-mt-32"
             >
-              <motion.div 
+              <motion.div
                 {...fadeInUp}
                 className="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl shadow-brand-primary/5 border border-gray-100 flex flex-col lg:flex-row gap-10 items-start hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group"
               >
@@ -184,7 +184,7 @@ const Committees = () => {
 
       {/* Bottom CTA */}
       <section className="container mx-auto px-6 pb-32">
-        <motion.div 
+        <motion.div
           {...fadeInUp}
           className="bg-brand-dark rounded-[3rem] p-12 text-center relative overflow-hidden"
         >

@@ -52,6 +52,20 @@ const BlogTab = ({ blogs, searchQuery, direction, isSidebarLayout }) => {
             <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed flex-grow">
               {post.excerpt}
             </p>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {post.tags.slice(0, 3).map((tag, idx) => (
+                  <span key={idx} className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
+                    #{tag}
+                  </span>
+                ))}
+                {post.tags.length > 3 && (
+                  <span className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
+                    +{post.tags.length - 3}
+                  </span>
+                )}
+              </div>
+            )}
             <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">

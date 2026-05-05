@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  HiBookOpen, 
-  HiAcademicCap, 
-  HiUsers, 
-  HiClock, 
-  HiCheckCircle, 
-  HiArrowRight, 
+import {
+  HiBookOpen,
+  HiAcademicCap,
+  HiUsers,
+  HiClock,
+  HiCheckCircle,
+  HiArrowRight,
   HiBriefcase,
   HiComputerDesktop,
   HiLightBulb,
@@ -19,6 +19,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import SubNav from '../components/ui/SubNav';
 import BannerBackground from '../components/ui/BannerBackground';
+import PDFModal from '../components/ui/PDFModal';
 
 const iconMap = {
   BookOpen: <HiBookOpen className="w-8 h-8" />,
@@ -31,6 +32,8 @@ const iconMap = {
 
 const Academics = () => {
   const [programs, setPrograms] = useState([]);
+  const [selectedProgram, setSelectedProgram] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -50,6 +53,11 @@ const Academics = () => {
       .then(data => setPrograms(data))
       .catch(err => console.error("Error loading programs:", err));
   }, []);
+
+  const openSyllabus = (program) => {
+    setSelectedProgram(program);
+    setIsModalOpen(true);
+  };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -72,22 +80,22 @@ const Academics = () => {
   return (
     <div className="bg-[#fafcff] min-h-screen pb-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+      <section className="relative pt-34 pb-0 lg:pt-38 lg:pb-0 overflow-hidden bg-brand-primary">
         <BannerBackground />
-        
+
         <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-[0.2em] uppercase bg-white/10 text-brand-secondary rounded-full backdrop-blur-sm border border-white/10">
               Academic Excellence
             </span>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
               Academic <span className="text-brand-secondary">Pathways</span>
             </h1>
-            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-base md:text-lg font-medium leading-relaxed mb-8">
               Empowering students through traditional wisdom and modern innovation within the sacred Gurukula system.
             </p>
             <div className="pointer-events-auto">
@@ -102,7 +110,7 @@ const Academics = () => {
 
       {/* Main Content Area */}
       <div className="container mx-auto px-6 lg:px-16 mt-12 lg:mt-20">
-        
+
         {/* Offering Courses Section */}
         <section id="offering-courses" className="scroll-mt-40 mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -113,7 +121,7 @@ const Academics = () => {
             {programs.map((program, idx) => {
               const slug = program.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '').replace(/\./g, '');
               return (
-                <motion.div 
+                <motion.div
                   key={idx}
                   id={slug}
                   {...fadeInUp}
@@ -121,14 +129,14 @@ const Academics = () => {
                   className="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl border border-gray-100 hover:shadow-2xl transition-all group overflow-hidden relative scroll-mt-40"
                 >
                   <div className={`absolute top-0 right-0 w-64 h-64 ${program.color} opacity-5 rounded-full blur-3xl -mr-20 -mt-20 group-hover:opacity-10 transition-opacity`}></div>
-                  
+
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10">
                     <div className="lg:w-1/3 border-b lg:border-b-0 lg:border-r border-gray-100 pb-8 lg:pb-0 lg:pr-8 flex flex-col justify-center">
                       <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 ${program.color}`}>
                         {iconMap[program.icon] || <HiAcademicCap className="w-8 h-8" />}
                       </div>
                       <h3 className="text-3xl font-black text-brand-dark mb-4 leading-tight">{program.title}</h3>
-                      
+
                       <div className="space-y-4 text-sm font-bold text-gray-600">
                         <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
                           <HiClock className="w-5 h-5 text-brand-primary" />
@@ -146,13 +154,12 @@ const Academics = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="lg:w-2/3">
                       <p className="text-gray-600 text-lg leading-relaxed mb-8 font-medium">
                         {program.description}
                       </p>
-                      <h4 className="text-brand-dark font-black uppercase tracking-widest text-sm mb-4">Program Highlights</h4>
-                      <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="grid sm:grid-cols-2 gap-4 mb-8">
                         {program.features.map((feature, fIdx) => (
                           <div key={fIdx} className="flex items-start gap-3">
                             <HiCheckCircle className="w-5 h-5 text-brand-secondary flex-shrink-0 mt-0.5" />
@@ -160,6 +167,14 @@ const Academics = () => {
                           </div>
                         ))}
                       </div>
+
+                      <button
+                        onClick={() => openSyllabus(program)}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-secondary transition-all active:scale-95 shadow-lg shadow-brand-primary/20"
+                      >
+                        <HiBookOpen className="w-5 h-5" />
+                        View Course Details
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -227,14 +242,14 @@ const Academics = () => {
                   Stay updated with our comprehensive schedule of academic activities, examinations, and institutional events for the current academic year.
                 </p>
                 <div className="space-y-4">
-                  <button className="w-full flex items-center justify-between p-4 bg-brand-primary/5 rounded-2xl text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition-all group">
-                    <span>University Calendar 2024-25</span>
+                  <Link to="/academic-calendar" className="w-full flex items-center justify-between p-4 bg-brand-primary/5 rounded-2xl text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition-all group">
+                    <span>View University Calendar</span>
                     <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button className="w-full flex items-center justify-between p-4 bg-brand-primary/5 rounded-2xl text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition-all group">
-                    <span>College Academic Calendar</span>
+                  </Link>
+                  <Link to="/academic-calendar" className="w-full flex items-center justify-between p-4 bg-brand-primary/5 rounded-2xl text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition-all group">
+                    <span>View College Calendar</span>
                     <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="lg:w-2/3">
@@ -265,23 +280,23 @@ const Academics = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { 
-                title: "Academic Mastery", 
+              {
+                title: "Academic Mastery",
                 desc: "Demonstrate profound knowledge in chosen fields of literature, science, and linguistics.",
                 icon: <HiPresentationChartLine className="w-12 h-12" />
               },
-              { 
-                title: "Character Building", 
+              {
+                title: "Character Building",
                 desc: "Imbibe values of discipline, selfless service, and integrity through the Gurukula system.",
                 icon: <HiAcademicCap className="w-12 h-12" />
               },
-              { 
-                title: "Professional Success", 
+              {
+                title: "Professional Success",
                 desc: "Transition seamlessly into government, media, or teaching roles with competitive skills.",
                 icon: <HiBriefcase className="w-12 h-12" />
               }
             ].map((outcome, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 {...fadeInUp}
                 transition={{ delay: idx * 0.1 }}
@@ -358,7 +373,7 @@ const Academics = () => {
                 <p className="text-gray-600 text-lg font-medium leading-relaxed mb-8">
                   A sanctuary of knowledge housing over 10,000 volumes, including rare ancient manuscripts, Sanskrit literature, and modern academic journals.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   {['Ancient Manuscript Section', 'Reading Room', 'Digital Catalog', 'Rare Book Collection'].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 font-bold text-gray-700">
                       <HiChevronRight className="text-brand-primary" />
@@ -366,6 +381,10 @@ const Academics = () => {
                     </div>
                   ))}
                 </div>
+                <Link to="/library" className="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition-colors group">
+                  Explore Full Library 
+                  <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
               <div className="lg:w-1/2">
                 <div className="aspect-video bg-gray-200 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
@@ -411,8 +430,8 @@ const Academics = () => {
             <div className="relative z-10">
               <h2 className="text-4xl lg:text-6xl font-black mb-8">Join the Gurukula Tradition</h2>
               <p className="text-white/80 mb-12 font-medium text-xl max-w-2xl mx-auto">Limited seats available for the 2024 - 2025 academic session. Embark on a journey of excellence.</p>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-3 bg-white text-brand-primary px-12 py-6 rounded-full font-black text-xl hover:bg-brand-secondary hover:text-white transition-all active:scale-95 group shadow-xl shadow-black/20"
               >
                 Apply for Admission
@@ -422,6 +441,13 @@ const Academics = () => {
           </motion.div>
         </section>
       </div>
+
+      <PDFModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        pdfUrl={selectedProgram?.syllabus}
+        title={selectedProgram?.title}
+      />
     </div>
   );
 };

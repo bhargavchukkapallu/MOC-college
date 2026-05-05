@@ -69,7 +69,7 @@ const Footer = () => {
               Resources
             </h3>
             <ul className="space-y-3">
-              <li><Link to="/academics#library" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Central Library</Link></li>
+              <li><Link to="/library" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Central Library</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Alumni Registration</a></li>
               <li><Link to="/student-support" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Student Support</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Feedback</a></li>

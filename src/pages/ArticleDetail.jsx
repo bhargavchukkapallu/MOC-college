@@ -77,7 +77,8 @@ const ArticleDetail = () => {
     }
     const filtered = allInsights.filter(i =>
       i.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      i.category.toLowerCase().includes(searchQuery.toLowerCase())
+      i.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (i.tags || []).some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
     ).slice(0, 5);
     setSearchResults(filtered);
   }, [searchQuery, allInsights]);
@@ -371,6 +372,26 @@ const ArticleDetail = () => {
                       </div>
                     </div>
                   )}
+
+                  {/* Article Tags */}
+                  {item.tags && item.tags.length > 0 && (
+                    <div className="mt-16 pt-8 border-t border-gray-100">
+                      <div className="flex items-center gap-3 mb-6">
+                        <HiTag className="w-5 h-5 text-brand-primary" />
+                        <h4 className="text-sm font-black uppercase tracking-widest text-gray-400">Keywords</h4>
+                      </div>
+                      <div className="flex flex-wrap gap-3">
+                        {item.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-5 py-2.5 bg-white border border-gray-100 rounded-xl text-sm font-bold text-gray-600 hover:border-brand-primary hover:text-brand-primary transition-all cursor-default shadow-sm"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </article>
 
                 {/* Social Sharing */}
@@ -459,11 +480,21 @@ const ArticleDetail = () => {
                     Popular Tags
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {['Sanskrit', 'Heritage', 'Academic', 'Campus Life', 'Gurukula', 'Spirituality', 'Research', 'Digital Humanities'].map((tag) => (
-                      <button key={tag} className="px-4 py-2 bg-gray-50 rounded-full text-xs font-bold text-gray-500 hover:bg-brand-primary hover:text-white transition-all border border-gray-100">
-                        #{tag}
-                      </button>
-                    ))}
+                    {Array.from(new Set(allInsights.flatMap(i => i.tags || [])))
+                      .sort(() => 0.5 - Math.random())
+                      .slice(0, 12)
+                      .map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => {
+                            navigate(`/insights?tab=${type}`);
+                            // In a real app, we'd pass the tag to filter the list
+                          }}
+                          className="px-4 py-2 bg-gray-50 rounded-full text-xs font-bold text-gray-500 hover:bg-brand-primary hover:text-white transition-all border border-gray-100"
+                        >
+                          #{tag}
+                        </button>
+                      ))}
                   </div>
                 </div>
 

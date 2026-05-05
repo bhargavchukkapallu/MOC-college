@@ -8,7 +8,8 @@
     "image": "MOC-Building.jpg",
     "category": "Literature",
     "description": "Deep dive into classical Telugu literature. Eligible for Govt jobs: VRO, Panchayat Secretary, Police, Groups, and Media.",
-    "icon": "BookOpen"
+    "icon": "BookOpen",
+    "syllabus": "pdfs/BA-OL-Telugu-Syllabus-ANU.pdf"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "image": "MOC-Library-2.jpg",
     "category": "Classical",
     "description": "Mastery of ancient Sanskrit texts. Opens paths for research, translators, and opportunities to work abroad for the proficient.",
-    "icon": "GraduationCap"
+    "icon": "GraduationCap",
+    "syllabus": "pdfs/BA-OL-Syllabus-SVVU.pdf"
   },
   {
     "id": 3,
@@ -30,6 +32,7 @@
     "image": "moc-lab.jpg",
     "category": "Science",
     "description": "Modern technical education blending programming, algorithms, and software development for the digital age.",
-    "icon": "Users"
+    "icon": "Users",
+    "syllabus": "pdfs/BA-OL-Syllabus-SVVU.pdf"
   }
 ]

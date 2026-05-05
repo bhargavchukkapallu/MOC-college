@@ -8,7 +8,8 @@
     "category": "Heritage",
     "date": "Oct 24, 2024",
     "readTime": "6 min read",
-    "author": "Acharya V. Sharma"
+    "author": "Acharya V. Sharma",
+    "tags": ["Sanskrit", "Linguistics", "Science", "Heritage", "Panini"]
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "category": "Education",
     "date": "Nov 12, 2024",
     "readTime": "8 min read",
-    "author": "Dr. S. Rajan"
+    "author": "Dr. S. Rajan",
+    "tags": ["Gurukula", "Mentorship", "Holistic", "Character", "Tradition"]
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "category": "Innovation",
     "date": "Dec 05, 2024",
     "readTime": "5 min read",
-    "author": "Prof. K. Venkatesh"
+    "author": "Prof. K. Venkatesh",
+    "tags": ["Vedic Math", "Digital Innovation", "Algorithms", "Mathematics", "Innovation"]
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "category": "Literature",
     "date": "Jan 15, 2025",
     "readTime": "6 min read",
-    "author": "Acharya V. Sharma"
+    "author": "Acharya V. Sharma",
+    "tags": ["Sanskrit", "Poetry", "Literature", "Culture", "Kalidasa"]
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "category": "Spirituality",
     "date": "Feb 20, 2025",
     "readTime": "7 min read",
-    "author": "Dr. S. Rajan"
+    "author": "Dr. S. Rajan",
+    "tags": ["Amma", "Spirituality", "Compassion", "Philosophy", "Universal Love"]
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "category": "Education",
     "date": "Mar 10, 2025",
     "readTime": "6 min read",
-    "author": "Acharya V. Sharma"
+    "author": "Acharya V. Sharma",
+    "tags": ["Holistic Education", "Gurukula", "Values", "Character Building", "Indian Wisdom"]
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "category": "Science",
     "date": "Apr 5, 2025",
     "readTime": "7 min read",
-    "author": "Prof. K. Venkatesh"
+    "author": "Prof. K. Venkatesh",
+    "tags": ["Sanskrit", "Science", "Ayurveda", "Vedic Math", "Astronomy"]
   },
   {
     "id": 8,
@@ -85,6 +92,7 @@
     "category": "Health",
     "date": "May 20, 2025",
     "readTime": "6 min read",
-    "author": "Dr. S. Rajan"
+    "author": "Dr. S. Rajan",
+    "tags": ["Yoga", "Well-being", "Health", "Meditation", "Patanjali"]
   }
 ]

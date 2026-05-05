@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { 
-  HiMagnifyingGlass, 
-  HiXMark, 
-  HiHashtag, 
-  HiChartBar, 
-  HiCalendarDays, 
-  HiUser, 
-  HiArrowRight, 
-  HiNewspaper 
+import {
+  HiMagnifyingGlass,
+  HiXMark,
+  HiHashtag,
+  HiChartBar,
+  HiCalendarDays,
+  HiUser,
+  HiArrowRight,
+  HiNewspaper
 } from 'react-icons/hi2';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import EventsTab from '../components/insights/EventsTab';
@@ -78,19 +78,22 @@ const Insights = () => {
   const filteredEvents = eventsData.filter(event =>
     (event.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     (event.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (event.description || '').toLowerCase().includes(searchQuery.toLowerCase())
+    (event.description || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (event.tags || []).some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   const filteredBlogs = blogData.filter(blog =>
     (blog.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     (blog.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (blog.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase())
+    (blog.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (blog.tags || []).some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   const filteredArticles = articlesData.filter(article =>
     (article.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     (article.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (article.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase())
+    (article.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (article.tags || []).some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   const getPaginatedData = () => {
@@ -134,7 +137,7 @@ const Insights = () => {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* Modern Hero Section */}
-      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+      <section className="relative pt-34 pb-0 lg:pt-38 lg:pb-0 overflow-hidden bg-brand-primary">
         <BannerBackground />
         <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <div className="max-w-4xl">
@@ -147,10 +150,10 @@ const Insights = () => {
                 <HiNewspaper className="w-4 h-4" />
                 Knowledge Hub
               </span>
-              <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-none">
+              <h1 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
                 The <span className="text-brand-secondary underline decoration-brand-secondary/30 decoration-8 underline-offset-8">MOC</span> Insights
               </h1>
-              <p className="text-white/70 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl mb-8">
+              <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mb-8">
                 A collection of scholarly articles, academic blogs, and cultural events shaping the future of oriental studies.
               </p>
               <div className="pointer-events-auto">
@@ -203,7 +206,7 @@ const Insights = () => {
                       <p className="text-white/80 text-lg max-w-3xl line-clamp-2 mb-8 font-medium italic">
                         "{getFeaturedItem().excerpt || getFeaturedItem().description}"
                       </p>
-                      <div className="flex items-center gap-6 text-sm font-bold text-white/90">
+                      <div className="flex flex-wrap items-center gap-6 text-sm font-bold text-white/90">
                         <div className="flex items-center gap-2">
                           <HiCalendarDays className="w-4 h-4 text-brand-secondary" />
                           {getFeaturedItem().date}
@@ -212,6 +215,15 @@ const Insights = () => {
                           <HiUser className="w-4 h-4 text-brand-secondary" />
                           {getFeaturedItem().author || 'MOC Team'}
                         </div>
+                        {getFeaturedItem().tags && (
+                          <div className="hidden md:flex items-center gap-2 border-l border-white/20 pl-6">
+                            {getFeaturedItem().tags.slice(0, 2).map((tag, idx) => (
+                              <span key={idx} className="text-[10px] text-brand-secondary uppercase tracking-widest">
+                                #{tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.div>

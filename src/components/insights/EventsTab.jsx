@@ -58,6 +58,20 @@ const EventsTab = ({ events, searchQuery, direction, isSidebarLayout }) => {
             <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 flex-grow">
               {event.description}
             </p>
+            {event.tags && event.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {event.tags.slice(0, 3).map((tag, idx) => (
+                  <span key={idx} className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
+                    #{tag}
+                  </span>
+                ))}
+                {event.tags.length > 3 && (
+                  <span className="text-[10px] font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
+                    +{event.tags.length - 3}
+                  </span>
+                )}
+              </div>
+            )}
             <div className="mt-auto pt-4 border-t border-gray-100">
               <div className="flex items-center justify-between w-full font-bold text-brand-primary group/btn hover:text-brand-dark transition-colors">
                 <span className="relative overflow-hidden w-full text-left">

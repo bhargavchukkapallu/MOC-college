@@ -14,7 +14,8 @@
       "gallery/20250702_123001.jpg",
       "gallery/20250702_123013.jpg",
       "gallery/20250702_124052.jpg"
-    ]
+    ],
+    "tags": ["Sanskrit", "Literature", "Festival", "Culture", "Scholarly"]
   },
   {
     "id": 2,
@@ -31,7 +32,8 @@
       "gallery/20250702_124114.jpg",
       "gallery/GMC07032026_150543.jpg",
       "gallery/GMC07032026_150558.jpg"
-    ]
+    ],
+    "tags": ["Retreat", "Spirituality", "Meditation", "Amma", "Yoga"]
   },
   {
     "id": 3,
@@ -48,7 +50,8 @@
       "gallery/IMG-20240212-WA0005.jpg",
       "gallery/IMG-20240212-WA0007.jpg",
       "MOC-Library-2.jpg"
-    ]
+    ],
+    "tags": ["Conference", "Research", "Digital Humanities", "Oriental Studies", "Innovation"]
   },
   {
     "id": 4,
@@ -65,7 +68,8 @@
       "gallery/20250702_124106.jpg",
       "gallery/20250702_124114.jpg",
       "gallery/GMC07032026_150543.jpg"
-    ]
+    ],
+    "tags": ["Youth", "Festival", "Competition", "Talent", "Leadership"]
   },
   {
     "id": 5,
@@ -82,7 +86,8 @@
       "gallery/IMG-20240212-WA0007.jpg",
       "gallery/IMG-20230930-WA0015.jpg",
       "gallery/MOC-Library-2.jpg"
-    ]
+    ],
+    "tags": ["Yoga", "Wellness", "Meditation", "International Yoga Day", "Health"]
   },
   {
     "id": 6,
@@ -99,7 +104,8 @@
       "gallery/20250702_124052.jpg",
       "gallery/20250702_124106.jpg",
       "gallery/20250702_124114.jpg"
-    ]
+    ],
+    "tags": ["Digital Humanities", "Workshop", "Technology", "Research", "Analysis"]
   },
   {
     "id": 7,
@@ -116,7 +122,8 @@
       "gallery/GMC07032026_150558.jpg",
       "gallery/GMC07032026_150644.jpg",
       "gallery/GMC07032026_150701.jpg"
-    ]
+    ],
+    "tags": ["Founder's Day", "Tribute", "Spirituality", "History", "Community"]
   },
   {
     "id": 8,
@@ -133,7 +140,8 @@
       "gallery/IMG-20230930-WA0015.jpg",
       "gallery/IMG-20240212-WA0005.jpg",
       "gallery/20250702_123013.jpg"
-    ]
+    ],
+    "tags": ["TEDx", "Innovation", "Ideas", "Inspiration", "Talks"]
   },
   {
     "id": 9,
@@ -150,7 +158,8 @@
       "gallery/20250702_123013.jpg",
       "gallery/20250702_124052.jpg",
       "gallery/20250702_124106.jpg"
-    ]
+    ],
+    "tags": ["Sports", "Athletics", "Fitness", "Competition", "Teamwork"]
   },
   {
     "id": 10,
@@ -167,7 +176,8 @@
       "gallery/IMG-20230930-WA0015.jpg",
       "gallery/MOC-Library-2.jpg",
       "gallery/GMC07032026_150644.jpg"
-    ]
+    ],
+    "tags": ["Research", "Symposium", "Science", "Innovation", "Academic"]
   },
   {
     "id": 11,
@@ -184,7 +194,8 @@
       "gallery/20250702_124052.jpg",
       "gallery/20250702_124106.jpg",
       "gallery/GMC07032026_150558.jpg"
-    ]
+    ],
+    "tags": ["Vedic Chanting", "Tradition", "Competition", "Heritage", "Spiritual"]
   },
   {
     "id": 12,
@@ -201,6 +212,7 @@
       "gallery/GMC07032026_150558.jpg",
       "gallery/GMC07032026_150644.jpg",
       "gallery/GMC07032026_150701.jpg"
-    ]
+    ],
+    "tags": ["Environment", "Sustainability", "Tree Plantation", "Green Initiative", "Workshop"]
   }
 ]
