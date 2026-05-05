@@ -137,7 +137,7 @@
       },
       {
         "name": "Library",
-        "path": "/academics#library",
+        "path": "/library",
         "icon": "BookOpen"
       },
       {
@@ -172,12 +172,12 @@
         "items": [
           {
             "name": "University Calendar",
-            "path": "/academics#calendar",
+            "path": "/academic-calendar",
             "icon": "BookOpen"
           },
           {
             "name": "College Calendar",
-            "path": "/academics#calendar",
+            "path": "/academic-calendar",
             "icon": "BookOpen"
           }
         ]
