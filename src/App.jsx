@@ -14,11 +14,13 @@ import Committees from './pages/Committees';
 import ArticleDetail from './pages/ArticleDetail';
 import AcademicCalendar from './pages/AcademicCalendar';
 import Library from './pages/Library';
+import PageLoader from './components/ui/PageLoader';
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen relative">
+        <PageLoader />
         <Navbar />
         <main className="flex-grow">
           <Routes>
