@@ -12,8 +12,8 @@ import { Link, useLocation } from 'react-router-dom';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import { ReactFlow, Controls, Background, applyNodeChanges, applyEdgeChanges, Handle, Position } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-
-// Data will be fetched dynamically from org_structure.json
+import SubNav from '../components/ui/SubNav';
+import BannerBackground from '../components/ui/BannerBackground';
 
 const OrgNodeComponent = ({ data }) => {
   return (
@@ -86,6 +86,13 @@ const initialEdges = [
 const Administration = () => {
   const { hash } = useLocation();
 
+  const sections = [
+    { id: 'governing-body', name: 'Management', icon: <HiBuildingLibrary className="w-4 h-4" /> },
+    { id: 'org-structure', name: 'Hierarchy', icon: <HiUsers className="w-4 h-4" /> },
+    { id: 'staff', name: 'Admin Staff', icon: <HiBriefcase className="w-4 h-4" /> },
+    { id: 'office', name: 'Office Hours', icon: <HiShieldCheck className="w-4 h-4" /> }
+  ];
+
   useEffect(() => {
     if (hash) {
       const element = document.querySelector(hash);
@@ -151,15 +158,10 @@ const Administration = () => {
   return (
     <div className="bg-[#fafcff] min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"></div>
-          <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" fillOpacity="0.05" />
-          </svg>
-        </div>
+      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+        <BannerBackground />
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,14 +173,18 @@ const Administration = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               Our <span className="text-brand-secondary">Administration</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Guided by a commitment to excellence, our administrative team works tirelessly
               to ensure a supportive and enriching environment for all students and staff.
             </p>
-            <Breadcrumbs />
+            <div className="pointer-events-auto">
+              <Breadcrumbs align="start" />
+            </div>
           </motion.div>
         </div>
       </section>
+
+      <SubNav sections={sections} />
 
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto space-y-32">

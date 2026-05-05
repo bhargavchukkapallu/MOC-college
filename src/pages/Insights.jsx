@@ -15,6 +15,7 @@ import Breadcrumbs from '../components/layout/Breadcrumbs';
 import EventsTab from '../components/insights/EventsTab';
 import BlogTab from '../components/insights/BlogTab';
 import ArticlesTab from '../components/insights/ArticlesTab';
+import BannerBackground from '../components/ui/BannerBackground';
 
 const Insights = () => {
   const location = useLocation();
@@ -133,12 +134,9 @@ const Insights = () => {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* Modern Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden bg-brand-primary">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.15),transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.15),transparent_50%)]"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+        <BannerBackground />
+        <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -155,7 +153,9 @@ const Insights = () => {
               <p className="text-white/70 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl mb-8">
                 A collection of scholarly articles, academic blogs, and cultural events shaping the future of oriental studies.
               </p>
-              <Breadcrumbs align="start" />
+              <div className="pointer-events-auto">
+                <Breadcrumbs align="start" />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -168,96 +168,104 @@ const Insights = () => {
           {/* Main Feed */}
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
-              {/* Featured Post */}
-              {getFeaturedItem() && (
-                <motion.div
-                  key={`featured-${activeTab}-${getFeaturedItem().id}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  onClick={() => navigate(`/insights/${activeTab}/${getFeaturedItem().id}`)}
-                  className="relative group cursor-pointer overflow-hidden rounded-[3rem] mb-16 shadow-2xl bg-white border border-gray-100"
-                >
-                  <div className="aspect-[21/10] w-full overflow-hidden">
-                    <img
-                      src={`${import.meta.env.BASE_URL}images/${getFeaturedItem().image}`}
-                      alt={getFeaturedItem().title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white w-full">
-                    <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-widest uppercase bg-brand-secondary text-brand-primary rounded-lg shadow-lg">
-                      Featured {activeTab.slice(0, -1)}
-                    </span>
-                    <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight leading-tight group-hover:text-brand-secondary transition-colors duration-300">
-                      {getFeaturedItem().title}
-                    </h2>
-                    <p className="text-white/80 text-lg max-w-3xl line-clamp-2 mb-8 font-medium italic">
-                      "{getFeaturedItem().excerpt || getFeaturedItem().description}"
-                    </p>
-                    <div className="flex items-center gap-6 text-sm font-bold text-white/90">
-                      <div className="flex items-center gap-2">
-                        <HiCalendarDays className="w-4 h-4 text-brand-secondary" />
-                        {getFeaturedItem().date}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <HiUser className="w-4 h-4 text-brand-secondary" />
-                        {getFeaturedItem().author || 'MOC Team'}
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Featured Post */}
+                {getFeaturedItem() && (
+                  <motion.div
+                    key={`featured-${activeTab}-${getFeaturedItem().id}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    onClick={() => navigate(`/insights/${activeTab}/${getFeaturedItem().id}`)}
+                    className="relative group cursor-pointer overflow-hidden rounded-[3rem] mb-16 shadow-2xl bg-white border border-gray-100"
+                  >
+                    <div className="aspect-[21/10] w-full overflow-hidden">
+                      <img
+                        src={`${import.meta.env.BASE_URL}images/${getFeaturedItem().image}`}
+                        alt={getFeaturedItem().title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white w-full">
+                      <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-widest uppercase bg-brand-secondary text-brand-primary rounded-lg shadow-lg">
+                        Featured {activeTab.slice(0, -1)}
+                      </span>
+                      <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight leading-tight group-hover:text-brand-secondary transition-colors duration-300">
+                        {getFeaturedItem().title}
+                      </h2>
+                      <p className="text-white/80 text-lg max-w-3xl line-clamp-2 mb-8 font-medium italic">
+                        "{getFeaturedItem().excerpt || getFeaturedItem().description}"
+                      </p>
+                      <div className="flex items-center gap-6 text-sm font-bold text-white/90">
+                        <div className="flex items-center gap-2">
+                          <HiCalendarDays className="w-4 h-4 text-brand-secondary" />
+                          {getFeaturedItem().date}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <HiUser className="w-4 h-4 text-brand-secondary" />
+                          {getFeaturedItem().author || 'MOC Team'}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Feed Content */}
-              <div key="feed-content">
-                {activeTab === 'events' && (
-                  <EventsTab
-                    key="events-tab"
-                    events={getPaginatedData()}
-                    searchQuery={searchQuery}
-                    direction={direction}
-                    isSidebarLayout={true}
-                  />
-                )}
-                {activeTab === 'blog' && (
-                  <BlogTab
-                    key="blog-tab"
-                    blogs={getPaginatedData()}
-                    searchQuery={searchQuery}
-                    direction={direction}
-                    isSidebarLayout={true}
-                  />
-                )}
-                {activeTab === 'articles' && (
-                  <ArticlesTab
-                    key="articles-tab"
-                    articles={getPaginatedData()}
-                    searchQuery={searchQuery}
-                    direction={direction}
-                    isSidebarLayout={true}
-                  />
+                  </motion.div>
                 )}
 
-                {/* Pagination */}
-                {getTotalPages() > 1 && (
-                  <div className="flex justify-center items-center mt-16 gap-3">
-                    {Array.from({ length: getTotalPages() }).map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => {
-                          setCurrentPage(i + 1);
-                          window.scrollTo({ top: 600, behavior: 'smooth' });
-                        }}
-                        className={`w-12 h-12 rounded-2xl font-black transition-all duration-300 ${currentPage === i + 1 ? 'bg-brand-primary text-white shadow-xl scale-110' : 'bg-white text-gray-500 hover:text-brand-primary shadow-md hover:shadow-lg'}`}
-                      >
-                        {i + 1}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+                {/* Feed Content */}
+                <div key="feed-content">
+                  {activeTab === 'events' && (
+                    <EventsTab
+                      key="events-tab"
+                      events={getPaginatedData()}
+                      searchQuery={searchQuery}
+                      direction={direction}
+                      isSidebarLayout={true}
+                    />
+                  )}
+                  {activeTab === 'blog' && (
+                    <BlogTab
+                      key="blog-tab"
+                      blogs={getPaginatedData()}
+                      searchQuery={searchQuery}
+                      direction={direction}
+                      isSidebarLayout={true}
+                    />
+                  )}
+                  {activeTab === 'articles' && (
+                    <ArticlesTab
+                      key="articles-tab"
+                      articles={getPaginatedData()}
+                      searchQuery={searchQuery}
+                      direction={direction}
+                      isSidebarLayout={true}
+                    />
+                  )}
+
+                  {/* Pagination */}
+                  {getTotalPages() > 1 && (
+                    <div className="flex justify-center items-center mt-16 gap-3">
+                      {Array.from({ length: getTotalPages() }).map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => {
+                            setCurrentPage(i + 1);
+                            window.scrollTo({ top: 600, behavior: 'smooth' });
+                          }}
+                          className={`w-12 h-12 rounded-2xl font-black transition-all duration-300 ${currentPage === i + 1 ? 'bg-brand-primary text-white shadow-xl scale-110' : 'bg-white text-gray-500 hover:text-brand-primary shadow-md hover:shadow-lg'}`}
+                        >
+                          {i + 1}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
             </AnimatePresence>
           </div>
 
@@ -323,7 +331,7 @@ const Insights = () => {
                 <div className="space-y-8 relative z-10">
                   {trendingPosts.map((post, i) => (
                     <motion.div
-                      key={post.id}
+                      key={`${post.type}-${post.id}`}
                       whileHover={{ x: 5 }}
                       onClick={() => navigate(`/insights/${post.type}/${post.id}`)}
                       className="cursor-pointer group/item"

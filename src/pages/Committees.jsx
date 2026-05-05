@@ -11,9 +11,21 @@ import {
 } from 'react-icons/hi2';
 import { useLocation } from 'react-router-dom';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
+import SubNav from '../components/ui/SubNav';
+import BannerBackground from '../components/ui/BannerBackground';
 
 const Committees = () => {
   const { hash } = useLocation();
+
+  const sections = [
+    { id: 'grievance', name: 'Grievance', icon: <HiScale className="w-4 h-4" /> },
+    { id: 'anti-ragging', name: 'Anti-Ragging', icon: <HiShieldCheck className="w-4 h-4" /> },
+    { id: 'rti', name: 'RTI', icon: <HiBookOpen className="w-4 h-4" /> },
+    { id: 'admission', name: 'Admission', icon: <HiUsers className="w-4 h-4" /> },
+    { id: 'examination', name: 'Examination', icon: <HiAcademicCap className="w-4 h-4" /> },
+    { id: 'discipline', name: 'Discipline', icon: <HiExclamationTriangle className="w-4 h-4" /> },
+    { id: 'isr', name: 'Social Responsibility', icon: <HiHeart className="w-4 h-4" /> }
+  ];
 
   useEffect(() => {
     if (hash) {
@@ -90,12 +102,10 @@ const Committees = () => {
   return (
     <div className="bg-[#fafcff] min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"></div>
-        </div>
+      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+        <BannerBackground />
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,14 +117,18 @@ const Committees = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               College <span className="text-brand-secondary">Committees</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Our committees and cells work collaboratively to ensure academic excellence, 
               student welfare, and operational transparency across the institution.
             </p>
-            <Breadcrumbs />
+            <div className="pointer-events-auto">
+              <Breadcrumbs align="start" />
+            </div>
           </motion.div>
         </div>
       </section>
+
+      <SubNav sections={sections} />
 
       {/* Committees Grid */}
       <div className="container mx-auto px-6 py-20">

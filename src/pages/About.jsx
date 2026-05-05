@@ -14,6 +14,8 @@ import {
   HiFlag
 } from 'react-icons/hi2';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
+import SubNav from '../components/ui/SubNav';
+import BannerBackground from '../components/ui/BannerBackground';
 
 const iconMap = {
   History: <HiClock className="w-5 h-5" />,
@@ -31,7 +33,14 @@ const About = () => {
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}json_data/about_sections.json`)
       .then(res => res.json())
-      .then(data => setSections(data))
+      .then(data => {
+        // Map the icon strings to actual components for SubNav
+        const sectionsWithIcons = data.map(section => ({
+          ...section,
+          icon: iconMap[section.icon]
+        }));
+        setSections(sectionsWithIcons);
+      })
       .catch(err => console.error("Error loading about sections:", err));
   }, []);
 
@@ -56,15 +65,10 @@ const About = () => {
   return (
     <div className="bg-brand-light">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"></div>
-          <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" fillOpacity="0.05" />
-          </svg>
-        </div>
+      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+        <BannerBackground />
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,39 +80,19 @@ const About = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               About <span className="text-brand-secondary">Us</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Nurturing wisdom and culture since 1971. A sanctuary of oriental learning
               founded on the principles of universal love and harmony.
             </p>
-            <Breadcrumbs />
+            <div className="pointer-events-auto">
+              <Breadcrumbs align="start" />
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Sticky Sub-Navigation */}
-      <nav className="sticky top-20 lg:top-24 z-40 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm overflow-x-auto no-scrollbar">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-start lg:justify-center py-4 space-x-8">
-            {sections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-brand-primary whitespace-nowrap transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
-                  window.history.pushState(null, '', `#${section.id}`);
-                }}
-              >
-                <span className="p-1.5 rounded-lg bg-gray-100 group-hover:bg-brand-primary/10 transition-colors">
-                  {iconMap[section.icon]}
-                </span>
-                {section.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <SubNav sections={sections} />
 
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-5xl mx-auto space-y-32">

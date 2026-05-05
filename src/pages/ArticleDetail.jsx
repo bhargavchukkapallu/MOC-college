@@ -141,7 +141,13 @@ const ArticleDetail = () => {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumbs & Search */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
-
+              <Breadcrumbs
+                variant="light"
+                customLinks={[
+                  { to: '/insights', label: 'Insights' },
+                  { label: type === 'blog' ? 'Blog' : type === 'events' ? 'Events' : 'Articles' }
+                ]}
+              />
               <div className="relative w-full md:w-80 group">
                 <input
                   type="text"
@@ -272,13 +278,6 @@ const ArticleDetail = () => {
                   </div>
                 )}
               </div>
-              <Breadcrumbs 
-                variant="light"
-                customLinks={[
-                  { to: '/insights', label: 'Insights' },
-                  { label: type === 'blog' ? 'Blog' : type === 'events' ? 'Events' : 'Articles' }
-                ]} 
-              />
             </motion.div>
 
             {/* Featured Image */}
@@ -359,8 +358,8 @@ const ArticleDetail = () => {
                             onClick={() => setSelectedImage(img)}
                             className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-md"
                           >
-                            <img 
-                              src={`${import.meta.env.BASE_URL}images/${img}`} 
+                            <img
+                              src={`${import.meta.env.BASE_URL}images/${img}`}
                               alt={`Gallery ${idx}`}
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />

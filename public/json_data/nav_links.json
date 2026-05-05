@@ -116,9 +116,24 @@
     "path": "/academics",
     "megaMenu": [
       {
-        "name": "Programs Offered",
-        "path": "/academics#programs",
+        "name": "Offering Courses",
+        "path": "/academics#offering-courses",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Addon Courses",
+        "path": "/academics#addon-courses",
+        "icon": "BookOpen"
+      },
+      {
+        "name": "Program Outcomes & Course Outcomes",
+        "path": "/academics#outcomes",
         "icon": "GraduationCap"
+      },
+      {
+        "name": "ICT Facilities",
+        "path": "/academics#ict",
+        "icon": "Menu"
       },
       {
         "name": "Library",
@@ -129,6 +144,73 @@
         "name": "Computer Lab",
         "path": "/academics#computer-lab",
         "icon": "Menu"
+      }
+    ],
+    "megaMenuSections": [
+      {
+        "title": "Programs Offered",
+        "items": [
+          {
+            "name": "B.A. O.L. Telugu",
+            "path": "/academics#ba-ol-telugu",
+            "icon": "GraduationCap"
+          },
+          {
+            "name": "B.A. O.L. Sanskrit",
+            "path": "/academics#ba-ol-sanskrit",
+            "icon": "GraduationCap"
+          },
+          {
+            "name": "B.Sc. Honours (Computer Science)",
+            "path": "/academics#bsc-honours-comp-sci",
+            "icon": "GraduationCap"
+          }
+        ]
+      },
+      {
+        "title": "Academic Calendar",
+        "items": [
+          {
+            "name": "University Calendar",
+            "path": "/academics#calendar",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "College Calendar",
+            "path": "/academics#calendar",
+            "icon": "BookOpen"
+          }
+        ]
+      },
+      {
+        "title": "Departments",
+        "items": [
+          {
+            "name": "Telugu",
+            "path": "/academics#departments",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "Sanskrit",
+            "path": "/academics#departments",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "English",
+            "path": "/academics#departments",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "History",
+            "path": "/academics#departments",
+            "icon": "BookOpen"
+          },
+          {
+            "name": "Computer Science",
+            "path": "/academics#departments",
+            "icon": "BookOpen"
+          }
+        ]
       }
     ]
   },

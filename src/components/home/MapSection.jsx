@@ -6,12 +6,12 @@ const MapSection = () => {
   return (
     <section className="relative w-full overflow-hidden bg-white group">
       {/* Map Header (Elite Style) */}
-      <div className="container mx-auto px-6 absolute top-[10px] left-[0px] z-20 pointer-events-none">
+      <div className="container mx-auto absolute top-[0px] left-[0px] z-20 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white/90 backdrop-blur-md p-6 lg:p-10 rounded-[2rem] shadow-2xl border border-white/20 max-w-sm lg:max-w-md pointer-events-auto"
+          className="bg-white/90 backdrop-blur-md p-6 lg:p-10 rounded-[2rem] rounded-tl-none shadow-2xl border border-white/20 max-w-sm lg:max-w-md pointer-events-auto"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center text-white shadow-lg">

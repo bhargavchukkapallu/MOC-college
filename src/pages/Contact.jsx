@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HiPhone, HiEnvelope, HiMapPin, HiClock, HiPaperAirplane } from 'react-icons/hi2';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
+import BannerBackground from '../components/ui/BannerBackground';
 
 const Contact = () => {
   const fadeInUp = {
@@ -14,12 +15,10 @@ const Contact = () => {
   return (
     <div className="bg-[#fafcff] min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"></div>
-        </div>
+      <section className="relative pt-32 pb-10 lg:pt-48 lg:pb-12 overflow-hidden bg-brand-primary">
+        <BannerBackground />
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-left pointer-events-none">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,10 +30,12 @@ const Contact = () => {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
               Contact <span className="text-brand-secondary">Us</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
+            <p className="max-w-2xl text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-8">
               Have questions about admissions, courses, or facilities? We're here to help you begin your journey with Matrusri Oriental College.
             </p>
-            <Breadcrumbs />
+            <div className="pointer-events-auto">
+              <Breadcrumbs align="start" />
+            </div>
           </motion.div>
         </div>
       </section>

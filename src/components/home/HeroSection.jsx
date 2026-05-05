@@ -175,7 +175,7 @@ const HeroSection = () => {
             </div>
 
             {/* 4. Award Badge - Positioned on the wave edge of the left mask */}
-            <div className="absolute top-[250px] sm:top-[350px] right-4 lg:top-auto lg:bottom-[0px] lg:left-[52%] lg:-translate-y-1/2 lg:-translate-x-1/2 z-30 opacity-90 lg:opacity-100 pointer-events-auto">
+            <div className="absolute top-[250px] sm:top-[350px] right-4 lg:top-auto lg:bottom-[0px] lg:left-[65%] lg:-translate-y-1/2 lg:-translate-x-1/2 z-30 opacity-90 lg:opacity-100 pointer-events-auto">
                 <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: 1, rotate: 0 }}
