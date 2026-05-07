@@ -39,6 +39,8 @@ const AcademicCalendar = () => {
   const [calendarScale, setCalendarScale] = useState("month"); // "month", "week", "day"
   const [currentDate, setCurrentDate] = useState(new Date(2024, 5, 12));
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
   
   // Custom Dropdown States
   const [isMonthOpen, setIsMonthOpen] = useState(false);
@@ -73,6 +75,10 @@ const AcademicCalendar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, searchQuery]);
+
   const filteredData = useMemo(() => {
     return calendarData.filter(item => {
       const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
@@ -82,17 +88,24 @@ const AcademicCalendar = () => {
     });
   }, [calendarData, selectedCategory, searchQuery]);
 
-  const groupedData = useMemo(() => {
+  const paginatedData = useMemo(() => {
     const sorted = [...filteredData].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return sorted.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredData, currentPage]);
+
+  const groupedData = useMemo(() => {
     const groups = {};
-    sorted.forEach(item => {
+    paginatedData.forEach(item => {
       const date = new Date(item.date);
       const monthYear = date.toLocaleString('default', { month: 'long', year: 'numeric' });
       if (!groups[monthYear]) groups[monthYear] = [];
       groups[monthYear].push(item);
     });
     return groups;
-  }, [filteredData]);
+  }, [paginatedData]);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   const calendarDays = useMemo(() => {
     const year = currentDate.getFullYear();
@@ -337,8 +350,10 @@ const AcademicCalendar = () => {
                   </motion.div>
                 ) : (
                   <motion.div key="list-view" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-16">
-                    {Object.keys(groupedData).length > 0 ? Object.entries(groupedData).map(([month, events]) => (
-                      <section key={month} className="relative">
+                    {Object.keys(groupedData).length > 0 ? (
+                      <>
+                        {Object.entries(groupedData).map(([month, events]) => (
+                          <section key={month} className="relative">
                         <div className="flex items-center gap-4 mb-8">
                           <h2 className="text-2xl font-black text-brand-dark flex-shrink-0">{month}</h2>
                           <div className="h-[2px] w-full bg-gradient-to-r from-brand-secondary/30 to-transparent"></div>
@@ -354,8 +369,21 @@ const AcademicCalendar = () => {
                             </motion.div>
                           ))}
                         </div>
-                      </section>
-                    )) : (
+                          </section>
+                        ))}
+                        {totalPages > 1 && (
+                          <div className="flex justify-center items-center mt-12 gap-2">
+                            <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1} className="p-3 rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-brand-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all"><HiChevronLeft className="w-5 h-5" /></button>
+                            <div className="flex flex-wrap justify-center gap-2">
+                              {Array.from({ length: totalPages }).map((_, idx) => (
+                                <button key={idx} onClick={() => setCurrentPage(idx + 1)} className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${currentPage === idx + 1 ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20" : "border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"}`}>{idx + 1}</button>
+                              ))}
+                            </div>
+                            <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages} className="p-3 rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-brand-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all"><HiChevronRight className="w-5 h-5" /></button>
+                          </div>
+                        )}
+                      </>
+                    ) : (
                       <motion.div key="empty" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center py-20 bg-white rounded-[3rem] border border-dashed border-gray-200">
                         <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6"><HiInformationCircle className="w-10 h-10 text-gray-300" /></div>
                         <h3 className="text-2xl font-black text-brand-dark mb-2">No events found</h3>
