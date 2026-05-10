@@ -59,6 +59,7 @@ const Footer = () => {
               <li><Link to="/student-support#iqac" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">IQAC</Link></li>
               <li><Link to="/student-support#naac" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">NAAC</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-brand-secondary transition-colors text-sm">Contact Us</Link></li>
+              <li><Link to="/admin/login" className="text-brand-secondary/80 hover:text-brand-secondary transition-colors text-sm font-semibold border-t border-white/5 pt-2 mt-2 block italic">Faculty Login</Link></li>
             </ul>
           </div>
 
