@@ -16,15 +16,18 @@ import AcademicCalendar from './pages/AcademicCalendar';
 import Library from './pages/Library';
 import PageLoader from './components/ui/PageLoader';
 import ScrollToTop from './components/ui/ScrollToTop';
+import ComingSoon from './pages/ComingSoon';
 
 // Admin Imports
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/admin/ProtectedRoute.jsx';
 import AdminLayout from './components/layout/AdminLayout.jsx';
-import AdminLogin from './pages/AdminLogin.jsx';
-import AdminDashboard from './pages/AdminDashboard.jsx';
-import AdminInsights from './pages/AdminInsights.jsx';
-import AdminCalendar from './pages/AdminCalendar.jsx';
+import AdminLogin from './pages/admin/AdminLogin.jsx';
+import AdminDashboard from './pages/admin/AdminDashboard.jsx';
+import AdminInsights from './pages/admin/AdminInsights.jsx';
+import AdminCalendar from './pages/admin/AdminCalendar.jsx';
+import AdminFacultyProfiles from './pages/admin/AdminFacultyProfiles.jsx';
+import AdminDepartments from './pages/admin/AdminDepartments.jsx';
 
 // Layout for public pages
 const PublicLayout = () => (
@@ -55,6 +58,40 @@ function App() {
               <Route index element={<AdminDashboard />} />
               <Route path="insights" element={<AdminInsights />} />
               <Route path="calendar" element={<AdminCalendar />} />
+
+              {/* Unimplemented Faculty Routes */}
+              <Route path="faculty/profiles" element={<AdminFacultyProfiles />} />
+              <Route path="faculty/departments" element={<AdminDepartments />} />
+              <Route path="faculty/attendance" element={<ComingSoon isAdmin={true} />} />
+              <Route path="faculty/roles" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Unimplemented Student Routes */}
+              <Route path="students/admissions" element={<ComingSoon isAdmin={true} />} />
+              <Route path="students/profiles" element={<ComingSoon isAdmin={true} />} />
+              <Route path="students/attendance" element={<ComingSoon isAdmin={true} />} />
+              <Route path="students/performance" element={<ComingSoon isAdmin={true} />} />
+              <Route path="students/parents" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Unimplemented Insights Sub-routes */}
+              <Route path="insights/blogs" element={<ComingSoon isAdmin={true} />} />
+              <Route path="insights/events" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Unimplemented Classes Routes */}
+              <Route path="classes/manage" element={<ComingSoon isAdmin={true} />} />
+              <Route path="classes/subjects" element={<ComingSoon isAdmin={true} />} />
+              <Route path="classes/syllabus" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Unimplemented Lesson Plan Routes */}
+              <Route path="lesson-plans/manage" element={<ComingSoon isAdmin={true} />} />
+              <Route path="lesson-plans/scheduling" element={<ComingSoon isAdmin={true} />} />
+              <Route path="lesson-plans/progress" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Unimplemented Calendar Sub-routes */}
+              <Route path="calendar/schedules" element={<ComingSoon isAdmin={true} />} />
+              <Route path="calendar/events" element={<ComingSoon isAdmin={true} />} />
+
+              {/* Admin Fallback Route to retain the layout */}
+              <Route path="*" element={<ComingSoon isAdmin={true} />} />
             </Route>
 
             {/* Public Routes */}
@@ -70,10 +107,13 @@ function App() {
               <Route path="/insights/:type/:id" element={<ArticleDetail />} />
               <Route path="/events" element={<Insights />} />
               <Route path="/contact" element={<Contact />} />
+              
+              {/* Unimplemented Public Routes */}
+              <Route path="/student-support" element={<ComingSoon />} />
             </Route>
 
             {/* Fallback route */}
-            <Route path="*" element={<div className="min-h-[50vh] flex items-center justify-center text-2xl font-semibold text-brand-primary">Coming Soon</div>} />
+            <Route path="*" element={<ComingSoon />} />
           </Routes>
 
           <FloatingFeedback />
