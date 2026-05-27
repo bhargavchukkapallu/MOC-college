@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSection from '../components/home/HeroSection';
 import AboutSection from '../components/home/AboutSection';
 import CoursesSection from '../components/home/CoursesSection';
+import AchievementsSection from '../components/home/AchievementsSection';
 import CTASection from '../components/home/CTASection';
 import AffiliationsSection from '../components/home/AffiliationsSection';
 import ArticlesSection from '../components/home/ArticlesSection';
@@ -15,6 +16,7 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <CoursesSection />
+      <AchievementsSection />
       <CTASection />
       <AffiliationsSection />
       <ArticlesSection />

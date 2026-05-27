@@ -7,6 +7,7 @@ import FloatingNotifications from './components/ui/FloatingNotifications';
 import Home from './pages/Home';
 import About from './pages/About';
 import Academics from './pages/Academics';
+import Achievements from './pages/Achievements';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
 import Administration from './pages/Administration';
@@ -101,6 +102,7 @@ function App() {
               <Route path="/administration" element={<Administration />} />
               <Route path="/committees" element={<Committees />} />
               <Route path="/academics" element={<Academics />} />
+              <Route path="/achievements" element={<Achievements />} />
               <Route path="/academic-calendar" element={<AcademicCalendar />} />
               <Route path="/library" element={<Library />} />
               <Route path="/insights" element={<Insights />} />

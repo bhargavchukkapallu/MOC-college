@@ -10,7 +10,8 @@ import {
   HiUsers,
   HiBookOpen,
   HiArrowRight,
-  HiShieldCheck
+  HiShieldCheck,
+  HiTrophy
 } from 'react-icons/hi2';
 
 const iconMap = {
@@ -19,7 +20,8 @@ const iconMap = {
   MessageSquare: <HiChatBubbleLeftEllipsis />,
   GraduationCap: <HiAcademicCap />,
   Menu: <HiBars3 />,
-  Shield: <HiShieldCheck />
+  Shield: <HiShieldCheck />,
+  Trophy: <HiTrophy />
 };
 
 const DesktopNavItem = ({ link, activeMegaMenu, setActiveMegaMenu, currentPath }) => {
