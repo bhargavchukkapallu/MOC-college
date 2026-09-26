@@ -144,6 +144,11 @@
         "name": "Computer Lab",
         "path": "/academics#computer-lab",
         "icon": "Menu"
+      },
+      {
+        "name": "Achievements",
+        "path": "/achievements",
+        "icon": "Trophy"
       }
     ],
     "megaMenuSections": [

@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "year": 2026,
+    "month": "April",
+    "title": "State Sanskrit Academy Declamation Championship",
+    "description": "Sri K. Raghavan, a final-year B.A. O.L. Sanskrit student, secured the 1st prize at the State Sanskrit Academy Declamation Championship, competing against candidates from 45 institutions.",
+    "category": "Student",
+    "tags": ["Sanskrit", "Award", "State Level"],
+    "highlight": true,
+    "image": "sanskrit_event.png"
+  },
+  {
+    "id": 2,
+    "year": 2026,
+    "month": "March",
+    "title": "100% Pass Percentage in Sanskrit Honours",
+    "description": "The Department of Sanskrit achieved a perfect 100% pass rate in the final semester examinations, with 12 students securing distinction grades.",
+    "category": "Academic",
+    "tags": ["Academic Excellence", "Sanskrit", "Exams"],
+    "highlight": true,
+    "image": "article_sanskrit.png"
+  },
+  {
+    "id": 3,
+    "year": 2026,
+    "month": "January",
+    "title": "National Seminar on 'Ancient Indian Heritage & Modern Science'",
+    "description": "Matrusri Oriental College successfully hosted a two-day national seminar funded by the ICPR, drawing over 150 scholars who presented research papers linking traditional oriental knowledge with modern science.",
+    "category": "Institutional",
+    "tags": ["Seminar", "Research", "Academic Collaboration"],
+    "highlight": true,
+    "image": "article_gurukula.png"
+  },
+  {
+    "id": 4,
+    "year": 2025,
+    "month": "December",
+    "title": "NAAC 'B++' Grade Accreditation",
+    "description": "In the recent cycle of National Assessment and Accreditation Council (NAAC) evaluations, the college was awarded a 'B++' grade, recognizing its excellence in value-based education and community outreach.",
+    "category": "Institutional",
+    "tags": ["Accreditation", "Quality", "NAAC"],
+    "highlight": true,
+    "image": "MOC-Building.jpg"
+  },
+  {
+    "id": 5,
+    "year": 2025,
+    "month": "September",
+    "title": "Inter-University Telugu Literature Quiz Winners",
+    "description": "A team of three B.A. O.L. Telugu students won the Gold Trophy at the South Zone Inter-University Telugu Quiz Competition, held in Vijayawada.",
+    "category": "Student",
+    "tags": ["Telugu", "Competition", "Gold Medal"],
+    "highlight": false,
+    "image": "amma_portrait.png"
+  },
+  {
+    "id": 6,
+    "year": 2025,
+    "month": "July",
+    "title": "DST-Sponsored Computer Science Lab Extension",
+    "description": "The College inaugurated a newly expanded Computer Science and ICT laboratory with high-speed internet and modern computing systems to support B.Sc. Honours (Computer Science) students.",
+    "category": "Institutional",
+    "tags": ["Lab", "Infrastructure", "DST"],
+    "highlight": false,
+    "image": "moc-lab.jpg"
+  },
+  {
+    "id": 7,
+    "year": 2025,
+    "month": "May",
+    "title": "Gold Medal in University Sanskrit Prathama Examinations",
+    "description": "Kumari M. Gayatri of second-year B.A. Sanskrit was awarded the University Gold Medal for securing the highest aggregate score in the state-wide Sanskrit examinations.",
+    "category": "Academic",
+    "tags": ["Gold Medal", "University Ranker", "Sanskrit"],
+    "highlight": true,
+    "image": "library_study.png"
+  },
+  {
+    "id": 8,
+    "year": 2024,
+    "month": "November",
+    "title": "Best Oriental College Excellence Award 2024",
+    "description": "The college received the 'Best Oriental College Excellence Award' from the State Education Department for its outstanding service in preserving and teaching ancient Sanskrit and Telugu scriptures.",
+    "category": "Institutional",
+    "tags": ["Award", "Excellence", "State Recognition"],
+    "highlight": true,
+    "image": "mog-gate.jpg"
+  },
+  {
+    "id": 9,
+    "year": 2024,
+    "month": "October",
+    "title": "Launch of Add-On Course in 'Web Design & Computational Linguistics'",
+    "description": "Successfully launched a modern 6-month Add-on certificate course merging Sanskrit grammar rules with Natural Language Processing (NLP) foundations, enrolling 35 students.",
+    "category": "Academic",
+    "tags": ["Addon Course", "NLP", "Sanskrit", "Computer Science"],
+    "highlight": false,
+    "image": "article_digital.png"
+  },
+  {
+    "id": 10,
+    "year": 2024,
+    "month": "August",
+    "title": "First Rank in District Sports Athletic Meet",
+    "description": "G. Venkatesh of final year Telugu studies won 1st place in the 800-meter track event and 2nd place in the long jump at the District-level College Athletic Meet.",
+    "category": "Student",
+    "tags": ["Sports", "Athletics", "District Level"],
+    "highlight": false,
+    "image": "MOC-Library-2.jpg"
+  },
+  {
+    "id": 11,
+    "year": 2024,
+    "month": "June",
+    "title": "Faculty Research Publication Milestone",
+    "description": "Dr. P. Sastri, HOD of Sanskrit, published a pioneering research book titled 'Pāṇini’s Aṣṭādhyāyī and Modern Coding Grammar', which was widely acclaimed by the linguistics community.",
+    "category": "Academic",
+    "tags": ["Research", "Faculty", "Publication"],
+    "highlight": false,
+    "image": "principal_portrait.png"
+  }
+]
