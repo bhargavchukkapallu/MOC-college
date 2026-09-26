@@ -8,7 +8,8 @@ const CTASection = () => {
     <section className="relative py-32 overflow-hidden flex items-center justify-center">
       {/* Background Image with Parallax / Fixed attachment */}
       <div
-        className="absolute inset-0 bg-[url('./images/mog-gate.jpg')] bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/mog-gate.jpg)` }}
       >
         {/* Deep blue gradient overlay */}
         <div className="absolute inset-0 bg-brand-primary/30 mix-blend-multiply"></div>
